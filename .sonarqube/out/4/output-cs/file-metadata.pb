@@ -1,0 +1,12 @@
+]
+T/Users/nizar/SwaggerDemo/src/SwaggerDemo.Domain/Data/ISwaggerDemoDbSchemaMigrator.csutf-8`
+W/Users/nizar/SwaggerDemo/src/SwaggerDemo.Domain/Data/NullSwaggerDemoDbSchemaMigrator.csutf-8^
+U/Users/nizar/SwaggerDemo/src/SwaggerDemo.Domain/Data/SwaggerDemoDbMigrationService.csutf-8d
+[/Users/nizar/SwaggerDemo/src/SwaggerDemo.Domain/OpenIddict/OpenIddictDataSeedContributor.csutf-8S
+J/Users/nizar/SwaggerDemo/src/SwaggerDemo.Domain/Properties/AssemblyInfo.csutf-8i
+`/Users/nizar/SwaggerDemo/src/SwaggerDemo.Domain/Settings/SwaggerDemoSettingDefinitionProvider.csutf-8X
+O/Users/nizar/SwaggerDemo/src/SwaggerDemo.Domain/Settings/SwaggerDemoSettings.csutf-8M
+D/Users/nizar/SwaggerDemo/src/SwaggerDemo.Domain/SwaggerDemoConsts.csutf-8S
+J/Users/nizar/SwaggerDemo/src/SwaggerDemo.Domain/SwaggerDemoDomainModule.csutf-8z
+o/Users/nizar/SwaggerDemo/src/SwaggerDemo.Domain/obj/Debug/net8.0/.NETCoreApp,Version=v8.0.AssemblyAttributes.csutf-8n
+c/Users/nizar/SwaggerDemo/src/SwaggerDemo.Domain/obj/Debug/net8.0/SwaggerDemo.Domain.AssemblyInfo.csutf-8

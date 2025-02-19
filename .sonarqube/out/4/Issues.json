@@ -1,0 +1,1081 @@
+{
+  "$schema": "http://json.schemastore.org/sarif-1.0.0",
+  "version": "1.0.0",
+  "runs": [
+    {
+      "tool": {
+        "name": "Microsoft (R) Visual C# Compiler",
+        "version": "4.12.0.0",
+        "fileVersion": "4.12.0-3.24574.8 (dfa7fc6b)",
+        "semanticVersion": "4.12.0",
+        "language": "en-TN"
+      },
+      "results": [
+        {
+          "ruleId": "CS8604",
+          "level": "warning",
+          "message": "Possible null reference argument for parameter 'str' in 'string AbpStringExtensions.EnsureEndsWith(string str, char c, StringComparison comparisonType = StringComparison.Ordinal)'.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///Users/nizar/SwaggerDemo/src/SwaggerDemo.Domain/OpenIddict/OpenIddictDataSeedContributor.cs",
+                "region": {
+                  "startLine": 86,
+                  "startColumn": 36,
+                  "endLine": 86,
+                  "endColumn": 83
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "CS8604",
+          "level": "warning",
+          "message": "Possible null reference argument for parameter 'str' in 'string AbpStringExtensions.EnsureEndsWith(string str, char c, StringComparison comparisonType = StringComparison.Ordinal)'.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///Users/nizar/SwaggerDemo/src/SwaggerDemo.Domain/OpenIddict/OpenIddictDataSeedContributor.cs",
+                "region": {
+                  "startLine": 156,
+                  "startColumn": 17,
+                  "endLine": 156,
+                  "endColumn": 79
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "S1144",
+          "level": "warning",
+          "message": "Remove the unused private field 'Prefix'.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///Users/nizar/SwaggerDemo/src/SwaggerDemo.Domain/Settings/SwaggerDemoSettings.cs",
+                "region": {
+                  "startLine": 5,
+                  "startColumn": 5,
+                  "endLine": 5,
+                  "endColumn": 49
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "S125",
+          "level": "warning",
+          "message": "Remove this commented out code.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///Users/nizar/SwaggerDemo/src/SwaggerDemo.Domain/Settings/SwaggerDemoSettingDefinitionProvider.cs",
+                "region": {
+                  "startLine": 10,
+                  "startColumn": 9,
+                  "endLine": 10,
+                  "endColumn": 78
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "S125",
+          "level": "warning",
+          "message": "Remove this commented out code.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///Users/nizar/SwaggerDemo/src/SwaggerDemo.Domain/Settings/SwaggerDemoSettings.cs",
+                "region": {
+                  "startLine": 8,
+                  "startColumn": 5,
+                  "endLine": 8,
+                  "endColumn": 63
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "CA2254",
+          "level": "note",
+          "message": "The logging message template should not vary between calls to 'LoggerExtensions.LogWarning(ILogger, string?, params object?[])'",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///Users/nizar/SwaggerDemo/src/SwaggerDemo.Domain/Data/SwaggerDemoDbMigrationService.cs",
+                "region": {
+                  "startLine": 137,
+                  "startColumn": 31,
+                  "endLine": 137,
+                  "endColumn": 92
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "CA2254",
+          "level": "note",
+          "message": "The logging message template should not vary between calls to 'LoggerExtensions.LogInformation(ILogger, string?, params object?[])'",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///Users/nizar/SwaggerDemo/src/SwaggerDemo.Domain/Data/SwaggerDemoDbMigrationService.cs",
+                "region": {
+                  "startLine": 101,
+                  "startColumn": 31,
+                  "endLine": 101,
+                  "endColumn": 114
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "CA2254",
+          "level": "note",
+          "message": "The logging message template should not vary between calls to 'LoggerExtensions.LogInformation(ILogger, string?, params object?[])'",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///Users/nizar/SwaggerDemo/src/SwaggerDemo.Domain/Data/SwaggerDemoDbMigrationService.cs",
+                "region": {
+                  "startLine": 91,
+                  "startColumn": 13,
+                  "endLine": 91,
+                  "endColumn": 102
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "S3776",
+          "level": "warning",
+          "message": "Refactor this method to reduce its Cognitive Complexity from 63 to the 15 allowed.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///Users/nizar/SwaggerDemo/src/SwaggerDemo.Domain/OpenIddict/OpenIddictDataSeedContributor.cs",
+                "region": {
+                  "startLine": 195,
+                  "startColumn": 24,
+                  "endLine": 195,
+                  "endColumn": 46
+                }
+              }
+            }
+          ],
+          "relatedLocations": [
+            {
+              "physicalLocation": {
+                "uri": "file:///Users/nizar/SwaggerDemo/src/SwaggerDemo.Domain/OpenIddict/OpenIddictDataSeedContributor.cs",
+                "region": {
+                  "startLine": 208,
+                  "startColumn": 9,
+                  "endLine": 208,
+                  "endColumn": 11
+                }
+              }
+            },
+            {
+              "physicalLocation": {
+                "uri": "file:///Users/nizar/SwaggerDemo/src/SwaggerDemo.Domain/OpenIddict/OpenIddictDataSeedContributor.cs",
+                "region": {
+                  "startLine": 208,
+                  "startColumn": 43,
+                  "endLine": 208,
+                  "endColumn": 45
+                }
+              }
+            },
+            {
+              "physicalLocation": {
+                "uri": "file:///Users/nizar/SwaggerDemo/src/SwaggerDemo.Domain/OpenIddict/OpenIddictDataSeedContributor.cs",
+                "region": {
+                  "startLine": 214,
+                  "startColumn": 9,
+                  "endLine": 214,
+                  "endColumn": 11
+                }
+              }
+            },
+            {
+              "physicalLocation": {
+                "uri": "file:///Users/nizar/SwaggerDemo/src/SwaggerDemo.Domain/OpenIddict/OpenIddictDataSeedContributor.cs",
+                "region": {
+                  "startLine": 214,
+                  "startColumn": 42,
+                  "endLine": 214,
+                  "endColumn": 44
+                }
+              }
+            },
+            {
+              "physicalLocation": {
+                "uri": "file:///Users/nizar/SwaggerDemo/src/SwaggerDemo.Domain/OpenIddict/OpenIddictDataSeedContributor.cs",
+                "region": {
+                  "startLine": 234,
+                  "startColumn": 9,
+                  "endLine": 234,
+                  "endColumn": 11
+                }
+              }
+            },
+            {
+              "physicalLocation": {
+                "uri": "file:///Users/nizar/SwaggerDemo/src/SwaggerDemo.Domain/OpenIddict/OpenIddictDataSeedContributor.cs",
+                "region": {
+                  "startLine": 239,
+                  "startColumn": 13,
+                  "endLine": 239,
+                  "endColumn": 15
+                }
+              }
+            },
+            {
+              "physicalLocation": {
+                "uri": "file:///Users/nizar/SwaggerDemo/src/SwaggerDemo.Domain/OpenIddict/OpenIddictDataSeedContributor.cs",
+                "region": {
+                  "startLine": 246,
+                  "startColumn": 9,
+                  "endLine": 246,
+                  "endColumn": 11
+                }
+              }
+            },
+            {
+              "physicalLocation": {
+                "uri": "file:///Users/nizar/SwaggerDemo/src/SwaggerDemo.Domain/OpenIddict/OpenIddictDataSeedContributor.cs",
+                "region": {
+                  "startLine": 246,
+                  "startColumn": 47,
+                  "endLine": 246,
+                  "endColumn": 49
+                }
+              }
+            },
+            {
+              "physicalLocation": {
+                "uri": "file:///Users/nizar/SwaggerDemo/src/SwaggerDemo.Domain/OpenIddict/OpenIddictDataSeedContributor.cs",
+                "region": {
+                  "startLine": 257,
+                  "startColumn": 9,
+                  "endLine": 257,
+                  "endColumn": 16
+                }
+              }
+            },
+            {
+              "physicalLocation": {
+                "uri": "file:///Users/nizar/SwaggerDemo/src/SwaggerDemo.Domain/OpenIddict/OpenIddictDataSeedContributor.cs",
+                "region": {
+                  "startLine": 259,
+                  "startColumn": 13,
+                  "endLine": 259,
+                  "endColumn": 15
+                }
+              }
+            },
+            {
+              "physicalLocation": {
+                "uri": "file:///Users/nizar/SwaggerDemo/src/SwaggerDemo.Domain/OpenIddict/OpenIddictDataSeedContributor.cs",
+                "region": {
+                  "startLine": 265,
+                  "startColumn": 13,
+                  "endLine": 265,
+                  "endColumn": 15
+                }
+              }
+            },
+            {
+              "physicalLocation": {
+                "uri": "file:///Users/nizar/SwaggerDemo/src/SwaggerDemo.Domain/OpenIddict/OpenIddictDataSeedContributor.cs",
+                "region": {
+                  "startLine": 265,
+                  "startColumn": 79,
+                  "endLine": 265,
+                  "endColumn": 81
+                }
+              }
+            },
+            {
+              "physicalLocation": {
+                "uri": "file:///Users/nizar/SwaggerDemo/src/SwaggerDemo.Domain/OpenIddict/OpenIddictDataSeedContributor.cs",
+                "region": {
+                  "startLine": 271,
+                  "startColumn": 13,
+                  "endLine": 271,
+                  "endColumn": 15
+                }
+              }
+            },
+            {
+              "physicalLocation": {
+                "uri": "file:///Users/nizar/SwaggerDemo/src/SwaggerDemo.Domain/OpenIddict/OpenIddictDataSeedContributor.cs",
+                "region": {
+                  "startLine": 271,
+                  "startColumn": 79,
+                  "endLine": 271,
+                  "endColumn": 81
+                }
+              }
+            },
+            {
+              "physicalLocation": {
+                "uri": "file:///Users/nizar/SwaggerDemo/src/SwaggerDemo.Domain/OpenIddict/OpenIddictDataSeedContributor.cs",
+                "region": {
+                  "startLine": 282,
+                  "startColumn": 13,
+                  "endLine": 282,
+                  "endColumn": 15
+                }
+              }
+            },
+            {
+              "physicalLocation": {
+                "uri": "file:///Users/nizar/SwaggerDemo/src/SwaggerDemo.Domain/OpenIddict/OpenIddictDataSeedContributor.cs",
+                "region": {
+                  "startLine": 287,
+                  "startColumn": 13,
+                  "endLine": 287,
+                  "endColumn": 15
+                }
+              }
+            },
+            {
+              "physicalLocation": {
+                "uri": "file:///Users/nizar/SwaggerDemo/src/SwaggerDemo.Domain/OpenIddict/OpenIddictDataSeedContributor.cs",
+                "region": {
+                  "startLine": 292,
+                  "startColumn": 13,
+                  "endLine": 292,
+                  "endColumn": 15
+                }
+              }
+            },
+            {
+              "physicalLocation": {
+                "uri": "file:///Users/nizar/SwaggerDemo/src/SwaggerDemo.Domain/OpenIddict/OpenIddictDataSeedContributor.cs",
+                "region": {
+                  "startLine": 297,
+                  "startColumn": 13,
+                  "endLine": 297,
+                  "endColumn": 15
+                }
+              }
+            },
+            {
+              "physicalLocation": {
+                "uri": "file:///Users/nizar/SwaggerDemo/src/SwaggerDemo.Domain/OpenIddict/OpenIddictDataSeedContributor.cs",
+                "region": {
+                  "startLine": 302,
+                  "startColumn": 13,
+                  "endLine": 302,
+                  "endColumn": 15
+                }
+              }
+            },
+            {
+              "physicalLocation": {
+                "uri": "file:///Users/nizar/SwaggerDemo/src/SwaggerDemo.Domain/OpenIddict/OpenIddictDataSeedContributor.cs",
+                "region": {
+                  "startLine": 308,
+                  "startColumn": 13,
+                  "endLine": 308,
+                  "endColumn": 15
+                }
+              }
+            },
+            {
+              "physicalLocation": {
+                "uri": "file:///Users/nizar/SwaggerDemo/src/SwaggerDemo.Domain/OpenIddict/OpenIddictDataSeedContributor.cs",
+                "region": {
+                  "startLine": 311,
+                  "startColumn": 17,
+                  "endLine": 311,
+                  "endColumn": 19
+                }
+              }
+            },
+            {
+              "physicalLocation": {
+                "uri": "file:///Users/nizar/SwaggerDemo/src/SwaggerDemo.Domain/OpenIddict/OpenIddictDataSeedContributor.cs",
+                "region": {
+                  "startLine": 318,
+                  "startColumn": 13,
+                  "endLine": 318,
+                  "endColumn": 15
+                }
+              }
+            },
+            {
+              "physicalLocation": {
+                "uri": "file:///Users/nizar/SwaggerDemo/src/SwaggerDemo.Domain/OpenIddict/OpenIddictDataSeedContributor.cs",
+                "region": {
+                  "startLine": 330,
+                  "startColumn": 9,
+                  "endLine": 330,
+                  "endColumn": 16
+                }
+              }
+            },
+            {
+              "physicalLocation": {
+                "uri": "file:///Users/nizar/SwaggerDemo/src/SwaggerDemo.Domain/OpenIddict/OpenIddictDataSeedContributor.cs",
+                "region": {
+                  "startLine": 332,
+                  "startColumn": 13,
+                  "endLine": 332,
+                  "endColumn": 15
+                }
+              }
+            },
+            {
+              "physicalLocation": {
+                "uri": "file:///Users/nizar/SwaggerDemo/src/SwaggerDemo.Domain/OpenIddict/OpenIddictDataSeedContributor.cs",
+                "region": {
+                  "startLine": 336,
+                  "startColumn": 13,
+                  "endLine": 336,
+                  "endColumn": 17
+                }
+              }
+            },
+            {
+              "physicalLocation": {
+                "uri": "file:///Users/nizar/SwaggerDemo/src/SwaggerDemo.Domain/OpenIddict/OpenIddictDataSeedContributor.cs",
+                "region": {
+                  "startLine": 342,
+                  "startColumn": 9,
+                  "endLine": 342,
+                  "endColumn": 11
+                }
+              }
+            },
+            {
+              "physicalLocation": {
+                "uri": "file:///Users/nizar/SwaggerDemo/src/SwaggerDemo.Domain/OpenIddict/OpenIddictDataSeedContributor.cs",
+                "region": {
+                  "startLine": 344,
+                  "startColumn": 13,
+                  "endLine": 344,
+                  "endColumn": 15
+                }
+              }
+            },
+            {
+              "physicalLocation": {
+                "uri": "file:///Users/nizar/SwaggerDemo/src/SwaggerDemo.Domain/OpenIddict/OpenIddictDataSeedContributor.cs",
+                "region": {
+                  "startLine": 346,
+                  "startColumn": 17,
+                  "endLine": 346,
+                  "endColumn": 19
+                }
+              }
+            },
+            {
+              "physicalLocation": {
+                "uri": "file:///Users/nizar/SwaggerDemo/src/SwaggerDemo.Domain/OpenIddict/OpenIddictDataSeedContributor.cs",
+                "region": {
+                  "startLine": 346,
+                  "startColumn": 80,
+                  "endLine": 346,
+                  "endColumn": 82
+                }
+              }
+            },
+            {
+              "physicalLocation": {
+                "uri": "file:///Users/nizar/SwaggerDemo/src/SwaggerDemo.Domain/OpenIddict/OpenIddictDataSeedContributor.cs",
+                "region": {
+                  "startLine": 351,
+                  "startColumn": 17,
+                  "endLine": 351,
+                  "endColumn": 19
+                }
+              }
+            },
+            {
+              "physicalLocation": {
+                "uri": "file:///Users/nizar/SwaggerDemo/src/SwaggerDemo.Domain/OpenIddict/OpenIddictDataSeedContributor.cs",
+                "region": {
+                  "startLine": 358,
+                  "startColumn": 9,
+                  "endLine": 358,
+                  "endColumn": 11
+                }
+              }
+            },
+            {
+              "physicalLocation": {
+                "uri": "file:///Users/nizar/SwaggerDemo/src/SwaggerDemo.Domain/OpenIddict/OpenIddictDataSeedContributor.cs",
+                "region": {
+                  "startLine": 360,
+                  "startColumn": 13,
+                  "endLine": 360,
+                  "endColumn": 15
+                }
+              }
+            },
+            {
+              "physicalLocation": {
+                "uri": "file:///Users/nizar/SwaggerDemo/src/SwaggerDemo.Domain/OpenIddict/OpenIddictDataSeedContributor.cs",
+                "region": {
+                  "startLine": 362,
+                  "startColumn": 17,
+                  "endLine": 362,
+                  "endColumn": 19
+                }
+              }
+            },
+            {
+              "physicalLocation": {
+                "uri": "file:///Users/nizar/SwaggerDemo/src/SwaggerDemo.Domain/OpenIddict/OpenIddictDataSeedContributor.cs",
+                "region": {
+                  "startLine": 362,
+                  "startColumn": 90,
+                  "endLine": 362,
+                  "endColumn": 92
+                }
+              }
+            },
+            {
+              "physicalLocation": {
+                "uri": "file:///Users/nizar/SwaggerDemo/src/SwaggerDemo.Domain/OpenIddict/OpenIddictDataSeedContributor.cs",
+                "region": {
+                  "startLine": 368,
+                  "startColumn": 17,
+                  "endLine": 368,
+                  "endColumn": 19
+                }
+              }
+            },
+            {
+              "physicalLocation": {
+                "uri": "file:///Users/nizar/SwaggerDemo/src/SwaggerDemo.Domain/OpenIddict/OpenIddictDataSeedContributor.cs",
+                "region": {
+                  "startLine": 375,
+                  "startColumn": 9,
+                  "endLine": 375,
+                  "endColumn": 11
+                }
+              }
+            },
+            {
+              "physicalLocation": {
+                "uri": "file:///Users/nizar/SwaggerDemo/src/SwaggerDemo.Domain/OpenIddict/OpenIddictDataSeedContributor.cs",
+                "region": {
+                  "startLine": 385,
+                  "startColumn": 9,
+                  "endLine": 385,
+                  "endColumn": 11
+                }
+              }
+            },
+            {
+              "physicalLocation": {
+                "uri": "file:///Users/nizar/SwaggerDemo/src/SwaggerDemo.Domain/OpenIddict/OpenIddictDataSeedContributor.cs",
+                "region": {
+                  "startLine": 391,
+                  "startColumn": 9,
+                  "endLine": 391,
+                  "endColumn": 11
+                }
+              }
+            },
+            {
+              "physicalLocation": {
+                "uri": "file:///Users/nizar/SwaggerDemo/src/SwaggerDemo.Domain/OpenIddict/OpenIddictDataSeedContributor.cs",
+                "region": {
+                  "startLine": 399,
+                  "startColumn": 9,
+                  "endLine": 399,
+                  "endColumn": 11
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1,
+            "customProperties": {
+              "0": "+1",
+              "1": "+1",
+              "10": "+2 (incl 1 for nesting)",
+              "11": "+1",
+              "12": "+2 (incl 1 for nesting)",
+              "13": "+1",
+              "14": "+2 (incl 1 for nesting)",
+              "15": "+2 (incl 1 for nesting)",
+              "16": "+2 (incl 1 for nesting)",
+              "17": "+2 (incl 1 for nesting)",
+              "18": "+2 (incl 1 for nesting)",
+              "19": "+2 (incl 1 for nesting)",
+              "2": "+1",
+              "20": "+3 (incl 2 for nesting)",
+              "21": "+2 (incl 1 for nesting)",
+              "22": "+1",
+              "23": "+2 (incl 1 for nesting)",
+              "24": "+1",
+              "25": "+1",
+              "26": "+2 (incl 1 for nesting)",
+              "27": "+3 (incl 2 for nesting)",
+              "28": "+1",
+              "29": "+3 (incl 2 for nesting)",
+              "3": "+1",
+              "30": "+1",
+              "31": "+2 (incl 1 for nesting)",
+              "32": "+3 (incl 2 for nesting)",
+              "33": "+1",
+              "34": "+3 (incl 2 for nesting)",
+              "35": "+1",
+              "36": "+1",
+              "37": "+1",
+              "38": "+1",
+              "4": "+1",
+              "5": "+2 (incl 1 for nesting)",
+              "6": "+1",
+              "7": "+1",
+              "8": "+1",
+              "9": "+2 (incl 1 for nesting)"
+            }
+          }
+        },
+        {
+          "ruleId": "S112",
+          "level": "warning",
+          "message": "'System.Exception' should not be thrown by user code.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///Users/nizar/SwaggerDemo/src/SwaggerDemo.Domain/Data/SwaggerDemoDbMigrationService.cs",
+                "region": {
+                  "startLine": 183,
+                  "startColumn": 19,
+                  "endLine": 183,
+                  "endColumn": 59
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "CA1860",
+          "level": "note",
+          "message": "Prefer comparing 'Count' to 0 rather than using 'Any()', both for clarity and for performance",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///Users/nizar/SwaggerDemo/src/SwaggerDemo.Domain/Data/SwaggerDemoDbMigrationService.cs",
+                "region": {
+                  "startLine": 64,
+                  "startColumn": 21,
+                  "endLine": 64,
+                  "endColumn": 51
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1,
+            "customProperties": {
+              "DiagnosticPropertyKey": "Count"
+            }
+          }
+        },
+        {
+          "ruleId": "S112",
+          "level": "warning",
+          "message": "'System.Exception' should not be thrown by user code.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///Users/nizar/SwaggerDemo/src/SwaggerDemo.Domain/Data/SwaggerDemoDbMigrationService.cs",
+                "region": {
+                  "startLine": 193,
+                  "startColumn": 19,
+                  "endLine": 193,
+                  "endColumn": 62
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "CA2254",
+          "level": "note",
+          "message": "The logging message template should not vary between calls to 'LoggerExtensions.LogInformation(ILogger, string?, params object?[])'",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///Users/nizar/SwaggerDemo/src/SwaggerDemo.Domain/Data/SwaggerDemoDbMigrationService.cs",
+                "region": {
+                  "startLine": 81,
+                  "startColumn": 35,
+                  "endLine": 81,
+                  "endColumn": 102
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "CA1822",
+          "level": "note",
+          "message": "Member 'GetSolutionDirectoryPath' does not access instance data and can be marked as static",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///Users/nizar/SwaggerDemo/src/SwaggerDemo.Domain/Data/SwaggerDemoDbMigrationService.cs",
+                "region": {
+                  "startLine": 202,
+                  "startColumn": 21,
+                  "endLine": 202,
+                  "endColumn": 45
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "S1066",
+          "level": "warning",
+          "message": "Merge this if statement with the enclosing one.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///Users/nizar/SwaggerDemo/src/SwaggerDemo.Domain/OpenIddict/OpenIddictDataSeedContributor.cs",
+                "region": {
+                  "startLine": 344,
+                  "startColumn": 13,
+                  "endLine": 344,
+                  "endColumn": 15
+                }
+              }
+            }
+          ],
+          "relatedLocations": [
+            {
+              "physicalLocation": {
+                "uri": "file:///Users/nizar/SwaggerDemo/src/SwaggerDemo.Domain/OpenIddict/OpenIddictDataSeedContributor.cs",
+                "region": {
+                  "startLine": 342,
+                  "startColumn": 9,
+                  "endLine": 342,
+                  "endColumn": 11
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "S1066",
+          "level": "warning",
+          "message": "Merge this if statement with the enclosing one.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///Users/nizar/SwaggerDemo/src/SwaggerDemo.Domain/OpenIddict/OpenIddictDataSeedContributor.cs",
+                "region": {
+                  "startLine": 360,
+                  "startColumn": 13,
+                  "endLine": 360,
+                  "endColumn": 15
+                }
+              }
+            }
+          ],
+          "relatedLocations": [
+            {
+              "physicalLocation": {
+                "uri": "file:///Users/nizar/SwaggerDemo/src/SwaggerDemo.Domain/OpenIddict/OpenIddictDataSeedContributor.cs",
+                "region": {
+                  "startLine": 358,
+                  "startColumn": 9,
+                  "endLine": 358,
+                  "endColumn": 11
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "S107",
+          "level": "warning",
+          "message": "Method has 11 parameters, which is greater than the 7 authorized.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///Users/nizar/SwaggerDemo/src/SwaggerDemo.Domain/OpenIddict/OpenIddictDataSeedContributor.cs",
+                "region": {
+                  "startLine": 195,
+                  "startColumn": 46,
+                  "endLine": 206,
+                  "endColumn": 42
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "CA1822",
+          "level": "note",
+          "message": "Member 'HasSameRedirectUris' does not access instance data and can be marked as static",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///Users/nizar/SwaggerDemo/src/SwaggerDemo.Domain/OpenIddict/OpenIddictDataSeedContributor.cs",
+                "region": {
+                  "startLine": 406,
+                  "startColumn": 18,
+                  "endLine": 406,
+                  "endColumn": 37
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "CA1822",
+          "level": "note",
+          "message": "Member 'HasSameScopes' does not access instance data and can be marked as static",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///Users/nizar/SwaggerDemo/src/SwaggerDemo.Domain/OpenIddict/OpenIddictDataSeedContributor.cs",
+                "region": {
+                  "startLine": 411,
+                  "startColumn": 18,
+                  "endLine": 411,
+                  "endColumn": 31
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        }
+      ],
+      "rules": {
+        "CA1822": {
+          "id": "CA1822",
+          "shortDescription": "Mark members as static",
+          "fullDescription": "Members that do not access instance data or call instance methods can be marked as static. After you mark the methods as static, the compiler will emit nonvirtual call sites to these members. This can give you a measurable performance gain for performance-sensitive code.",
+          "defaultLevel": "note",
+          "helpUri": "https://learn.microsoft.com/dotnet/fundamentals/code-analysis/quality-rules/ca1822",
+          "properties": {
+            "category": "Performance",
+            "isEnabledByDefault": true,
+            "tags": [
+              "PortedFromFxCop",
+              "Telemetry",
+              "EnabledRuleInAggressiveMode"
+            ]
+          }
+        },
+        "CA1860": {
+          "id": "CA1860",
+          "shortDescription": "Avoid using 'Enumerable.Any()' extension method",
+          "fullDescription": "Prefer using 'IsEmpty', 'Count' or 'Length' properties whichever available, rather than calling 'Enumerable.Any()'. The intent is clearer and it is more performant than using 'Enumerable.Any()' extension method.",
+          "defaultLevel": "note",
+          "helpUri": "https://learn.microsoft.com/dotnet/fundamentals/code-analysis/quality-rules/ca1860",
+          "properties": {
+            "category": "Performance",
+            "isEnabledByDefault": true,
+            "tags": [
+              "Telemetry",
+              "EnabledRuleInAggressiveMode"
+            ]
+          }
+        },
+        "CA2254": {
+          "id": "CA2254",
+          "shortDescription": "Template should be a static expression",
+          "fullDescription": "The logging message template should not vary between calls.",
+          "defaultLevel": "note",
+          "helpUri": "https://learn.microsoft.com/dotnet/fundamentals/code-analysis/quality-rules/ca2254",
+          "properties": {
+            "category": "Usage",
+            "isEnabledByDefault": true,
+            "tags": [
+              "Telemetry",
+              "EnabledRuleInAggressiveMode"
+            ]
+          }
+        },
+        "CS8604": {
+          "id": "CS8604",
+          "shortDescription": "Possible null reference argument.",
+          "defaultLevel": "warning",
+          "helpUri": "https://msdn.microsoft.com/query/roslyn.query?appId=roslyn&k=k(CS8604)",
+          "properties": {
+            "category": "Compiler",
+            "isEnabledByDefault": true,
+            "tags": [
+              "Compiler",
+              "Telemetry"
+            ]
+          }
+        },
+        "S1066": {
+          "id": "S1066",
+          "shortDescription": "Collapsible \"if\" statements should be merged",
+          "fullDescription": "Merging collapsible if statements increases the code’s readability.",
+          "defaultLevel": "warning",
+          "helpUri": "https://rules.sonarsource.com/csharp/RSPEC-1066",
+          "properties": {
+            "category": "Major Code Smell",
+            "isEnabledByDefault": true,
+            "tags": [
+              "C#",
+              "MainSourceScope",
+              "TestSourceScope",
+              "SonarWay"
+            ]
+          }
+        },
+        "S107": {
+          "id": "S107",
+          "shortDescription": "Methods should not have too many parameters",
+          "fullDescription": "A long parameter list can indicate that a new structure should be created to wrap the numerous parameters or that the function is doing too many things.",
+          "defaultLevel": "warning",
+          "helpUri": "https://rules.sonarsource.com/csharp/RSPEC-107",
+          "properties": {
+            "category": "Major Code Smell",
+            "isEnabledByDefault": false,
+            "tags": [
+              "C#",
+              "MainSourceScope",
+              "TestSourceScope",
+              "SonarWay"
+            ]
+          }
+        },
+        "S112": {
+          "id": "S112",
+          "shortDescription": "General exceptions should never be thrown",
+          "fullDescription": "Throwing such general exceptions as Exception, SystemException, ApplicationException, IndexOutOfRangeException, NullReferenceException, OutOfMemoryException and ExecutionEngineException prevents calling methods from handling true, system-generated exceptions differently than application-generated errors.",
+          "defaultLevel": "warning",
+          "helpUri": "https://rules.sonarsource.com/csharp/RSPEC-112",
+          "properties": {
+            "category": "Major Code Smell",
+            "isEnabledByDefault": true,
+            "tags": [
+              "C#",
+              "MainSourceScope",
+              "SonarWay"
+            ]
+          }
+        },
+        "S1144": {
+          "id": "S1144",
+          "shortDescription": "Unused private types or members should be removed",
+          "fullDescription": "private or internal types or private members that are never executed or referenced are dead code: unnecessary, inoperative code that should be removed. Cleaning out dead code decreases the size of the maintained codebase, making it easier to understand the program and preventing bugs from being introduced.",
+          "defaultLevel": "note",
+          "helpUri": "https://rules.sonarsource.com/csharp/RSPEC-1144",
+          "properties": {
+            "category": "Major Code Smell",
+            "isEnabledByDefault": true,
+            "tags": [
+              "C#",
+              "MainSourceScope",
+              "TestSourceScope",
+              "SonarWay",
+              "Unnecessary"
+            ]
+          }
+        },
+        "S125": {
+          "id": "S125",
+          "shortDescription": "Sections of code should not be commented out",
+          "fullDescription": "Programmers should not comment out code as it bloats programs and reduces readability.",
+          "defaultLevel": "warning",
+          "helpUri": "https://rules.sonarsource.com/csharp/RSPEC-125",
+          "properties": {
+            "category": "Major Code Smell",
+            "isEnabledByDefault": true,
+            "tags": [
+              "C#",
+              "MainSourceScope",
+              "TestSourceScope",
+              "SonarWay"
+            ]
+          }
+        },
+        "S3776": {
+          "id": "S3776",
+          "shortDescription": "Cognitive Complexity of methods should not be too high",
+          "fullDescription": "Cognitive Complexity is a measure of how hard the control flow of a method is to understand. Methods with high Cognitive Complexity will be difficult to maintain.",
+          "defaultLevel": "warning",
+          "helpUri": "https://rules.sonarsource.com/csharp/RSPEC-3776",
+          "properties": {
+            "category": "Critical Code Smell",
+            "isEnabledByDefault": false,
+            "tags": [
+              "C#",
+              "MainSourceScope",
+              "TestSourceScope",
+              "SonarWay"
+            ]
+          }
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,32 @@
+﻿<Properties StartupConfiguration="{6FE54035-9C11-4702-A5E2-D16F23101468}|Default">
+  <MonoDevelop.Ide.ItemProperties.src.SwaggerDemo.Web PreferredExecutionTarget="/Applications/Opera.app" />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MultiItemStartupConfigurations />
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.Workbench ActiveDocument="global.json">
+    <Files>
+      <File FileName="global.json" Line="6" Column="1" />
+    </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State name="__root__">
+          <Node name="SwaggerDemo" expanded="True">
+            <Node name="src" expanded="True">
+              <Node name="SwaggerDemo.Application.Contracts" expanded="True">
+                <Node name="Permissions" expanded="True" />
+              </Node>
+            </Node>
+          </Node>
+        </State>
+      </Pad>
+      <Pad Id="MonoDevelop.UnitTesting.TestPad">
+        <State name="__root__">
+          <Node name="SwaggerDemo" expanded="True" selected="True" />
+        </State>
+      </Pad>
+    </Pads>
+  </MonoDevelop.Ide.Workbench>
+</Properties>

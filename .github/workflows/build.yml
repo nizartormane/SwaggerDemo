@@ -1,0 +1,37 @@
+name: Build ABP .NET App
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Setup .NET
+        uses: actions/setup-dotnet@v3
+        with:
+          dotnet-version: '8.0.x'
+
+      - name: Restore Dependencies
+        run: dotnet restore src/SwaggerDemo.HttpApi.Host
+
+      - name: Build Project
+        run: dotnet build src/SwaggerDemo.HttpApi.Host --configuration Release --no-restore
+
+      - name: Publish Project
+        run: dotnet publish src/SwaggerDemo.HttpApi.Host --configuration Release --output publish
+
+      - name: Upload Published App
+        uses: actions/upload-artifact@v4
+        with:
+          name: abp-app
+          path: publish/

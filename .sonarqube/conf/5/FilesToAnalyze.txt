@@ -1,0 +1,4 @@
+﻿/Users/nizar/SwaggerDemo/src/SwaggerDemo.Application.Contracts/Permissions/SwaggerDemoPermissionDefinitionProvider.cs
+/Users/nizar/SwaggerDemo/src/SwaggerDemo.Application.Contracts/Permissions/SwaggerDemoPermissions.cs
+/Users/nizar/SwaggerDemo/src/SwaggerDemo.Application.Contracts/SwaggerDemoApplicationContractsModule.cs
+/Users/nizar/SwaggerDemo/src/SwaggerDemo.Application.Contracts/SwaggerDemoDtoExtensions.cs

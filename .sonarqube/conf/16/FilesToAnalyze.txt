@@ -1,0 +1,6 @@
+﻿/Users/nizar/SwaggerDemo/test/SwaggerDemo.HttpApi.Client.ConsoleTestApp/ClientDemoService.cs
+/Users/nizar/SwaggerDemo/test/SwaggerDemo.HttpApi.Client.ConsoleTestApp/ConsoleTestAppHostedService.cs
+/Users/nizar/SwaggerDemo/test/SwaggerDemo.HttpApi.Client.ConsoleTestApp/Program.cs
+/Users/nizar/SwaggerDemo/test/SwaggerDemo.HttpApi.Client.ConsoleTestApp/SwaggerDemoConsoleApiClientModule.cs
+/Users/nizar/SwaggerDemo/test/SwaggerDemo.HttpApi.Client.ConsoleTestApp/appsettings.json
+/Users/nizar/SwaggerDemo/test/SwaggerDemo.HttpApi.Client.ConsoleTestApp/appsettings.secrets.json
