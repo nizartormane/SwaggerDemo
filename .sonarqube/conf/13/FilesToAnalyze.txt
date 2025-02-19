@@ -1,0 +1,6 @@
+﻿/Users/nizar/SwaggerDemo/src/SwaggerDemo.DbMigrator/DbMigratorHostedService.cs
+/Users/nizar/SwaggerDemo/src/SwaggerDemo.DbMigrator/Program.cs
+/Users/nizar/SwaggerDemo/src/SwaggerDemo.DbMigrator/SwaggerDemoDbMigratorModule.cs
+/Users/nizar/SwaggerDemo/src/SwaggerDemo.DbMigrator/appsettings.json
+/Users/nizar/SwaggerDemo/src/SwaggerDemo.DbMigrator/appsettings.secrets.json
+/Users/nizar/SwaggerDemo/src/SwaggerDemo.DbMigrator/Dockerfile

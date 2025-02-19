@@ -1,0 +1,12 @@
+å
+Ç/Users/nizar/SwaggerDemo/src/SwaggerDemo.EntityFrameworkCore/EntityFrameworkCore/EntityFrameworkCoreSwaggerDemoDbSchemaMigrator.csutf-8q
+h/Users/nizar/SwaggerDemo/src/SwaggerDemo.EntityFrameworkCore/EntityFrameworkCore/SwaggerDemoDbContext.csutf-8x
+o/Users/nizar/SwaggerDemo/src/SwaggerDemo.EntityFrameworkCore/EntityFrameworkCore/SwaggerDemoDbContextFactory.csutf-8Ö
+|/Users/nizar/SwaggerDemo/src/SwaggerDemo.EntityFrameworkCore/EntityFrameworkCore/SwaggerDemoEfCoreEntityExtensionMappings.csutf-8Å
+x/Users/nizar/SwaggerDemo/src/SwaggerDemo.EntityFrameworkCore/EntityFrameworkCore/SwaggerDemoEntityFrameworkCoreModule.csutf-8j
+a/Users/nizar/SwaggerDemo/src/SwaggerDemo.EntityFrameworkCore/Migrations/20240912065503_Initial.csutf-8u
+j/Users/nizar/SwaggerDemo/src/SwaggerDemo.EntityFrameworkCore/Migrations/20240912065503_Initial.Designer.csutf-8w
+l/Users/nizar/SwaggerDemo/src/SwaggerDemo.EntityFrameworkCore/Migrations/SwaggerDemoDbContextModelSnapshot.csutf-8`
+W/Users/nizar/SwaggerDemo/src/SwaggerDemo.EntityFrameworkCore/Properties/AssemblyInfo.csutf-8á
+|/Users/nizar/SwaggerDemo/src/SwaggerDemo.EntityFrameworkCore/obj/Debug/net8.0/.NETCoreApp,Version=v8.0.AssemblyAttributes.csutf-8à
+}/Users/nizar/SwaggerDemo/src/SwaggerDemo.EntityFrameworkCore/obj/Debug/net8.0/SwaggerDemo.EntityFrameworkCore.AssemblyInfo.csutf-8

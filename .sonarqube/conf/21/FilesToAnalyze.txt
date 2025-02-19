@@ -1,0 +1,5 @@
+﻿/Users/nizar/SwaggerDemo/test/SwaggerDemo.Application.Tests/Samples/SampleAppServiceTests.cs
+/Users/nizar/SwaggerDemo/test/SwaggerDemo.Application.Tests/SwaggerDemoApplicationTestBase.cs
+/Users/nizar/SwaggerDemo/test/SwaggerDemo.Application.Tests/SwaggerDemoApplicationTestModule.cs
+/Users/nizar/.nuget/packages/microsoft.net.test.sdk/17.2.0/build/netcoreapp2.1/Microsoft.NET.Test.Sdk.Program.cs
+/Users/nizar/.nuget/packages/microsoft.testplatform.testhost/17.2.0/build/netcoreapp2.1/Microsoft.TestPlatform.PlatformAbstractions.dll

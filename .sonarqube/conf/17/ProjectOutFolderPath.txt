@@ -1,0 +1,1 @@
+/Users/nizar/SwaggerDemo/.sonarqube/out/17

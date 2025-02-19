@@ -1,0 +1,9 @@
+c
+Z/Users/nizar/SwaggerDemo/src/SwaggerDemo.Domain.Shared/Localization/SwaggerDemoResource.csutf-8b
+Y/Users/nizar/SwaggerDemo/src/SwaggerDemo.Domain.Shared/MultiTenancy/MultiTenancyConsts.csutf-8^
+U/Users/nizar/SwaggerDemo/src/SwaggerDemo.Domain.Shared/SwaggerDemoDomainErrorCodes.csutf-8`
+W/Users/nizar/SwaggerDemo/src/SwaggerDemo.Domain.Shared/SwaggerDemoDomainSharedModule.csutf-8g
+^/Users/nizar/SwaggerDemo/src/SwaggerDemo.Domain.Shared/SwaggerDemoGlobalFeatureConfigurator.csutf-8i
+`/Users/nizar/SwaggerDemo/src/SwaggerDemo.Domain.Shared/SwaggerDemoModuleExtensionConfigurator.csutf-8Š
+/Users/nizar/SwaggerDemo/src/SwaggerDemo.Domain.Shared/obj/Debug/netstandard2.1/.NETStandard,Version=v2.1.AssemblyAttributes.csutf-8„
+y/Users/nizar/SwaggerDemo/src/SwaggerDemo.Domain.Shared/obj/Debug/netstandard2.1/SwaggerDemo.Domain.Shared.AssemblyInfo.csutf-8
