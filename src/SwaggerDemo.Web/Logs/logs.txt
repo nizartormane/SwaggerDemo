@@ -4400,3 +4400,249 @@ Volo.Abp.Http.Client.AbpRemoteCallException: An error occurred during the ABP re
 --- End of stack trace from previous location ---
    at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
 2025-02-19 21:54:36.246 +01:00 [INF] Request finished HTTP/2 GET https://localhost:44330/favicon.ico - 500 null text/plain; charset=utf-8 40.3686ms
+2025-02-20 11:00:06.688 +01:00 [INF] Request starting HTTP/2 GET https://localhost:44330/ - null null
+2025-02-20 11:00:06.742 +01:00 [WRN] Could not find IdentityClientConfiguration for AbpMvcClient. Either define a configuration for AbpMvcClient or set a default configuration.
+2025-02-20 11:00:06.742 +01:00 [INF] Start processing HTTP request GET https://localhost:44397/api/abp/application-configuration?IncludeLocalizationResources=False&api-version=1.0
+2025-02-20 11:00:06.743 +01:00 [INF] Sending HTTP request GET https://localhost:44397/api/abp/application-configuration?IncludeLocalizationResources=False&api-version=1.0
+2025-02-20 11:00:06.799 +01:00 [ERR] An unhandled exception has occurred while executing the request.
+Volo.Abp.Http.Client.AbpRemoteCallException: An error occurred during the ABP remote HTTP request. (The SSL connection could not be established, see inner exception.) See the inner exception for details.
+ ---> System.Net.Http.HttpRequestException: The SSL connection could not be established, see inner exception.
+ ---> System.Security.Authentication.AuthenticationException: The remote certificate is invalid because of errors in the certificate chain: UntrustedRoot
+   at System.Net.Security.SslStream.SendAuthResetSignal(ReadOnlySpan`1 alert, ExceptionDispatchInfo exception)
+   at System.Net.Security.SslStream.CompleteHandshake(SslAuthenticationOptions sslAuthenticationOptions)
+   at System.Net.Security.SslStream.ForceAuthenticationAsync[TIOAdapter](Boolean receiveFirst, Byte[] reAuthenticationData, CancellationToken cancellationToken)
+   at System.Net.Http.ConnectHelper.EstablishSslConnectionAsync(SslClientAuthenticationOptions sslOptions, HttpRequestMessage request, Boolean async, Stream stream, CancellationToken cancellationToken)
+   --- End of inner exception stack trace ---
+   at System.Net.Http.ConnectHelper.EstablishSslConnectionAsync(SslClientAuthenticationOptions sslOptions, HttpRequestMessage request, Boolean async, Stream stream, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.ConnectAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.CreateHttp11ConnectionAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.AddHttp11ConnectionAsync(QueueItem queueItem)
+   at System.Threading.Tasks.TaskCompletionSourceWithCancellation`1.WaitWithCancellationAsync(CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.SendWithVersionDetectionAndRetryAsync(HttpRequestMessage request, Boolean async, Boolean doRequestAuth, CancellationToken cancellationToken)
+   at System.Net.Http.DiagnosticsHandler.SendAsyncCore(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.RedirectHandler.SendAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at Microsoft.Extensions.Http.Logging.LoggingHttpMessageHandler.<SendCoreAsync>g__Core|5_0(HttpRequestMessage request, Boolean useAsync, CancellationToken cancellationToken)
+   at Microsoft.Extensions.Http.Logging.LoggingScopeHttpMessageHandler.<SendCoreAsync>g__Core|5_0(HttpRequestMessage request, Boolean useAsync, CancellationToken cancellationToken)
+   at System.Net.Http.HttpClient.<SendAsync>g__Core|83_0(HttpRequestMessage request, HttpCompletionOption completionOption, CancellationTokenSource cts, Boolean disposeCts, CancellationTokenSource pendingRequestsCts, CancellationToken originalCancellationToken)
+   at Volo.Abp.Http.Client.ClientProxying.ClientProxyBase`1.RequestAsync(ClientProxyRequestContext requestContext)
+   --- End of inner exception stack trace ---
+   at Volo.Abp.Http.Client.ClientProxying.ClientProxyBase`1.RequestAsync(ClientProxyRequestContext requestContext)
+   at Volo.Abp.Http.Client.ClientProxying.ClientProxyBase`1.RequestAsync[T](ClientProxyRequestContext requestContext)
+   at Volo.Abp.Http.Client.ClientProxying.ClientProxyBase`1.RequestAsync[T](String methodName, ClientProxyRequestTypeValue arguments)
+   at Volo.Abp.AspNetCore.Mvc.ApplicationConfigurations.ClientProxies.AbpApplicationConfigurationClientProxy.GetAsync(ApplicationConfigurationRequestOptions options)
+   at Volo.Abp.AspNetCore.Mvc.Client.MvcCachedApplicationConfigurationClient.GetRemoteConfigurationAsync()
+   at Volo.Abp.AspNetCore.Mvc.Client.MvcCachedApplicationConfigurationClient.<GetAsync>b__19_0()
+   at Volo.Abp.Caching.DistributedCache`2.GetOrAddAsync(TCacheKey key, Func`1 factory, Func`1 optionsFactory, Nullable`1 hideErrors, Boolean considerUow, CancellationToken token)
+   at Volo.Abp.AspNetCore.Mvc.Client.MvcCachedApplicationConfigurationClient.GetAsync()
+   at Volo.Abp.AspNetCore.Mvc.Client.RemoteLanguageProvider.GetLanguagesAsync()
+   at Microsoft.AspNetCore.RequestLocalization.DefaultAbpRequestLocalizationOptionsProvider.GetLocalizationOptionsAsync()
+   at Microsoft.AspNetCore.RequestLocalization.AbpRequestLocalizationMiddleware.InvokeAsync(HttpContext context, RequestDelegate next)
+   at Microsoft.AspNetCore.Builder.UseMiddlewareExtensions.InterfaceMiddlewareBinder.<>c__DisplayClass2_0.<<CreateMiddleware>b__0>d.MoveNext()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+2025-02-20 11:00:06.818 +01:00 [INF] Request finished HTTP/2 GET https://localhost:44330/ - 500 null text/html; charset=utf-8 132.1273ms
+2025-02-20 11:00:06.906 +01:00 [INF] Request starting HTTP/2 GET https://localhost:44330/favicon.ico - null null
+2025-02-20 11:00:06.910 +01:00 [WRN] Could not find IdentityClientConfiguration for AbpMvcClient. Either define a configuration for AbpMvcClient or set a default configuration.
+2025-02-20 11:00:06.910 +01:00 [INF] Start processing HTTP request GET https://localhost:44397/api/abp/application-configuration?IncludeLocalizationResources=False&api-version=1.0
+2025-02-20 11:00:06.910 +01:00 [INF] Sending HTTP request GET https://localhost:44397/api/abp/application-configuration?IncludeLocalizationResources=False&api-version=1.0
+2025-02-20 11:00:06.943 +01:00 [ERR] An unhandled exception has occurred while executing the request.
+Volo.Abp.Http.Client.AbpRemoteCallException: An error occurred during the ABP remote HTTP request. (The SSL connection could not be established, see inner exception.) See the inner exception for details.
+ ---> System.Net.Http.HttpRequestException: The SSL connection could not be established, see inner exception.
+ ---> System.Security.Authentication.AuthenticationException: The remote certificate is invalid because of errors in the certificate chain: UntrustedRoot
+   at System.Net.Security.SslStream.SendAuthResetSignal(ReadOnlySpan`1 alert, ExceptionDispatchInfo exception)
+   at System.Net.Security.SslStream.CompleteHandshake(SslAuthenticationOptions sslAuthenticationOptions)
+   at System.Net.Security.SslStream.ForceAuthenticationAsync[TIOAdapter](Boolean receiveFirst, Byte[] reAuthenticationData, CancellationToken cancellationToken)
+   at System.Net.Http.ConnectHelper.EstablishSslConnectionAsync(SslClientAuthenticationOptions sslOptions, HttpRequestMessage request, Boolean async, Stream stream, CancellationToken cancellationToken)
+   --- End of inner exception stack trace ---
+   at System.Net.Http.ConnectHelper.EstablishSslConnectionAsync(SslClientAuthenticationOptions sslOptions, HttpRequestMessage request, Boolean async, Stream stream, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.ConnectAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.CreateHttp11ConnectionAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.AddHttp11ConnectionAsync(QueueItem queueItem)
+   at System.Threading.Tasks.TaskCompletionSourceWithCancellation`1.WaitWithCancellationAsync(CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.SendWithVersionDetectionAndRetryAsync(HttpRequestMessage request, Boolean async, Boolean doRequestAuth, CancellationToken cancellationToken)
+   at System.Net.Http.DiagnosticsHandler.SendAsyncCore(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.RedirectHandler.SendAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at Microsoft.Extensions.Http.Logging.LoggingHttpMessageHandler.<SendCoreAsync>g__Core|5_0(HttpRequestMessage request, Boolean useAsync, CancellationToken cancellationToken)
+   at Microsoft.Extensions.Http.Logging.LoggingScopeHttpMessageHandler.<SendCoreAsync>g__Core|5_0(HttpRequestMessage request, Boolean useAsync, CancellationToken cancellationToken)
+   at System.Net.Http.HttpClient.<SendAsync>g__Core|83_0(HttpRequestMessage request, HttpCompletionOption completionOption, CancellationTokenSource cts, Boolean disposeCts, CancellationTokenSource pendingRequestsCts, CancellationToken originalCancellationToken)
+   at Volo.Abp.Http.Client.ClientProxying.ClientProxyBase`1.RequestAsync(ClientProxyRequestContext requestContext)
+   --- End of inner exception stack trace ---
+   at Volo.Abp.Http.Client.ClientProxying.ClientProxyBase`1.RequestAsync(ClientProxyRequestContext requestContext)
+   at Volo.Abp.Http.Client.ClientProxying.ClientProxyBase`1.RequestAsync[T](ClientProxyRequestContext requestContext)
+   at Volo.Abp.Http.Client.ClientProxying.ClientProxyBase`1.RequestAsync[T](String methodName, ClientProxyRequestTypeValue arguments)
+   at Volo.Abp.AspNetCore.Mvc.ApplicationConfigurations.ClientProxies.AbpApplicationConfigurationClientProxy.GetAsync(ApplicationConfigurationRequestOptions options)
+   at Volo.Abp.AspNetCore.Mvc.Client.MvcCachedApplicationConfigurationClient.GetRemoteConfigurationAsync()
+   at Volo.Abp.AspNetCore.Mvc.Client.MvcCachedApplicationConfigurationClient.<GetAsync>b__19_0()
+   at Volo.Abp.Caching.DistributedCache`2.GetOrAddAsync(TCacheKey key, Func`1 factory, Func`1 optionsFactory, Nullable`1 hideErrors, Boolean considerUow, CancellationToken token)
+   at Volo.Abp.AspNetCore.Mvc.Client.MvcCachedApplicationConfigurationClient.GetAsync()
+   at Volo.Abp.AspNetCore.Mvc.Client.RemoteLanguageProvider.GetLanguagesAsync()
+   at Microsoft.AspNetCore.RequestLocalization.DefaultAbpRequestLocalizationOptionsProvider.GetLocalizationOptionsAsync()
+   at Microsoft.AspNetCore.RequestLocalization.AbpRequestLocalizationMiddleware.InvokeAsync(HttpContext context, RequestDelegate next)
+   at Microsoft.AspNetCore.Builder.UseMiddlewareExtensions.InterfaceMiddlewareBinder.<>c__DisplayClass2_0.<<CreateMiddleware>b__0>d.MoveNext()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+2025-02-20 11:00:06.950 +01:00 [INF] Request finished HTTP/2 GET https://localhost:44330/favicon.ico - 500 null text/plain; charset=utf-8 43.4206ms
+2025-02-20 11:00:07.620 +01:00 [INF] Request starting HTTP/2 GET https://localhost:44330/ - null null
+2025-02-20 11:00:07.621 +01:00 [WRN] Could not find IdentityClientConfiguration for AbpMvcClient. Either define a configuration for AbpMvcClient or set a default configuration.
+2025-02-20 11:00:07.622 +01:00 [INF] Start processing HTTP request GET https://localhost:44397/api/abp/application-configuration?IncludeLocalizationResources=False&api-version=1.0
+2025-02-20 11:00:07.622 +01:00 [INF] Sending HTTP request GET https://localhost:44397/api/abp/application-configuration?IncludeLocalizationResources=False&api-version=1.0
+2025-02-20 11:00:07.651 +01:00 [ERR] An unhandled exception has occurred while executing the request.
+Volo.Abp.Http.Client.AbpRemoteCallException: An error occurred during the ABP remote HTTP request. (The SSL connection could not be established, see inner exception.) See the inner exception for details.
+ ---> System.Net.Http.HttpRequestException: The SSL connection could not be established, see inner exception.
+ ---> System.Security.Authentication.AuthenticationException: The remote certificate is invalid because of errors in the certificate chain: UntrustedRoot
+   at System.Net.Security.SslStream.SendAuthResetSignal(ReadOnlySpan`1 alert, ExceptionDispatchInfo exception)
+   at System.Net.Security.SslStream.CompleteHandshake(SslAuthenticationOptions sslAuthenticationOptions)
+   at System.Net.Security.SslStream.ForceAuthenticationAsync[TIOAdapter](Boolean receiveFirst, Byte[] reAuthenticationData, CancellationToken cancellationToken)
+   at System.Net.Http.ConnectHelper.EstablishSslConnectionAsync(SslClientAuthenticationOptions sslOptions, HttpRequestMessage request, Boolean async, Stream stream, CancellationToken cancellationToken)
+   --- End of inner exception stack trace ---
+   at System.Net.Http.ConnectHelper.EstablishSslConnectionAsync(SslClientAuthenticationOptions sslOptions, HttpRequestMessage request, Boolean async, Stream stream, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.ConnectAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.CreateHttp11ConnectionAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.AddHttp11ConnectionAsync(QueueItem queueItem)
+   at System.Threading.Tasks.TaskCompletionSourceWithCancellation`1.WaitWithCancellationAsync(CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.SendWithVersionDetectionAndRetryAsync(HttpRequestMessage request, Boolean async, Boolean doRequestAuth, CancellationToken cancellationToken)
+   at System.Net.Http.DiagnosticsHandler.SendAsyncCore(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.RedirectHandler.SendAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at Microsoft.Extensions.Http.Logging.LoggingHttpMessageHandler.<SendCoreAsync>g__Core|5_0(HttpRequestMessage request, Boolean useAsync, CancellationToken cancellationToken)
+   at Microsoft.Extensions.Http.Logging.LoggingScopeHttpMessageHandler.<SendCoreAsync>g__Core|5_0(HttpRequestMessage request, Boolean useAsync, CancellationToken cancellationToken)
+   at System.Net.Http.HttpClient.<SendAsync>g__Core|83_0(HttpRequestMessage request, HttpCompletionOption completionOption, CancellationTokenSource cts, Boolean disposeCts, CancellationTokenSource pendingRequestsCts, CancellationToken originalCancellationToken)
+   at Volo.Abp.Http.Client.ClientProxying.ClientProxyBase`1.RequestAsync(ClientProxyRequestContext requestContext)
+   --- End of inner exception stack trace ---
+   at Volo.Abp.Http.Client.ClientProxying.ClientProxyBase`1.RequestAsync(ClientProxyRequestContext requestContext)
+   at Volo.Abp.Http.Client.ClientProxying.ClientProxyBase`1.RequestAsync[T](ClientProxyRequestContext requestContext)
+   at Volo.Abp.Http.Client.ClientProxying.ClientProxyBase`1.RequestAsync[T](String methodName, ClientProxyRequestTypeValue arguments)
+   at Volo.Abp.AspNetCore.Mvc.ApplicationConfigurations.ClientProxies.AbpApplicationConfigurationClientProxy.GetAsync(ApplicationConfigurationRequestOptions options)
+   at Volo.Abp.AspNetCore.Mvc.Client.MvcCachedApplicationConfigurationClient.GetRemoteConfigurationAsync()
+   at Volo.Abp.AspNetCore.Mvc.Client.MvcCachedApplicationConfigurationClient.<GetAsync>b__19_0()
+   at Volo.Abp.Caching.DistributedCache`2.GetOrAddAsync(TCacheKey key, Func`1 factory, Func`1 optionsFactory, Nullable`1 hideErrors, Boolean considerUow, CancellationToken token)
+   at Volo.Abp.AspNetCore.Mvc.Client.MvcCachedApplicationConfigurationClient.GetAsync()
+   at Volo.Abp.AspNetCore.Mvc.Client.RemoteLanguageProvider.GetLanguagesAsync()
+   at Microsoft.AspNetCore.RequestLocalization.DefaultAbpRequestLocalizationOptionsProvider.GetLocalizationOptionsAsync()
+   at Microsoft.AspNetCore.RequestLocalization.AbpRequestLocalizationMiddleware.InvokeAsync(HttpContext context, RequestDelegate next)
+   at Microsoft.AspNetCore.Builder.UseMiddlewareExtensions.InterfaceMiddlewareBinder.<>c__DisplayClass2_0.<<CreateMiddleware>b__0>d.MoveNext()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+2025-02-20 11:00:07.658 +01:00 [INF] Request finished HTTP/2 GET https://localhost:44330/ - 500 null text/html; charset=utf-8 38.3607ms
+2025-02-20 11:00:07.677 +01:00 [INF] Request starting HTTP/2 GET https://localhost:44330/favicon.ico - null null
+2025-02-20 11:00:07.681 +01:00 [WRN] Could not find IdentityClientConfiguration for AbpMvcClient. Either define a configuration for AbpMvcClient or set a default configuration.
+2025-02-20 11:00:07.681 +01:00 [INF] Start processing HTTP request GET https://localhost:44397/api/abp/application-configuration?IncludeLocalizationResources=False&api-version=1.0
+2025-02-20 11:00:07.681 +01:00 [INF] Sending HTTP request GET https://localhost:44397/api/abp/application-configuration?IncludeLocalizationResources=False&api-version=1.0
+2025-02-20 11:00:07.731 +01:00 [ERR] An unhandled exception has occurred while executing the request.
+Volo.Abp.Http.Client.AbpRemoteCallException: An error occurred during the ABP remote HTTP request. (The SSL connection could not be established, see inner exception.) See the inner exception for details.
+ ---> System.Net.Http.HttpRequestException: The SSL connection could not be established, see inner exception.
+ ---> System.Security.Authentication.AuthenticationException: The remote certificate is invalid because of errors in the certificate chain: UntrustedRoot
+   at System.Net.Security.SslStream.SendAuthResetSignal(ReadOnlySpan`1 alert, ExceptionDispatchInfo exception)
+   at System.Net.Security.SslStream.CompleteHandshake(SslAuthenticationOptions sslAuthenticationOptions)
+   at System.Net.Security.SslStream.ForceAuthenticationAsync[TIOAdapter](Boolean receiveFirst, Byte[] reAuthenticationData, CancellationToken cancellationToken)
+   at System.Net.Http.ConnectHelper.EstablishSslConnectionAsync(SslClientAuthenticationOptions sslOptions, HttpRequestMessage request, Boolean async, Stream stream, CancellationToken cancellationToken)
+   --- End of inner exception stack trace ---
+   at System.Net.Http.ConnectHelper.EstablishSslConnectionAsync(SslClientAuthenticationOptions sslOptions, HttpRequestMessage request, Boolean async, Stream stream, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.ConnectAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.CreateHttp11ConnectionAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.AddHttp11ConnectionAsync(QueueItem queueItem)
+   at System.Threading.Tasks.TaskCompletionSourceWithCancellation`1.WaitWithCancellationAsync(CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.SendWithVersionDetectionAndRetryAsync(HttpRequestMessage request, Boolean async, Boolean doRequestAuth, CancellationToken cancellationToken)
+   at System.Net.Http.DiagnosticsHandler.SendAsyncCore(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.RedirectHandler.SendAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at Microsoft.Extensions.Http.Logging.LoggingHttpMessageHandler.<SendCoreAsync>g__Core|5_0(HttpRequestMessage request, Boolean useAsync, CancellationToken cancellationToken)
+   at Microsoft.Extensions.Http.Logging.LoggingScopeHttpMessageHandler.<SendCoreAsync>g__Core|5_0(HttpRequestMessage request, Boolean useAsync, CancellationToken cancellationToken)
+   at System.Net.Http.HttpClient.<SendAsync>g__Core|83_0(HttpRequestMessage request, HttpCompletionOption completionOption, CancellationTokenSource cts, Boolean disposeCts, CancellationTokenSource pendingRequestsCts, CancellationToken originalCancellationToken)
+   at Volo.Abp.Http.Client.ClientProxying.ClientProxyBase`1.RequestAsync(ClientProxyRequestContext requestContext)
+   --- End of inner exception stack trace ---
+   at Volo.Abp.Http.Client.ClientProxying.ClientProxyBase`1.RequestAsync(ClientProxyRequestContext requestContext)
+   at Volo.Abp.Http.Client.ClientProxying.ClientProxyBase`1.RequestAsync[T](ClientProxyRequestContext requestContext)
+   at Volo.Abp.Http.Client.ClientProxying.ClientProxyBase`1.RequestAsync[T](String methodName, ClientProxyRequestTypeValue arguments)
+   at Volo.Abp.AspNetCore.Mvc.ApplicationConfigurations.ClientProxies.AbpApplicationConfigurationClientProxy.GetAsync(ApplicationConfigurationRequestOptions options)
+   at Volo.Abp.AspNetCore.Mvc.Client.MvcCachedApplicationConfigurationClient.GetRemoteConfigurationAsync()
+   at Volo.Abp.AspNetCore.Mvc.Client.MvcCachedApplicationConfigurationClient.<GetAsync>b__19_0()
+   at Volo.Abp.Caching.DistributedCache`2.GetOrAddAsync(TCacheKey key, Func`1 factory, Func`1 optionsFactory, Nullable`1 hideErrors, Boolean considerUow, CancellationToken token)
+   at Volo.Abp.AspNetCore.Mvc.Client.MvcCachedApplicationConfigurationClient.GetAsync()
+   at Volo.Abp.AspNetCore.Mvc.Client.RemoteLanguageProvider.GetLanguagesAsync()
+   at Microsoft.AspNetCore.RequestLocalization.DefaultAbpRequestLocalizationOptionsProvider.GetLocalizationOptionsAsync()
+   at Microsoft.AspNetCore.RequestLocalization.AbpRequestLocalizationMiddleware.InvokeAsync(HttpContext context, RequestDelegate next)
+   at Microsoft.AspNetCore.Builder.UseMiddlewareExtensions.InterfaceMiddlewareBinder.<>c__DisplayClass2_0.<<CreateMiddleware>b__0>d.MoveNext()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+2025-02-20 11:00:07.734 +01:00 [INF] Request finished HTTP/2 GET https://localhost:44330/favicon.ico - 500 null text/plain; charset=utf-8 57.0393ms
+2025-02-20 11:00:09.205 +01:00 [INF] Request starting HTTP/2 GET https://localhost:44330/ - null null
+2025-02-20 11:00:09.209 +01:00 [WRN] Could not find IdentityClientConfiguration for AbpMvcClient. Either define a configuration for AbpMvcClient or set a default configuration.
+2025-02-20 11:00:09.209 +01:00 [INF] Start processing HTTP request GET https://localhost:44397/api/abp/application-configuration?IncludeLocalizationResources=False&api-version=1.0
+2025-02-20 11:00:09.209 +01:00 [INF] Sending HTTP request GET https://localhost:44397/api/abp/application-configuration?IncludeLocalizationResources=False&api-version=1.0
+2025-02-20 11:00:09.238 +01:00 [ERR] An unhandled exception has occurred while executing the request.
+Volo.Abp.Http.Client.AbpRemoteCallException: An error occurred during the ABP remote HTTP request. (The SSL connection could not be established, see inner exception.) See the inner exception for details.
+ ---> System.Net.Http.HttpRequestException: The SSL connection could not be established, see inner exception.
+ ---> System.Security.Authentication.AuthenticationException: The remote certificate is invalid because of errors in the certificate chain: UntrustedRoot
+   at System.Net.Security.SslStream.SendAuthResetSignal(ReadOnlySpan`1 alert, ExceptionDispatchInfo exception)
+   at System.Net.Security.SslStream.CompleteHandshake(SslAuthenticationOptions sslAuthenticationOptions)
+   at System.Net.Security.SslStream.ForceAuthenticationAsync[TIOAdapter](Boolean receiveFirst, Byte[] reAuthenticationData, CancellationToken cancellationToken)
+   at System.Net.Http.ConnectHelper.EstablishSslConnectionAsync(SslClientAuthenticationOptions sslOptions, HttpRequestMessage request, Boolean async, Stream stream, CancellationToken cancellationToken)
+   --- End of inner exception stack trace ---
+   at System.Net.Http.ConnectHelper.EstablishSslConnectionAsync(SslClientAuthenticationOptions sslOptions, HttpRequestMessage request, Boolean async, Stream stream, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.ConnectAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.CreateHttp11ConnectionAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.AddHttp11ConnectionAsync(QueueItem queueItem)
+   at System.Threading.Tasks.TaskCompletionSourceWithCancellation`1.WaitWithCancellationAsync(CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.SendWithVersionDetectionAndRetryAsync(HttpRequestMessage request, Boolean async, Boolean doRequestAuth, CancellationToken cancellationToken)
+   at System.Net.Http.DiagnosticsHandler.SendAsyncCore(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.RedirectHandler.SendAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at Microsoft.Extensions.Http.Logging.LoggingHttpMessageHandler.<SendCoreAsync>g__Core|5_0(HttpRequestMessage request, Boolean useAsync, CancellationToken cancellationToken)
+   at Microsoft.Extensions.Http.Logging.LoggingScopeHttpMessageHandler.<SendCoreAsync>g__Core|5_0(HttpRequestMessage request, Boolean useAsync, CancellationToken cancellationToken)
+   at System.Net.Http.HttpClient.<SendAsync>g__Core|83_0(HttpRequestMessage request, HttpCompletionOption completionOption, CancellationTokenSource cts, Boolean disposeCts, CancellationTokenSource pendingRequestsCts, CancellationToken originalCancellationToken)
+   at Volo.Abp.Http.Client.ClientProxying.ClientProxyBase`1.RequestAsync(ClientProxyRequestContext requestContext)
+   --- End of inner exception stack trace ---
+   at Volo.Abp.Http.Client.ClientProxying.ClientProxyBase`1.RequestAsync(ClientProxyRequestContext requestContext)
+   at Volo.Abp.Http.Client.ClientProxying.ClientProxyBase`1.RequestAsync[T](ClientProxyRequestContext requestContext)
+   at Volo.Abp.Http.Client.ClientProxying.ClientProxyBase`1.RequestAsync[T](String methodName, ClientProxyRequestTypeValue arguments)
+   at Volo.Abp.AspNetCore.Mvc.ApplicationConfigurations.ClientProxies.AbpApplicationConfigurationClientProxy.GetAsync(ApplicationConfigurationRequestOptions options)
+   at Volo.Abp.AspNetCore.Mvc.Client.MvcCachedApplicationConfigurationClient.GetRemoteConfigurationAsync()
+   at Volo.Abp.AspNetCore.Mvc.Client.MvcCachedApplicationConfigurationClient.<GetAsync>b__19_0()
+   at Volo.Abp.Caching.DistributedCache`2.GetOrAddAsync(TCacheKey key, Func`1 factory, Func`1 optionsFactory, Nullable`1 hideErrors, Boolean considerUow, CancellationToken token)
+   at Volo.Abp.AspNetCore.Mvc.Client.MvcCachedApplicationConfigurationClient.GetAsync()
+   at Volo.Abp.AspNetCore.Mvc.Client.RemoteLanguageProvider.GetLanguagesAsync()
+   at Microsoft.AspNetCore.RequestLocalization.DefaultAbpRequestLocalizationOptionsProvider.GetLocalizationOptionsAsync()
+   at Microsoft.AspNetCore.RequestLocalization.AbpRequestLocalizationMiddleware.InvokeAsync(HttpContext context, RequestDelegate next)
+   at Microsoft.AspNetCore.Builder.UseMiddlewareExtensions.InterfaceMiddlewareBinder.<>c__DisplayClass2_0.<<CreateMiddleware>b__0>d.MoveNext()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+2025-02-20 11:00:09.246 +01:00 [INF] Request finished HTTP/2 GET https://localhost:44330/ - 500 null text/html; charset=utf-8 41.0889ms
+2025-02-20 11:00:09.267 +01:00 [INF] Request starting HTTP/2 GET https://localhost:44330/favicon.ico - null null
+2025-02-20 11:00:09.270 +01:00 [WRN] Could not find IdentityClientConfiguration for AbpMvcClient. Either define a configuration for AbpMvcClient or set a default configuration.
+2025-02-20 11:00:09.271 +01:00 [INF] Start processing HTTP request GET https://localhost:44397/api/abp/application-configuration?IncludeLocalizationResources=False&api-version=1.0
+2025-02-20 11:00:09.271 +01:00 [INF] Sending HTTP request GET https://localhost:44397/api/abp/application-configuration?IncludeLocalizationResources=False&api-version=1.0
+2025-02-20 11:00:09.298 +01:00 [ERR] An unhandled exception has occurred while executing the request.
+Volo.Abp.Http.Client.AbpRemoteCallException: An error occurred during the ABP remote HTTP request. (The SSL connection could not be established, see inner exception.) See the inner exception for details.
+ ---> System.Net.Http.HttpRequestException: The SSL connection could not be established, see inner exception.
+ ---> System.Security.Authentication.AuthenticationException: The remote certificate is invalid because of errors in the certificate chain: UntrustedRoot
+   at System.Net.Security.SslStream.SendAuthResetSignal(ReadOnlySpan`1 alert, ExceptionDispatchInfo exception)
+   at System.Net.Security.SslStream.CompleteHandshake(SslAuthenticationOptions sslAuthenticationOptions)
+   at System.Net.Security.SslStream.ForceAuthenticationAsync[TIOAdapter](Boolean receiveFirst, Byte[] reAuthenticationData, CancellationToken cancellationToken)
+   at System.Net.Http.ConnectHelper.EstablishSslConnectionAsync(SslClientAuthenticationOptions sslOptions, HttpRequestMessage request, Boolean async, Stream stream, CancellationToken cancellationToken)
+   --- End of inner exception stack trace ---
+   at System.Net.Http.ConnectHelper.EstablishSslConnectionAsync(SslClientAuthenticationOptions sslOptions, HttpRequestMessage request, Boolean async, Stream stream, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.ConnectAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.CreateHttp11ConnectionAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.AddHttp11ConnectionAsync(QueueItem queueItem)
+   at System.Threading.Tasks.TaskCompletionSourceWithCancellation`1.WaitWithCancellationAsync(CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.SendWithVersionDetectionAndRetryAsync(HttpRequestMessage request, Boolean async, Boolean doRequestAuth, CancellationToken cancellationToken)
+   at System.Net.Http.DiagnosticsHandler.SendAsyncCore(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.RedirectHandler.SendAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at Microsoft.Extensions.Http.Logging.LoggingHttpMessageHandler.<SendCoreAsync>g__Core|5_0(HttpRequestMessage request, Boolean useAsync, CancellationToken cancellationToken)
+   at Microsoft.Extensions.Http.Logging.LoggingScopeHttpMessageHandler.<SendCoreAsync>g__Core|5_0(HttpRequestMessage request, Boolean useAsync, CancellationToken cancellationToken)
+   at System.Net.Http.HttpClient.<SendAsync>g__Core|83_0(HttpRequestMessage request, HttpCompletionOption completionOption, CancellationTokenSource cts, Boolean disposeCts, CancellationTokenSource pendingRequestsCts, CancellationToken originalCancellationToken)
+   at Volo.Abp.Http.Client.ClientProxying.ClientProxyBase`1.RequestAsync(ClientProxyRequestContext requestContext)
+   --- End of inner exception stack trace ---
+   at Volo.Abp.Http.Client.ClientProxying.ClientProxyBase`1.RequestAsync(ClientProxyRequestContext requestContext)
+   at Volo.Abp.Http.Client.ClientProxying.ClientProxyBase`1.RequestAsync[T](ClientProxyRequestContext requestContext)
+   at Volo.Abp.Http.Client.ClientProxying.ClientProxyBase`1.RequestAsync[T](String methodName, ClientProxyRequestTypeValue arguments)
+   at Volo.Abp.AspNetCore.Mvc.ApplicationConfigurations.ClientProxies.AbpApplicationConfigurationClientProxy.GetAsync(ApplicationConfigurationRequestOptions options)
+   at Volo.Abp.AspNetCore.Mvc.Client.MvcCachedApplicationConfigurationClient.GetRemoteConfigurationAsync()
+   at Volo.Abp.AspNetCore.Mvc.Client.MvcCachedApplicationConfigurationClient.<GetAsync>b__19_0()
+   at Volo.Abp.Caching.DistributedCache`2.GetOrAddAsync(TCacheKey key, Func`1 factory, Func`1 optionsFactory, Nullable`1 hideErrors, Boolean considerUow, CancellationToken token)
+   at Volo.Abp.AspNetCore.Mvc.Client.MvcCachedApplicationConfigurationClient.GetAsync()
+   at Volo.Abp.AspNetCore.Mvc.Client.RemoteLanguageProvider.GetLanguagesAsync()
+   at Microsoft.AspNetCore.RequestLocalization.DefaultAbpRequestLocalizationOptionsProvider.GetLocalizationOptionsAsync()
+   at Microsoft.AspNetCore.RequestLocalization.AbpRequestLocalizationMiddleware.InvokeAsync(HttpContext context, RequestDelegate next)
+   at Microsoft.AspNetCore.Builder.UseMiddlewareExtensions.InterfaceMiddlewareBinder.<>c__DisplayClass2_0.<<CreateMiddleware>b__0>d.MoveNext()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+2025-02-20 11:00:09.300 +01:00 [INF] Request finished HTTP/2 GET https://localhost:44330/favicon.ico - 500 null text/plain; charset=utf-8 33.1389ms
