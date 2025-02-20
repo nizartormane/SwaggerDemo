@@ -6673,3 +6673,8 @@ System.ArgumentException: The path must be absolute. (Parameter 'root')
 2025-02-19 21:43:53.744 +01:00 [DBG] The event OpenIddict.Server.OpenIddictServerEvents+ProcessRequestContext was successfully processed by OpenIddict.Server.OpenIddictServerHandlers+Discovery+ApplyConfigurationResponse`1[[OpenIddict.Server.OpenIddictServerEvents+ProcessRequestContext, OpenIddict.Server, Version=5.5.0.0, Culture=neutral, PublicKeyToken=35a561290d20de2f]].
 2025-02-19 21:43:53.745 +01:00 [DBG] The event OpenIddict.Server.OpenIddictServerEvents+ProcessRequestContext was marked as handled by OpenIddict.Server.OpenIddictServerHandlers+Discovery+ApplyConfigurationResponse`1[[OpenIddict.Server.OpenIddictServerEvents+ProcessRequestContext, OpenIddict.Server, Version=5.5.0.0, Culture=neutral, PublicKeyToken=35a561290d20de2f]].
 2025-02-19 21:43:53.747 +01:00 [INF] Request finished HTTP/2 GET https://localhost:44348/.well-known/openid-configuration - 200 2153 application/json;charset=UTF-8 1723.64ms
+2025-02-20 11:07:25.576 +01:00 [INF] Lock is acquired for TokenCleanupBackgroundWorker
+2025-02-20 11:07:26.012 +01:00 [INF] Start cleanup.
+2025-02-20 11:07:26.013 +01:00 [INF] Start cleanup tokens.
+2025-02-20 11:07:27.032 +01:00 [INF] Start cleanup authorizations.
+2025-02-20 11:07:27.476 +01:00 [INF] Lock is released for TokenCleanupBackgroundWorker
