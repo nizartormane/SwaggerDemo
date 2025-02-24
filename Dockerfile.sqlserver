@@ -1,0 +1,17 @@
+FROM mcr.microsoft.com/mssql/server:latest
+
+# Switch to root user to perform installations
+USER root
+
+# Install prerequisites and mssql-tools
+RUN apt-get update && apt-get install -y curl gnupg
+RUN curl https://packages.microsoft.com/keys/microsoft.asc | apt-key add -
+# Use Ubuntu 22.04 (jammy) repository to match the base image
+RUN curl https://packages.microsoft.com/config/ubuntu/22.04/prod.list > /etc/apt/sources.list.d/mssql-release.list
+RUN apt-get update && ACCEPT_EULA=Y apt-get install -y mssql-tools unixodbc-dev
+
+# Ensure sqlcmd is in the PATH for the healthcheck
+RUN echo 'export PATH="$PATH:/opt/mssql-tools/bin"' >> /root/.bashrc
+
+# Switch back to mssql user for runtime
+USER mssql
