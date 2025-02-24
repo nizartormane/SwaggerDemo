@@ -40,7 +40,7 @@ jobs:
         run: |
           dotnet tool install --global dotnet-sonarscanner
 
-       - name: Start SonarQube
+      - name: Start SonarQube
         run: |
           docker run -d --name sonar -p 9000:9000 sonarqube:lts
           sleep 60  # Attendre que SonarQube démarre
