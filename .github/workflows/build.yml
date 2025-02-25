@@ -35,9 +35,10 @@ jobs:
           path: publish/
       - name: Install SonarScanner
         run: |
+      - name: Install SonarScanner
+        run: |
           dotnet tool install --global dotnet-sonarscanner
-          echo "Checking if SonarScanner is installed..."
-          dotnet sonarscanner --version
+
 
       - name: Start SonarQube
         run: |
