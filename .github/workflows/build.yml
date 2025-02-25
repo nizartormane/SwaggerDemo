@@ -50,6 +50,6 @@ jobs:
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}     
           SONAR_HOST_URL: "http://localhost:9000"
         run: |
-          dotnet sonarscanner begin /k:"SONAR_TOKEN" /d:sonar.host.url="$SONAR_HOST_URL" /d:sonar.login="$SONAR_TOKEN"
+          dotnet sonarscanner begin /k:"new-p-dotnet" /d:sonar.host.url="$SONAR_HOST_URL" /d:sonar.login="$SONAR_TOKEN"
           dotnet build src/SwaggerDemo.HttpApi.Host --configuration Release
           dotnet sonarscanner end /d:sonar.login="$SONAR_TOKEN"
