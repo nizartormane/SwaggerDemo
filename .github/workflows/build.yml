@@ -10,6 +10,13 @@ jobs:
   build:
     runs-on: ubuntu-latest
 
+    services:
+      sonar:
+        image: sonarqube:lts
+        options: --p 9000:9000
+        ports:
+          - 9000:9000
+
     steps:
       - name: Checkout Repository
         uses: actions/checkout@v4
@@ -38,16 +45,14 @@ jobs:
         run: |
           dotnet tool install --global dotnet-sonarscanner
 
-      - name: Start SonarQube (if not already running)
-        run: |
-          # Start SonarQube in the background (if needed)
-          nohup sonar --start &
-
       - name: Run SonarScanner with Local SonarQube
         run: |
-          dotnet sonarscanner begin /k:"SWAGGERDEMOKEY" /d:sonar.host.url="http://localhost:9000" /d:sonar.login="sqp_9fb6d428428fa1ec18cf3dbfa3a20f46dd3cf8d9"
+          # Attendre que SonarQube soit prêt
+          sleep 60
+          dotnet sonarscanner begin /k:"SWAGGERDEMOKEY" /d:sonar.host.url="http://localhost:9000" /d:sonar.login="${{ secrets.SONAR_TOKEN }}"
           dotnet build
-          dotnet sonarscanner end /d:sonar.login="sqp_9fb6d428428fa1ec18cf3dbfa3a20f46dd3cf8d9"
+          dotnet sonarscanner end /d:sonar.login="${{ secrets.SONAR_TOKEN }}"
+
 
 
 
