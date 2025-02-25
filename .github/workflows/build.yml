@@ -41,19 +41,15 @@ jobs:
           dotnet tool install --global dotnet-sonarscanner
 
       - name: Start SonarQube
-        env:
-          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}     
-          SONAR_HOST_URL: ${{ secrets.SONAR_HOST_URL }}
         run: |
-          docker run -d --name sonar -p 9000:9000 -e SONARQUBE_ADMIN_USERNAME=admin -e SONARQUBE_ADMIN_PASSWORD=${{ secrets.SONAR_TOKEN }} sonarqube:lts
-          sleep 120  # Wait for SonarQube to fully start
+          docker run -d --name sonar -p 9000:9000 sonarqube:lts
+          sleep 60  # Attendre que SonarQube démarre complètement
 
       - name: Run SonarScanner
         env:
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}     
-          SONAR_HOST_URL: ${{ secrets.SONAR_HOST_URL }}
+          SONAR_HOST_URL: "http://localhost:9000"
         run: |
-          # Explicitly set the SonarQube URL and token
           dotnet sonarscanner begin /k:"new-p-dotnet" /d:sonar.host.url="$SONAR_HOST_URL" /d:sonar.login="$SONAR_TOKEN"
           dotnet build src/SwaggerDemo.HttpApi.Host --configuration Release
           dotnet sonarscanner end /d:sonar.login="$SONAR_TOKEN"
