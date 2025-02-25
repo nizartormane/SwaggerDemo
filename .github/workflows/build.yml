@@ -33,12 +33,25 @@ jobs:
         with:
           name: abp-app
           path: publish/
+      - name: Install SonarScanner
+        run: |
+          dotnet tool install --global dotnet-sonarscanner
+          echo "Checking if SonarScanner is installed..."
+          dotnet sonarscanner --version
 
       - name: Start SonarQube
         run: |
           docker run -d --name sonarqube -p 9000:9000 sonarqube:lts
           echo "Waiting for SonarQube to start..."
-          sleep 60 # Attendre que SonarQube démarre complètement
+          for i in {1..10}; do
+            if curl -s http://localhost:9000/api/system/status | grep -q "UP"; then
+              echo "SonarQube is UP!"
+              break
+            fi
+            echo "Waiting for SonarQube..."
+            sleep 10
+          done
+
           dotnet sonarscanner begin /k:"SWAGGERDEMOKEY" /d:sonar.host.url="http://localhost:9000" /d:sonar.login="sqp_9fb6d428428fa1ec18cf3dbfa3a20f46dd3cf8d9"
           dotnet build
           dotnet sonarscanner end /d:sonar.login="sqp_9fb6d428428fa1ec18cf3dbfa3a20f46dd3cf8d9"
