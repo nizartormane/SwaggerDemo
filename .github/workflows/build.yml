@@ -10,13 +10,6 @@ jobs:
   build:
     runs-on: ubuntu-latest
 
-    services:
-      sonar:
-        image: sonarqube:lts
-        options: --p 9000:9000
-        ports:
-          - 9000:9000
-
     steps:
       - name: Checkout Repository
         uses: actions/checkout@v4
