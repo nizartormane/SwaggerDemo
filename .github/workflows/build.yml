@@ -33,19 +33,20 @@ jobs:
         with:
           name: abp-app
           path: publish/
-      - name: Install SonarScanner
-        run: |
-      - name: Install SonarScanner
-        run: |
-          dotnet tool install --global dotnet-sonarscanner
 
+      - name: Install SonarScanner
+        run: dotnet tool install --global dotnet-sonarscanner
 
       - name: Start SonarQube
         run: |
           docker run -d --name sonarqube -p 9000:9000 sonarqube:lts
           echo "Waiting for SonarQube to start..."
-          for i in {1..10}; do
-            if curl -s http://localhost:9000/api/system/status | grep -q "UP"; then
+          
+          # Attendre jusqu'à ce que SonarQube soit UP
+          for i in {1..30}; do
+            STATUS=$(curl -s http://localhost:9000/api/system/status | grep -o '"status":"[^"]*"' | awk -F':' '{print $2}' | tr -d '"')
+            echo "SonarQube status: $STATUS"
+            if [ "$STATUS" == "UP" ]; then
               echo "SonarQube is UP!"
               break
             fi
@@ -53,9 +54,14 @@ jobs:
             sleep 10
           done
 
-          dotnet sonarscanner begin /k:"SWAGGERDEMOKEY" /d:sonar.host.url="http://localhost:9000" /d:sonar.login="sqp_9fb6d428428fa1ec18cf3dbfa3a20f46dd3cf8d9"
-          dotnet build
-          dotnet sonarscanner end /d:sonar.login="sqp_9fb6d428428fa1ec18cf3dbfa3a20f46dd3cf8d9"
+      - name: Run SonarScanner
+        env:
+          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }} # Utiliser le token depuis les secrets GitHub
+        run: |
+          dotnet sonarscanner begin /k:"SWAGGERDEMOKEY" /d:sonar.host.url="http://localhost:9000" /d:sonar.login="$SONAR_TOKEN"
+          dotnet build src/SwaggerDemo.HttpApi.Host --configuration Release
+          dotnet sonarscanner end /d:sonar.login="$SONAR_TOKEN"
+
 
 
 
