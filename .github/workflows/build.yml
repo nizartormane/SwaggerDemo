@@ -34,19 +34,16 @@ jobs:
           name: abp-app
           path: publish/
 
-      - name: Install SonarScanner
-        run: |
-          dotnet tool install --global dotnet-sonarscanner
+      # - name: Install SonarScanner
+      #   run: |
+      #     dotnet tool install --global dotnet-sonarscanner
 
       - name: Run SonarScanner with Local SonarQube
+        
         run: |
-          # Attendre que SonarQube soit prêt
-          sleep 60
-          dotnet sonarscanner begin /k:"SWAGGERDEMOKEY" /d:sonar.host.url="http://localhost:9000" /d:sonar.login="${{ secrets.SONAR_TOKEN }}"
-          dotnet build
-          dotnet sonarscanner end /d:sonar.login="${{ secrets.SONAR_TOKEN }}"
-
-
+          dotnet sonarscanner begin /k:"SWAGGERDEMOKEY" /d:sonar.host.url="http://localhost:9000"  /d:sonar.login="sqp_9fb6d428428fa1ec18cf3dbfa3a20f46dd3cf8d9"
+          dotnet build 
+          dotnet sonarscanner end /d:sonar.login="sqp_9fb6d428428fa1ec18cf3dbfa3a20f46dd3cf8d9"
 
 
 
