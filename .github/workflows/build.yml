@@ -43,20 +43,17 @@ jobs:
       - name: Start SonarQube
         env:
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}     
+          SONAR_HOST_URL: ${{ secrets.SONAR_HOST_URL }}
         run: |
           docker run -d --name sonar -p 9000:9000 -e SONARQUBE_ADMIN_USERNAME=admin -e SONARQUBE_ADMIN_PASSWORD=${{ secrets.SONAR_TOKEN }} sonarqube:lts
           sleep 120  # Wait for SonarQube to fully start
-          docker logs sonar  # Check logs to ensure SonarQube is running
 
-      - name: Run SonarScanner with dsonar
+      - name: Run SonarScanner
         env:
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}     
+          SONAR_HOST_URL: ${{ secrets.SONAR_HOST_URL }}
         run: |
-          # Get the Docker container's IP address
-          SONAR_HOST_URL="http://$(docker inspect -f '{{range .NetworkSettings.Networks}}{{.IPAddress}}{{end}}' sonar):9000"
-          echo "SonarQube URL: $SONAR_HOST_URL"
-
-          # Run SonarScanner using dsonar
-          dsonar begin /k:"new-p-dotnet" /d:sonar.host.url="http://localhost:9000/" /d:sonar.login="$SONAR_TOKEN"
+          # Explicitly set the SonarQube URL and token
+          dotnet sonarscanner begin /k:"new-p-dotnet" /d:sonar.host.url="$SONAR_HOST_URL" /d:sonar.login="$SONAR_TOKEN"
           dotnet build src/SwaggerDemo.HttpApi.Host --configuration Release
-          dsonar end /d:sonar.login="$SONAR_TOKEN"
+          dotnet sonarscanner end /d:sonar.login="$SONAR_TOKEN"
