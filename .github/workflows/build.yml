@@ -1,66 +1,114 @@
+name: SonarQube
 on:
   push:
     branches:
       - main
   pull_request:
-    branches:
-      - main
-
+    types: [opened, synchronize, reopened]
 jobs:
   build:
-    runs-on: ubuntu-latest
-
+    name: Build and analyze
+    runs-on: windows-latest
     steps:
-      - name: Checkout Repository
-        uses: actions/checkout@v4
-
-      - name: Setup .NET
-        uses: actions/setup-dotnet@v3
+      - name: Set up JDK 17
+        uses: actions/setup-java@v4
         with:
-          dotnet-version: '8.0.x'
-
-      - name: Restore Dependencies
-        run: dotnet restore src/SwaggerDemo.HttpApi.Host
-
-      - name: Build Project
-        run: dotnet build src/SwaggerDemo.HttpApi.Host --configuration Release --no-restore
-
-      - name: Publish Project
-        run: dotnet publish src/SwaggerDemo.HttpApi.Host --configuration Release --output publish
-
-      - name: Upload Published App
-        uses: actions/upload-artifact@v4
+          java-version: 17
+          distribution: 'zulu' # Alternative distribution options are available.
+      - uses: actions/checkout@v4
         with:
-          name: abp-app
-          path: publish/
-
-      - name: Install SonarScanner
-        run: dotnet tool install --global dotnet-sonarscanner
-
-      - name: Start SonarQube
+          fetch-depth: 0  # Shallow clones should be disabled for a better relevancy of analysis
+      - name: Cache SonarQube Cloud packages
+        uses: actions/cache@v4
+        with:
+          path: ~\sonar\cache
+          key: ${{ runner.os }}-sonar
+          restore-keys: ${{ runner.os }}-sonar
+      - name: Cache SonarQube Cloud scanner
+        id: cache-sonar-scanner
+        uses: actions/cache@v4
+        with:
+          path: .\.sonar\scanner
+          key: ${{ runner.os }}-sonar-scanner
+          restore-keys: ${{ runner.os }}-sonar-scanner
+      - name: Install SonarQube Cloud scanner
+        if: steps.cache-sonar-scanner.outputs.cache-hit != 'true'
+        shell: powershell
         run: |
-          docker run -d --name sonarqube -p 9000:9000 sonarqube:lts
-          echo "Waiting for SonarQube to start..."
-          
-          # Attendre jusqu'à ce que SonarQube soit UP
-          for i in {1..30}; do
-            STATUS=$(curl -s http://localhost:9000/api/system/status | grep -o '"status":"[^"]*"' | awk -F':' '{print $2}' | tr -d '"')
-            echo "SonarQube status: $STATUS"
-            if [ "$STATUS" == "UP" ]; then
-              echo "SonarQube is UP!"
-              break
-            fi
-            echo "Waiting for SonarQube..."
-            sleep 10
-          done
-
-      - name: Run SonarScanner
+          New-Item -Path .\.sonar\scanner -ItemType Directory
+          dotnet tool update dotnet-sonarscanner --tool-path .\.sonar\scanner
+      - name: Build and analyze
         env:
-          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }} # Utiliser le token depuis les secrets GitHub
+          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+        shell: powershell
         run: |
-          dotnet sonarscanner begin /k:"SWAGGERDEMOKEY" /d:sonar.host.url="http://localhost:9000" /d:sonar.login="$SONAR_TOKEN"
-          dotnet build src/SwaggerDemo.HttpApi.Host --configuration Release
-          dotnet sonarscanner end /d:sonar.login="$SONAR_TOKEN"
+          .\.sonar\scanner\dotnet-sonarscanner begin /k:"nizartormane_SwaggerDemo" /o:"nizartormane" /d:sonar.token="${{ secrets.SONAR_TOKEN }}" /d:sonar.host.url="https://sonarcloud.io"
+          dotnet build
+          .\.sonar\scanner\dotnet-sonarscanner end /d:sonar.token="${{ secrets.SONAR_TOKEN }}"
+
+# on:
+#   push:
+#     branches:
+#       - main
+#   pull_request:
+#     branches:
+#       - main
+
+# jobs:
+#   build:
+#     runs-on: ubuntu-latest
+
+#     steps:
+#       - name: Checkout Repository
+#         uses: actions/checkout@v4
+
+#       - name: Setup .NET
+#         uses: actions/setup-dotnet@v3
+#         with:
+#           dotnet-version: '8.0.x'
+
+#       - name: Restore Dependencies
+#         run: dotnet restore src/SwaggerDemo.HttpApi.Host
+
+#       - name: Build Project
+#         run: dotnet build src/SwaggerDemo.HttpApi.Host --configuration Release --no-restore
+
+#       - name: Publish Project
+#         run: dotnet publish src/SwaggerDemo.HttpApi.Host --configuration Release --output publish
+
+#       - name: Upload Published App
+#         uses: actions/upload-artifact@v4
+#         with:
+#           name: abp-app
+#           path: publish/
+
+#       - name: Install SonarScanner
+#         run: dotnet tool install --global dotnet-sonarscanner
+
+#       - name: Start SonarQube
+#         run: |
+#           docker run -d --name sonarqube -p 9000:9000 sonarqube:lts
+#           echo "Waiting for SonarQube to start..."
+          
+#           # Attendre jusqu'à ce que SonarQube soit UP
+#           for i in {1..30}; do
+#             STATUS=$(curl -s http://localhost:9000/api/system/status | grep -o '"status":"[^"]*"' | awk -F':' '{print $2}' | tr -d '"')
+#             echo "SonarQube status: $STATUS"
+#             if [ "$STATUS" == "UP" ]; then
+#               echo "SonarQube is UP!"
+#               break
+#             fi
+#             echo "Waiting for SonarQube..."
+#             sleep 10
+#           done
+
+#       - name: Run SonarScanner
+#         env:
+#           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }} # Utiliser le token depuis les secrets GitHub
+#         run: |
+#           dotnet sonarscanner begin /k:"SWAGGERDEMOKEY" /d:sonar.host.url="http://localhost:9000" /d:sonar.login="$SONAR_TOKEN"
+#           dotnet build src/SwaggerDemo.HttpApi.Host --configuration Release
+#           dotnet sonarscanner end /d:sonar.login="$SONAR_TOKEN"
 
 
 
