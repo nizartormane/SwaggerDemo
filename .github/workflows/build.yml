@@ -38,14 +38,17 @@ jobs:
         run: |
           dotnet tool install --global dotnet-sonarscanner
 
-      - name: Run SonarScanner with Local SonarQube
-        env:
-          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}     
-          SONAR_HOST_URL: "http://localhost:9000"  # URL de ton serveur SonarQube local
+      - name: Start SonarQube (if not already running)
         run: |
-          dotnet sonarscanner begin /k:"your-sonarqube-project-key" /d:sonar.host.url="$SONAR_HOST_URL" /d:sonar.login="$SONAR_TOKEN"
-          dotnet build src/SwaggerDemo.HttpApi.Host --configuration Release
-          dotnet sonarscanner end /d:sonar.login="$SONAR_TOKEN"
+          # Start SonarQube in the background (if needed)
+          nohup sonar --start &
+
+      - name: Run SonarScanner with Local SonarQube
+        run: |
+          dotnet sonarscanner begin /k:"SWAGGERDEMOKEY" /d:sonar.host.url="http://localhost:9000" /d:sonar.login="sqp_9fb6d428428fa1ec18cf3dbfa3a20f46dd3cf8d9"
+          dotnet build
+          dotnet sonarscanner end /d:sonar.login="sqp_9fb6d428428fa1ec18cf3dbfa3a20f46dd3cf8d9"
+
 
 
 
