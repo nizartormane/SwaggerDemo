@@ -42,10 +42,8 @@ jobs:
 
       - name: Start SonarQube
         run: |
-          docker run -d --name sonar -p 9000:9000 sonarqube:lts
-          sleep 60  # Attendre que SonarQube démarre
-
-      - name: SonarQube Analysis
+          docker run -d --name sonar -p 9000:9000 -e SONARQUBE_ADMIN_USERNAME=admin -e SONARQUBE_ADMIN_PASSWORD=${{ secrets.SONAR_TOKEN }} sonarqube:lts
+          sleep 60
         env:
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}     
           SONAR_HOST_URL: "http://localhost:9000"
