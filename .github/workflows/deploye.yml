@@ -19,7 +19,7 @@ jobs:
           password: ${{ secrets.DOCKER_PASSWORD }}
 
       - name: Build Docker Image
-        run: |
+        run: |  
           docker build -t mon-image -f src/SwaggerDemo.HttpApi.Host/Dockerfile .
 
          
