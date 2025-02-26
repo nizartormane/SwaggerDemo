@@ -1,49 +1,87 @@
-name: SonarQube Analysis
+
+name: Build and SonarQube Analysis
 
 on:
   push:
     branches:
-      - main  # Déclencher sur push dans la branche main, ajuster si nécessaire
-  pull_request:
-    branches:
-      - main  # Déclencher lors des PRs vers la branche main
+      - main
 
 jobs:
-  build:
-    runs-on: ubuntu-latest  # Utiliser un environnement Linux, mais tu peux utiliser macOS si nécessaire
+  sonar-analysis:
+    runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout code
-        uses: actions/checkout@v3
+    - name: Check out repository
+      uses: actions/checkout@v2
 
-      - name: Set up .NET SDK
-        uses: actions/setup-dotnet@v3
-        with:
-          dotnet-version: '6.0'  # Ajuste la version de .NET en fonction de ton projet
+    - name: Setup .NET
+      uses: actions/setup-dotnet@v1
+      with:
+        dotnet-version: '6.0'
 
-      - name: Install SonarScanner for MSBuild
-        run: |
-          dotnet tool install --global dotnet-sonarscanner
+    - name: Install SonarScanner for MSBuild
+      run: |
+        curl -sS https://downloads.sonarsource.com/sonarscanner/sonar-scanner-msbuild-4.8.0.2856-netcore.zip -o sonar-scanner.zip
+        unzip sonar-scanner.zip
+        mv sonar-scanner-* /usr/local/bin/sonar-scanner
 
-      - name: Begin SonarQube analysis
-        run: |
-          dotnet sonarscanner begin /k:"my-new-project-key" \
-            /d:sonar.host.url="http://localhost:9000" \
-            /d:sonar.login="sqa_a37e9475471d9823285321e694382d135850ba21" \
-            /d:sonar.scanner.scanAll=false
+    - name: Start SonarQube Analysis
+      run: |
+        dotnet sonarscanner begin /k:"my-new-project-key" /d:sonar.host.url="https://74d3-41-225-94-245.ngrok-free.app" /d:sonar.login="sqa_a37e9475471d9823285321e694382d135850ba21" /d:sonar.scanner.scanAll=false
+        dotnet build
 
-      - name: Build the project
-        run: |
-          dotnet build
+    - name: End SonarQube Analysis
+      run: |
+        dotnet sonarscanner end /d:sonar.login="sqa_a37e9475471d9823285321e694382d135850ba21"
 
-      - name: End SonarQube analysis
-        run: |
-          dotnet sonarscanner end /d:sonar.login="sqa_a37e9475471d9823285321e694382d135850ba21" \
-            /d:sonar.password="sqa_a37e9475471d9823285321e694382d135850ba21"
 
-      - name: Upload results to SonarQube
-        run: |
-          curl -X POST "http://localhost:9000/api/ce/submit"  # Optionnel, si tu veux envoyer explicitement les résultats via une requête API
+
+# name: SonarQube Analysis
+
+# on:
+#   push:
+#     branches:
+#       - main  # Déclencher sur push dans la branche main, ajuster si nécessaire
+#   pull_request:
+#     branches:
+#       - main  # Déclencher lors des PRs vers la branche main
+
+# jobs:
+#   build:
+#     runs-on: ubuntu-latest  # Utiliser un environnement Linux, mais tu peux utiliser macOS si nécessaire
+
+#     steps:
+#       - name: Checkout code
+#         uses: actions/checkout@v3
+
+#       - name: Set up .NET SDK
+#         uses: actions/setup-dotnet@v3
+#         with:
+#           dotnet-version: '6.0'  # Ajuste la version de .NET en fonction de ton projet
+
+#       - name: Install SonarScanner for MSBuild
+#         run: |
+#           dotnet tool install --global dotnet-sonarscanner
+
+#       - name: Begin SonarQube analysis
+#         run: |
+#           dotnet sonarscanner begin /k:"my-new-project-key" \
+#             /d:sonar.host.url="http://localhost:9000" \
+#             /d:sonar.login="sqa_a37e9475471d9823285321e694382d135850ba21" \
+#             /d:sonar.scanner.scanAll=false
+
+#       - name: Build the project
+#         run: |
+#           dotnet build
+
+#       - name: End SonarQube analysis
+#         run: |
+#           dotnet sonarscanner end /d:sonar.login="sqa_a37e9475471d9823285321e694382d135850ba21" \
+#             /d:sonar.password="sqa_a37e9475471d9823285321e694382d135850ba21"
+
+#       - name: Upload results to SonarQube
+#         run: |
+#           curl -X POST "http://localhost:9000/api/ce/submit"  # Optionnel, si tu veux envoyer explicitement les résultats via une requête API
 
 
 
