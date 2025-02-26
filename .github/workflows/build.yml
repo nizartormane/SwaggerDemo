@@ -13,10 +13,10 @@ jobs:
     - name: Check out repository
       uses: actions/checkout@v2
 
-    - name: Setup .NET
+    - name: Setup .NET 8.0
       uses: actions/setup-dotnet@v1
       with:
-        dotnet-version: '6.0'
+        dotnet-version: '8.0'
 
     - name: Install SonarScanner for .NET
       run: |
@@ -30,6 +30,7 @@ jobs:
     - name: End SonarQube Analysis
       run: |
         dotnet sonarscanner end /d:sonar.login="sqa_a37e9475471d9823285321e694382d135850ba21"
+
 
 
 
