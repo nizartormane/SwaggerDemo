@@ -8,22 +8,214 @@
         "version": "4.12.0.0",
         "fileVersion": "4.12.0-3.24574.8 (dfa7fc6b)",
         "semanticVersion": "4.12.0",
-        "language": "en-TN"
+        "language": "en-US"
       },
       "results": [
         {
-          "ruleId": "CS8604",
+          "ruleId": "CS1998",
           "level": "warning",
-          "message": "Possible null reference argument for parameter 'authority' in 'IServiceCollection AbpSwaggerGenServiceCollectionExtensions.AddAbpSwaggerGenWithOidc(IServiceCollection services, string authority, string[]? scopes = null, string[]? flows = null, string? discoveryEndpoint = null, Action<SwaggerGenOptions>? setupAction = null)'.",
+          "message": "This async method lacks 'await' operators and will run synchronously. Consider using the 'await' operator to await non-blocking API calls, or 'await Task.Run(...)' to do CPU-bound work on a background thread.",
+          "suppressionStates": [
+            "suppressedInSource"
+          ],
           "locations": [
             {
               "resultFile": {
-                "uri": "file:///Users/nizar/SwaggerDemo/src/SwaggerDemo.HttpApi.Host/SwaggerDemoHttpApiHostModule.cs",
+                "uri": "file:///Users/nizar/SwaggerDemo/src/SwaggerDemo.Web/obj/Debug/net8.0/Microsoft.CodeAnalysis.Razor.Compiler/Microsoft.NET.Sdk.Razor.SourceGenerators.RazorSourceGenerator/Components__ViewImports_cshtml.g.cs",
                 "region": {
-                  "startLine": 130,
+                  "startLine": 25,
+                  "startColumn": 67,
+                  "endLine": 25,
+                  "endColumn": 79
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "CS1998",
+          "level": "warning",
+          "message": "This async method lacks 'await' operators and will run synchronously. Consider using the 'await' operator to await non-blocking API calls, or 'await Task.Run(...)' to do CPU-bound work on a background thread.",
+          "suppressionStates": [
+            "suppressedInSource"
+          ],
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///Users/nizar/SwaggerDemo/src/SwaggerDemo.Web/obj/Debug/net8.0/Microsoft.CodeAnalysis.Razor.Compiler/Microsoft.NET.Sdk.Razor.SourceGenerators.RazorSourceGenerator/Views__ViewImports_cshtml.g.cs",
+                "region": {
+                  "startLine": 25,
+                  "startColumn": 67,
+                  "endLine": 25,
+                  "endColumn": 79
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "CS1998",
+          "level": "warning",
+          "message": "This async method lacks 'await' operators and will run synchronously. Consider using the 'await' operator to await non-blocking API calls, or 'await Task.Run(...)' to do CPU-bound work on a background thread.",
+          "suppressionStates": [
+            "suppressedInSource"
+          ],
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///Users/nizar/SwaggerDemo/src/SwaggerDemo.Web/obj/Debug/net8.0/Microsoft.CodeAnalysis.Razor.Compiler/Microsoft.NET.Sdk.Razor.SourceGenerators.RazorSourceGenerator/Pages__ViewImports_cshtml.g.cs",
+                "region": {
+                  "startLine": 25,
+                  "startColumn": 67,
+                  "endLine": 25,
+                  "endColumn": 79
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "CS1998",
+          "level": "warning",
+          "message": "This async method lacks 'await' operators and will run synchronously. Consider using the 'await' operator to await non-blocking API calls, or 'await Task.Run(...)' to do CPU-bound work on a background thread.",
+          "suppressionStates": [
+            "suppressedInSource"
+          ],
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///Users/nizar/SwaggerDemo/src/SwaggerDemo.Web/obj/Debug/net8.0/Microsoft.CodeAnalysis.Razor.Compiler/Microsoft.NET.Sdk.Razor.SourceGenerators.RazorSourceGenerator/Components_Toolbar_LoginLink_Default_cshtml.g.cs",
+                "region": {
+                  "startLine": 64,
+                  "startColumn": 231,
+                  "endLine": 64,
+                  "endColumn": 233
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "CS0162",
+          "level": "warning",
+          "message": "Unreachable code detected",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///Users/nizar/SwaggerDemo/src/SwaggerDemo.Web/Menus/SwaggerDemoMenuContributor.cs",
+                "region": {
+                  "startLine": 60,
                   "startColumn": 13,
-                  "endLine": 130,
-                  "endColumn": 50
+                  "endLine": 60,
+                  "endColumn": 27
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 2
+          }
+        },
+        {
+          "ruleId": "CS1998",
+          "level": "warning",
+          "message": "This async method lacks 'await' operators and will run synchronously. Consider using the 'await' operator to await non-blocking API calls, or 'await Task.Run(...)' to do CPU-bound work on a background thread.",
+          "suppressionStates": [
+            "suppressedInSource"
+          ],
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///Users/nizar/SwaggerDemo/src/SwaggerDemo.Web/obj/Debug/net8.0/Microsoft.CodeAnalysis.Razor.Compiler/Microsoft.NET.Sdk.Razor.SourceGenerators.RazorSourceGenerator/Pages_Index_cshtml.g.cs",
+                "region": {
+                  "startLine": 77,
+                  "startColumn": 237,
+                  "endLine": 77,
+                  "endColumn": 239
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "CS1998",
+          "level": "warning",
+          "message": "This async method lacks 'await' operators and will run synchronously. Consider using the 'await' operator to await non-blocking API calls, or 'await Task.Run(...)' to do CPU-bound work on a background thread.",
+          "suppressionStates": [
+            "suppressedInSource"
+          ],
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///Users/nizar/SwaggerDemo/src/SwaggerDemo.Web/obj/Debug/net8.0/Microsoft.CodeAnalysis.Razor.Compiler/Microsoft.NET.Sdk.Razor.SourceGenerators.RazorSourceGenerator/Pages_Index_cshtml.g.cs",
+                "region": {
+                  "startLine": 96,
+                  "startColumn": 238,
+                  "endLine": 96,
+                  "endColumn": 240
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "CS1998",
+          "level": "warning",
+          "message": "This async method lacks 'await' operators and will run synchronously. Consider using the 'await' operator to await non-blocking API calls, or 'await Task.Run(...)' to do CPU-bound work on a background thread.",
+          "suppressionStates": [
+            "suppressedInSource"
+          ],
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///Users/nizar/SwaggerDemo/src/SwaggerDemo.Web/obj/Debug/net8.0/Microsoft.CodeAnalysis.Razor.Compiler/Microsoft.NET.Sdk.Razor.SourceGenerators.RazorSourceGenerator/Pages_Index_cshtml.g.cs",
+                "region": {
+                  "startLine": 141,
+                  "startColumn": 231,
+                  "endLine": 141,
+                  "endColumn": 233
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "CS1998",
+          "level": "warning",
+          "message": "This async method lacks 'await' operators and will run synchronously. Consider using the 'await' operator to await non-blocking API calls, or 'await Task.Run(...)' to do CPU-bound work on a background thread.",
+          "suppressionStates": [
+            "suppressedInSource"
+          ],
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///Users/nizar/SwaggerDemo/src/SwaggerDemo.Web/obj/Debug/net8.0/Microsoft.CodeAnalysis.Razor.Compiler/Microsoft.NET.Sdk.Razor.SourceGenerators.RazorSourceGenerator/Pages_Index_cshtml.g.cs",
+                "region": {
+                  "startLine": 263,
+                  "startColumn": 237,
+                  "endLine": 263,
+                  "endColumn": 239
                 }
               }
             }
@@ -39,11 +231,11 @@
           "locations": [
             {
               "resultFile": {
-                "uri": "file:///Users/nizar/SwaggerDemo/src/SwaggerDemo.HttpApi.Host/SwaggerDemoHttpApiHostModule.cs",
+                "uri": "file:///Users/nizar/SwaggerDemo/src/SwaggerDemo.Web/SwaggerDemoWebModule.cs",
                 "region": {
-                  "startLine": 153,
+                  "startLine": 224,
                   "startColumn": 55,
-                  "endLine": 153,
+                  "endLine": 224,
                   "endColumn": 91
                 }
               }
@@ -60,11 +252,11 @@
           "locations": [
             {
               "resultFile": {
-                "uri": "file:///Users/nizar/SwaggerDemo/src/SwaggerDemo.HttpApi.Host/SwaggerDemoHttpApiHostModule.cs",
+                "uri": "file:///Users/nizar/SwaggerDemo/src/SwaggerDemo.Web/SwaggerDemoWebModule.cs",
                 "region": {
-                  "startLine": 165,
+                  "startLine": 236,
                   "startColumn": 26,
-                  "endLine": 165,
+                  "endLine": 236,
                   "endColumn": 62
                 }
               }
@@ -75,18 +267,42 @@
           }
         },
         {
-          "ruleId": "S125",
+          "ruleId": "CS0169",
           "level": "warning",
-          "message": "Remove this commented out code.",
+          "message": "The field 'Components_Toolbar_LoginLink_Default.__tagHelperStringValueBuffer' is never used",
+          "suppressionStates": [
+            "suppressedInSource"
+          ],
           "locations": [
             {
               "resultFile": {
-                "uri": "file:///Users/nizar/SwaggerDemo/src/SwaggerDemo.HttpApi.Host/SwaggerDemoHttpApiHostModule.cs",
+                "uri": "file:///Users/nizar/SwaggerDemo/src/SwaggerDemo.Web/obj/Debug/net8.0/Microsoft.CodeAnalysis.Razor.Compiler/Microsoft.NET.Sdk.Razor.SourceGenerators.RazorSourceGenerator/Components_Toolbar_LoginLink_Default_cshtml.g.cs",
                 "region": {
-                  "startLine": 118,
-                  "startColumn": 1,
-                  "endLine": 118,
-                  "endColumn": 14
+                  "startLine": 46,
+                  "startColumn": 24,
+                  "endLine": 46,
+                  "endColumn": 52
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 3
+          }
+        },
+        {
+          "ruleId": "S1118",
+          "level": "warning",
+          "message": "Add a 'protected' constructor or the 'static' keyword to the class declaration.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///Users/nizar/SwaggerDemo/src/SwaggerDemo.Web/Program.cs",
+                "region": {
+                  "startLine": 11,
+                  "startColumn": 14,
+                  "endLine": 11,
+                  "endColumn": 21
                 }
               }
             }
@@ -102,12 +318,33 @@
           "locations": [
             {
               "resultFile": {
-                "uri": "file:///Users/nizar/SwaggerDemo/src/SwaggerDemo.HttpApi.Host/Program.cs",
+                "uri": "file:///Users/nizar/SwaggerDemo/src/SwaggerDemo.Web/Menus/SwaggerDemoMenus.cs",
                 "region": {
-                  "startLine": 11,
+                  "startLine": 3,
                   "startColumn": 14,
-                  "endLine": 11,
-                  "endColumn": 21
+                  "endLine": 3,
+                  "endColumn": 30
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "S1186",
+          "level": "warning",
+          "message": "Add a nested comment explaining why this method is empty, throw a 'NotSupportedException' or complete the implementation.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///Users/nizar/SwaggerDemo/src/SwaggerDemo.Web/Pages/Index.cshtml.cs",
+                "region": {
+                  "startLine": 8,
+                  "startColumn": 17,
+                  "endLine": 8,
+                  "endColumn": 22
                 }
               }
             }
@@ -123,7 +360,7 @@
           "locations": [
             {
               "resultFile": {
-                "uri": "file:///Users/nizar/SwaggerDemo/src/SwaggerDemo.HttpApi.Host/Program.cs",
+                "uri": "file:///Users/nizar/SwaggerDemo/src/SwaggerDemo.Web/Program.cs",
                 "region": {
                   "startLine": 15,
                   "startColumn": 22,
@@ -138,87 +375,18 @@
           }
         },
         {
-          "ruleId": "S1172",
-          "level": "warning",
-          "message": "Remove this unused method parameter 'configuration'.",
-          "locations": [
-            {
-              "resultFile": {
-                "uri": "file:///Users/nizar/SwaggerDemo/src/SwaggerDemo.HttpApi.Host/SwaggerDemoHttpApiHostModule.cs",
-                "region": {
-                  "startLine": 62,
-                  "startColumn": 33,
-                  "endLine": 62,
-                  "endColumn": 61
-                }
-              }
-            }
-          ],
-          "properties": {
-            "warningLevel": 1,
-            "customProperties": {
-              "IsRemovable": "True"
-            }
-          }
-        },
-        {
-          "ruleId": "CA1861",
-          "level": "note",
-          "message": "Prefer 'static readonly' fields over constant array arguments if the called method is called repeatedly and is not mutating the passed array",
-          "locations": [
-            {
-              "resultFile": {
-                "uri": "file:///Users/nizar/SwaggerDemo/src/SwaggerDemo.HttpApi.Host/SwaggerDemoHttpApiHostModule.cs",
-                "region": {
-                  "startLine": 131,
-                  "startColumn": 21,
-                  "endLine": 131,
-                  "endColumn": 44
-                }
-              }
-            }
-          ],
-          "properties": {
-            "warningLevel": 1,
-            "customProperties": {
-              "paramName": "scopes"
-            }
-          }
-        },
-        {
           "ruleId": "CA1822",
           "level": "note",
-          "message": "Member 'ConfigureAuthentication' does not access instance data and can be marked as static",
+          "message": "Member 'ConfigureMainMenuAsync' does not access instance data and can be marked as static",
           "locations": [
             {
               "resultFile": {
-                "uri": "file:///Users/nizar/SwaggerDemo/src/SwaggerDemo.HttpApi.Host/SwaggerDemoHttpApiHostModule.cs",
+                "uri": "file:///Users/nizar/SwaggerDemo/src/SwaggerDemo.Web/Menus/SwaggerDemoMenuContributor.cs",
                 "region": {
-                  "startLine": 99,
+                  "startLine": 38,
                   "startColumn": 18,
-                  "endLine": 99,
-                  "endColumn": 41
-                }
-              }
-            }
-          ],
-          "properties": {
-            "warningLevel": 1
-          }
-        },
-        {
-          "ruleId": "CA1822",
-          "level": "note",
-          "message": "Member 'ConfigureDataProtection' does not access instance data and can be marked as static",
-          "locations": [
-            {
-              "resultFile": {
-                "uri": "file:///Users/nizar/SwaggerDemo/src/SwaggerDemo.HttpApi.Host/SwaggerDemoHttpApiHostModule.cs",
-                "region": {
-                  "startLine": 145,
-                  "startColumn": 18,
-                  "endLine": 145,
-                  "endColumn": 41
+                  "endLine": 38,
+                  "endColumn": 40
                 }
               }
             }
@@ -234,11 +402,11 @@
           "locations": [
             {
               "resultFile": {
-                "uri": "file:///Users/nizar/SwaggerDemo/src/SwaggerDemo.HttpApi.Host/SwaggerDemoHttpApiHostModule.cs",
+                "uri": "file:///Users/nizar/SwaggerDemo/src/SwaggerDemo.Web/SwaggerDemoWebModule.cs",
                 "region": {
-                  "startLine": 158,
+                  "startLine": 229,
                   "startColumn": 18,
-                  "endLine": 158,
+                  "endLine": 229,
                   "endColumn": 45
                 }
               }
@@ -251,16 +419,58 @@
         {
           "ruleId": "CA1822",
           "level": "note",
-          "message": "Member 'ConfigureCors' does not access instance data and can be marked as static",
+          "message": "Member 'ConfigureDataProtection' does not access instance data and can be marked as static",
           "locations": [
             {
               "resultFile": {
-                "uri": "file:///Users/nizar/SwaggerDemo/src/SwaggerDemo.HttpApi.Host/SwaggerDemoHttpApiHostModule.cs",
+                "uri": "file:///Users/nizar/SwaggerDemo/src/SwaggerDemo.Web/SwaggerDemoWebModule.cs",
                 "region": {
-                  "startLine": 170,
+                  "startLine": 216,
                   "startColumn": 18,
-                  "endLine": 170,
-                  "endColumn": 31
+                  "endLine": 216,
+                  "endColumn": 41
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "CA1822",
+          "level": "note",
+          "message": "Member 'ConfigureSwaggerServices' does not access instance data and can be marked as static",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///Users/nizar/SwaggerDemo/src/SwaggerDemo.Web/SwaggerDemoWebModule.cs",
+                "region": {
+                  "startLine": 204,
+                  "startColumn": 18,
+                  "endLine": 204,
+                  "endColumn": 42
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "CA1822",
+          "level": "note",
+          "message": "Member 'ConfigureAuthentication' does not access instance data and can be marked as static",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///Users/nizar/SwaggerDemo/src/SwaggerDemo.Web/SwaggerDemoWebModule.cs",
+                "region": {
+                  "startLine": 138,
+                  "startColumn": 18,
+                  "endLine": 138,
+                  "endColumn": 41
                 }
               }
             }
@@ -287,18 +497,45 @@
             ]
           }
         },
-        "CA1861": {
-          "id": "CA1861",
-          "shortDescription": "Avoid constant arrays as arguments",
-          "fullDescription": "Constant arrays passed as arguments are not reused when called repeatedly, which implies a new array is created each time. Consider extracting them to 'static readonly' fields to improve performance if the passed array is not mutated within the called method.",
-          "defaultLevel": "note",
-          "helpUri": "https://learn.microsoft.com/dotnet/fundamentals/code-analysis/quality-rules/ca1861",
+        "CS0162": {
+          "id": "CS0162",
+          "shortDescription": "Unreachable code detected",
+          "defaultLevel": "warning",
+          "helpUri": "https://msdn.microsoft.com/query/roslyn.query?appId=roslyn&k=k(CS0162)",
           "properties": {
-            "category": "Performance",
+            "category": "Compiler",
             "isEnabledByDefault": true,
             "tags": [
-              "Telemetry",
-              "EnabledRuleInAggressiveMode"
+              "Compiler",
+              "Telemetry"
+            ]
+          }
+        },
+        "CS0169": {
+          "id": "CS0169",
+          "shortDescription": "Field is never used",
+          "defaultLevel": "warning",
+          "helpUri": "https://msdn.microsoft.com/query/roslyn.query?appId=roslyn&k=k(CS0169)",
+          "properties": {
+            "category": "Compiler",
+            "isEnabledByDefault": true,
+            "tags": [
+              "Compiler",
+              "Telemetry"
+            ]
+          }
+        },
+        "CS1998": {
+          "id": "CS1998",
+          "shortDescription": "Async method lacks 'await' operators and will run synchronously",
+          "defaultLevel": "warning",
+          "helpUri": "https://msdn.microsoft.com/query/roslyn.query?appId=roslyn&k=k(CS1998)",
+          "properties": {
+            "category": "Compiler",
+            "isEnabledByDefault": true,
+            "tags": [
+              "Compiler",
+              "Telemetry"
             ]
           }
         },
@@ -333,31 +570,14 @@
             ]
           }
         },
-        "S1172": {
-          "id": "S1172",
-          "shortDescription": "Unused method parameters should be removed",
-          "fullDescription": "Unused parameters are misleading. Whatever the values passed to such parameters, the behavior will be the same.",
+        "S1186": {
+          "id": "S1186",
+          "shortDescription": "Methods should not be empty",
+          "fullDescription": "There are several reasons for a method not to have a method body:",
           "defaultLevel": "warning",
-          "helpUri": "https://rules.sonarsource.com/csharp/RSPEC-1172",
+          "helpUri": "https://rules.sonarsource.com/csharp/RSPEC-1186",
           "properties": {
-            "category": "Major Code Smell",
-            "isEnabledByDefault": true,
-            "tags": [
-              "C#",
-              "MainSourceScope",
-              "TestSourceScope",
-              "SonarWay"
-            ]
-          }
-        },
-        "S125": {
-          "id": "S125",
-          "shortDescription": "Sections of code should not be commented out",
-          "fullDescription": "Programmers should not comment out code as it bloats programs and reduces readability.",
-          "defaultLevel": "warning",
-          "helpUri": "https://rules.sonarsource.com/csharp/RSPEC-125",
-          "properties": {
-            "category": "Major Code Smell",
+            "category": "Critical Code Smell",
             "isEnabledByDefault": true,
             "tags": [
               "C#",

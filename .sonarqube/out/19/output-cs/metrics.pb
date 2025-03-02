@@ -1,9 +1,25 @@
-m
-S/Users/nizar/SwaggerDemo/src/SwaggerDemo.HttpApi.Host/Controllers/HomeController.cs 8r
+}
+c/Users/nizar/SwaggerDemo/src/SwaggerDemo.Web/Components/Toolbar/LoginLink/LoginLinkViewComponent.cs 8r
 	
 Ç
-ì
-@/Users/nizar/SwaggerDemo/src/SwaggerDemo.HttpApi.Host/Program.cs 8r0	 !"#$%&'()*+,-.012345678xÇ #$%&'+-015â
-U/Users/nizar/SwaggerDemo/src/SwaggerDemo.HttpApi.Host/SwaggerDemoHttpApiHostModule.cs? 
-8jqstuwy{|}ÄÑÜárï	
- "#$%&'()*+,-./012456789:;<>?@ACDEGHIJKLMNOPQRSTUVWXY[\]^_`acdefghijklmopÅÇÉÖàâäãåçéèëíìîïñóòôöõúûü†°¢£§•¶ß®™´¨≠ÆØ∞±≤≥¥µ∂∑∏π∫ªºæø¿¡√ƒ≈∆»… ÀÃÕœ–—“‘÷◊ÿŸ€‹›ﬁ‡·‚„‰ÂxÇz12456789:;@EGIKLMNOPQRSTUV]_efhijkÅÉÖâãåçñóôö¢§¶¨Æ∞±≤≥¥¿¡√≈»… ÀÃÕœ—‘÷◊Ÿ€‹›‡·‚„
+X
+M/Users/nizar/SwaggerDemo/src/SwaggerDemo.Web/Controllers/AccountController.csrª
+P/Users/nizar/SwaggerDemo/src/SwaggerDemo.Web/Menus/SwaggerDemoMenuContributor.cs 8rE	
+ !"#$&'()+,-./012346789:;<=?@BCEFGHIKLMOPQxÇ "()+.68<?@BGHKLMOU
+F/Users/nizar/SwaggerDemo/src/SwaggerDemo.Web/Menus/SwaggerDemoMenus.csjr
+~
+S/Users/nizar/SwaggerDemo/src/SwaggerDemo.Web/Menus/SwaggerDemoToolbarContributor.cs 8r	
+xÇ_
+B/Users/nizar/SwaggerDemo/src/SwaggerDemo.Web/Pages/Index.cshtml.cs 8r	Çd
+J/Users/nizar/SwaggerDemo/src/SwaggerDemo.Web/Pages/SwaggerDemoPageModel.cs 8r
+	
+Ç
+ä
+7/Users/nizar/SwaggerDemo/src/SwaggerDemo.Web/Program.cs 8r0	 !"#$%&'()*+,-.012345678xÇ #$%&'+-015M
+G/Users/nizar/SwaggerDemo/src/SwaggerDemo.Web/Properties/AssemblyInfo.csr]
+K/Users/nizar/SwaggerDemo/src/SwaggerDemo.Web/SwaggerDemoBrandingProvider.cs 8r	
+d
+O/Users/nizar/SwaggerDemo/src/SwaggerDemo.Web/SwaggerDemoWebAutoMapperProfile.cs 8j	r
+Ó
+D/Users/nizar/SwaggerDemo/src/SwaggerDemo.Web/SwaggerDemoWebModule.csR 8r˛	
+ !"#$%&'()*+,-.023456789:;<=>?@ABCDEFGHIJKLMNOPRSTUWXYZ[\]^_`abdefghijklmnoprstuvwxz{|}~ÄÇÉÑÖÜáàäãåçéèêëíìîïñóòôöúùü†°£§•¶ß®™´¨≠ÆØ∞≤≥¥µ∂∑∏π∫ªºΩø¿¡¬√ƒ∆«»… ÃÕŒœ–—“”‘’÷ÿŸ⁄€‹›ﬁﬂ‡·‚„ÂÊÁËÈÍÎÏÌÓÔÒÚÛÙˆ˜¯˘˚˝˛ˇÄÇÉÑÖáàâäåçéèêëíìîïxÇôGIKLMTUWXYZ[\]^_`afhijltv|~ÑÜåéèëìîñòôöúùü†°£§•¶¨Æ¥∂∏π∫¡√∆»Œœ—“”›ﬁ‡·ÈÎÌÛÙˆ¯˚˝ˇÇÉÑÖáâåçéêíì

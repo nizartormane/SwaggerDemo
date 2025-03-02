@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ProjectInfo xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://www.sonarsource.com/msbuild/integration/2015/1">
-  <ProjectName>SwaggerDemo.Application.Contracts</ProjectName>
+  <ProjectName>SwaggerDemo.Domain</ProjectName>
   <ProjectLanguage>C#</ProjectLanguage>
   <ProjectType>Product</ProjectType>
-  <ProjectGuid>520659c8-c734-4298-a3da-b539db9dfc0b</ProjectGuid>
-  <FullPath>/Users/nizar/SwaggerDemo/src/SwaggerDemo.Application.Contracts/SwaggerDemo.Application.Contracts.csproj</FullPath>
+  <ProjectGuid>554ad327-6dba-4f8f-96f8-81ce7a0c863f</ProjectGuid>
+  <FullPath>/Users/nizar/SwaggerDemo/src/SwaggerDemo.Domain/SwaggerDemo.Domain.csproj</FullPath>
   <IsExcluded>false</IsExcluded>
   <AnalysisResults>
     <AnalysisResult Id="FilesToAnalyze" Location="/Users/nizar/SwaggerDemo/.sonarqube/conf/6/FilesToAnalyze.txt" />
@@ -15,5 +15,5 @@
   </AnalysisSettings>
   <Configuration>Debug</Configuration>
   <Platform>AnyCPU</Platform>
-  <TargetFramework>netstandard2.1</TargetFramework>
+  <TargetFramework>net8.0</TargetFramework>
 </ProjectInfo>

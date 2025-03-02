@@ -7,6 +7,7 @@ EXPOSE 443
 FROM mcr.microsoft.com/dotnet/sdk:8.0 AS build
 ARG BUILD_CONFIGURATION=Release
 WORKDIR /src
+
 COPY ["src/SwaggerDemo.HttpApi.Host/SwaggerDemo.HttpApi.Host.csproj", "src/SwaggerDemo.HttpApi.Host/"]
 COPY ["src/SwaggerDemo.Application/SwaggerDemo.Application.csproj", "src/SwaggerDemo.Application/"]
 COPY ["src/SwaggerDemo.Domain/SwaggerDemo.Domain.csproj", "src/SwaggerDemo.Domain/"]

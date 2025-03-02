@@ -5,5 +5,5 @@
   <FilesToAnalyzePath>/Users/nizar/SwaggerDemo/.sonarqube/conf/3/FilesToAnalyze.txt</FilesToAnalyzePath>
   <OutPath>/Users/nizar/SwaggerDemo/.sonarqube/out/3</OutPath>
   <ProjectType>Product</ProjectType>
-  <TargetFramework>net8.0</TargetFramework>
+  <TargetFramework>netstandard2.0</TargetFramework>
 </SonarProjectConfig>

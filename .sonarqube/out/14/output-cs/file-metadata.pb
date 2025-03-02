@@ -1,11 +1,6 @@
-R
-I/Users/nizar/SwaggerDemo/src/SwaggerDemo.AuthServer/Pages/Index.cshtml.csutf-8G
->/Users/nizar/SwaggerDemo/src/SwaggerDemo.AuthServer/Program.csutf-8[
-R/Users/nizar/SwaggerDemo/src/SwaggerDemo.AuthServer/SwaggerDemoAuthServerModule.csutf-8[
-R/Users/nizar/SwaggerDemo/src/SwaggerDemo.AuthServer/SwaggerDemoBrandingProvider.csutf-8~
-s/Users/nizar/SwaggerDemo/src/SwaggerDemo.AuthServer/obj/Debug/net8.0/.NETCoreApp,Version=v8.0.AssemblyAttributes.csutf-8v
-k/Users/nizar/SwaggerDemo/src/SwaggerDemo.AuthServer/obj/Debug/net8.0/SwaggerDemo.AuthServer.AssemblyInfo.csutf-8‰
-~/Users/nizar/SwaggerDemo/src/SwaggerDemo.AuthServer/obj/Debug/net8.0/SwaggerDemo.AuthServer.MvcApplicationPartsAssemblyInfo.csutf-8{
-p/Users/nizar/SwaggerDemo/src/SwaggerDemo.AuthServer/obj/Debug/net8.0/SwaggerDemo.AuthServer.RazorAssemblyInfo.csutf-8Ì
-À/Users/nizar/SwaggerDemo/src/SwaggerDemo.AuthServer/obj/Debug/net8.0/Microsoft.CodeAnalysis.Razor.Compiler/Microsoft.NET.Sdk.Razor.SourceGenerators.RazorSourceGenerator/Pages_Index_cshtml.g.csutf-8Ó
-Ç/Users/nizar/SwaggerDemo/src/SwaggerDemo.AuthServer/obj/Debug/net8.0/Microsoft.CodeAnalysis.Razor.Compiler/Microsoft.NET.Sdk.Razor.SourceGenerators.RazorSourceGenerator/Pages__ViewImports_cshtml.g.csutf-8
+W
+N/Users/nizar/SwaggerDemo/src/SwaggerDemo.DbMigrator/DbMigratorHostedService.csutf-8G
+>/Users/nizar/SwaggerDemo/src/SwaggerDemo.DbMigrator/Program.csutf-8[
+R/Users/nizar/SwaggerDemo/src/SwaggerDemo.DbMigrator/SwaggerDemoDbMigratorModule.csutf-8~
+s/Users/nizar/SwaggerDemo/src/SwaggerDemo.DbMigrator/obj/Debug/net8.0/.NETCoreApp,Version=v8.0.AssemblyAttributes.csutf-8v
+k/Users/nizar/SwaggerDemo/src/SwaggerDemo.DbMigrator/obj/Debug/net8.0/SwaggerDemo.DbMigrator.AssemblyInfo.csutf-8

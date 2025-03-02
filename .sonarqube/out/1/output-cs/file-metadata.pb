@@ -4,6 +4,6 @@ Y/Users/nizar/SwaggerDemo/src/SwaggerDemo.Domain.Shared/MultiTenancy/MultiTenanc
 U/Users/nizar/SwaggerDemo/src/SwaggerDemo.Domain.Shared/SwaggerDemoDomainErrorCodes.csutf-8`
 W/Users/nizar/SwaggerDemo/src/SwaggerDemo.Domain.Shared/SwaggerDemoDomainSharedModule.csutf-8g
 ^/Users/nizar/SwaggerDemo/src/SwaggerDemo.Domain.Shared/SwaggerDemoGlobalFeatureConfigurator.csutf-8i
-`/Users/nizar/SwaggerDemo/src/SwaggerDemo.Domain.Shared/SwaggerDemoModuleExtensionConfigurator.csutf-8ä
-/Users/nizar/SwaggerDemo/src/SwaggerDemo.Domain.Shared/obj/Debug/netstandard2.1/.NETStandard,Version=v2.1.AssemblyAttributes.csutf-8Ñ
-y/Users/nizar/SwaggerDemo/src/SwaggerDemo.Domain.Shared/obj/Debug/netstandard2.1/SwaggerDemo.Domain.Shared.AssemblyInfo.csutf-8
+`/Users/nizar/SwaggerDemo/src/SwaggerDemo.Domain.Shared/SwaggerDemoModuleExtensionConfigurator.csutf-8Å
+v/Users/nizar/SwaggerDemo/src/SwaggerDemo.Domain.Shared/obj/Debug/net8.0/.NETCoreApp,Version=v8.0.AssemblyAttributes.csutf-8|
+q/Users/nizar/SwaggerDemo/src/SwaggerDemo.Domain.Shared/obj/Debug/net8.0/SwaggerDemo.Domain.Shared.AssemblyInfo.csutf-8

@@ -1,1 +1,5 @@
-﻿/Users/nizar/SwaggerDemo/src/SwaggerDemo.HttpApi.Client/SwaggerDemoHttpApiClientModule.cs
+﻿/Users/nizar/SwaggerDemo/test/SwaggerDemo.EntityFrameworkCore.Tests/EntityFrameworkCore/Samples/SampleRepositoryTests.cs
+/Users/nizar/SwaggerDemo/test/SwaggerDemo.EntityFrameworkCore.Tests/EntityFrameworkCore/SwaggerDemoEntityFrameworkCoreTestBase.cs
+/Users/nizar/SwaggerDemo/test/SwaggerDemo.EntityFrameworkCore.Tests/EntityFrameworkCore/SwaggerDemoEntityFrameworkCoreTestModule.cs
+/Users/nizar/.nuget/packages/microsoft.net.test.sdk/17.2.0/build/netcoreapp2.1/Microsoft.NET.Test.Sdk.Program.cs
+/Users/nizar/.nuget/packages/microsoft.testplatform.testhost/17.2.0/build/netcoreapp2.1/Microsoft.TestPlatform.PlatformAbstractions.dll

@@ -1,8 +1,20 @@
-¿
-Y/Users/nizar/SwaggerDemo/src/SwaggerDemo.HttpApi.Client/SwaggerDemoHttpApiClientModule.cs
- +##) G
- ) 
+c
+U/Users/nizar/SwaggerDemo/src/SwaggerDemo.HttpApi/Controllers/SwaggerDemoController.cs
 
- *
-G N 
-!!/ 6## 
+ +o
+I/Users/nizar/SwaggerDemo/src/SwaggerDemo.HttpApi/Models/Test/TestModel.cs
+
+ 
+
+ 
+
+		 ž
+L/Users/nizar/SwaggerDemo/src/SwaggerDemo.HttpApi/SwaggerDemoHttpApiModule.cs
+
+ %
+
+ *
+
+G N
+ & 
+  * 1"" 

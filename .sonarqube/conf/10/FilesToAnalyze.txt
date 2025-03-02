@@ -1,1 +1,4 @@
-﻿/Users/nizar/SwaggerDemo/src/SwaggerDemo.HttpApi.Client/SwaggerDemoHttpApiClientModule.cs
+﻿/Users/nizar/SwaggerDemo/src/SwaggerDemo.HttpApi/Controllers/SwaggerDemoController.cs
+/Users/nizar/SwaggerDemo/src/SwaggerDemo.HttpApi/Models/Test/TestModel.cs
+/Users/nizar/SwaggerDemo/src/SwaggerDemo.HttpApi/SwaggerDemoHttpApiModule.cs
+/Users/nizar/.nuget/packages/volo.abp.identity.httpapi/8.3.0/contentFiles/any/net8.0/Volo.Abp.Identity.HttpApi.abppkg.analyze.json

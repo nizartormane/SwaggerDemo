@@ -1,49 +1,664 @@
-•
-S/Users/nizar/SwaggerDemo/src/SwaggerDemo.HttpApi.Host/Controllers/HomeController.cs
+√
+c/Users/nizar/SwaggerDemo/src/SwaggerDemo.Web/Components/Toolbar/LoginLink/LoginLinkViewComponent.cs
 	namespace 	
 SwaggerDemo
  
-. 
-Controllers !
-;! "
+. 
+Web 
+. 
+
+Components $
+.$ %
+Toolbar% ,
+., -
+	LoginLink- 6
+;6 7
 public 
-class 
-HomeController 
-: 
-AbpController +
+class "
+LoginLinkViewComponent #
+:$ %
+AbpViewComponent& 6
 { 
 public 
-
-ActionResult 
-Index 
-( 
-) 
+
+virtual  
+IViewComponentResult '
+Invoke( .
+(. /
+)/ 0
 {		 
 return
 
- 
-Redirect
+ 
+View
 
- 
+ 
 (
 
- 
+ 
 $str
 
- #
+ C
 )
 
-# $
+C D
 ;
 
-$ %
+D E
 } 
-} í
-@/Users/nizar/SwaggerDemo/src/SwaggerDemo.HttpApi.Host/Program.cs
+} È
+M/Users/nizar/SwaggerDemo/src/SwaggerDemo.Web/Controllers/AccountController.cs
+	namespace 	
+SwaggerDemo
+ 
+. 
+Web 
+. 
+Controllers %
+;% &
+public 
+class 
+AccountController 
+:  &
+ChallengeAccountController! ;
+{ 
+} –3
+P/Users/nizar/SwaggerDemo/src/SwaggerDemo.Web/Menus/SwaggerDemoMenuContributor.cs
+	namespace 	
+SwaggerDemo
+ 
+. 
+Web 
+. 
+Menus 
+;  
+public 
+class &
+SwaggerDemoMenuContributor '
+:( )
+IMenuContributor* :
+{ 
+private 
+readonly 
+IConfiguration #
+_configuration$ 2
+;2 3
+public 
+&
+SwaggerDemoMenuContributor %
+(% &
+IConfiguration& 4
+configuration5 B
+)B C
+{ 
+_configuration 
+= 
+configuration &
+;& '
+} 
+public 
+
+async 
+Task 
+ConfigureMenuAsync (
+(( )$
+MenuConfigurationContext) A
+contextB I
+)I J
+{ 
+if 
+
+( 
+context 
+. 
+Menu 
+. 
+Name 
+==  
+StandardMenus! .
+.. /
+Main/ 3
+)3 4
+{ 	
+await "
+ConfigureMainMenuAsync (
+(( )
+context) 0
+)0 1
+;1 2
+} 	
+else   
+if   
+(   
+context   
+.   
+Menu   
+.   
+Name   "
+==  # %
+StandardMenus  & 3
+.  3 4
+User  4 8
+)  8 9
+{!! 	
+await"" "
+ConfigureUserMenuAsync"" (
+(""( )
+context"") 0
+)""0 1
+;""1 2
+}## 	
+}$$ 
+private&& 
+Task&& "
+ConfigureMainMenuAsync&& '
+(&&' ($
+MenuConfigurationContext&&( @
+context&&A H
+)&&H I
+{'' 
+var(( 
+administration(( 
+=(( 
+context(( $
+.(($ %
+Menu((% )
+.(() *
+GetAdministration((* ;
+(((; <
+)((< =
+;((= >
+var)) 
+l)) 
+=)) 
+context)) 
+.)) 
+GetLocalizer)) $
+<))$ %
+SwaggerDemoResource))% 8
+>))8 9
+())9 :
+))): ;
+;)); <
+context++ 
+.++ 
+Menu++ 
+.++ 
+Items++ 
+.++ 
+Insert++ !
+(++! "
+$num,, 
+,,, 
+new-- 
+ApplicationMenuItem-- #
+(--# $
+SwaggerDemoMenus..  
+...  !
+Home..! %
+,..% &
+l// 
+[// 
+$str// 
+]// 
+,// 
+$str00 
+,00 
+icon11 
+:11 
+$str11 #
+,11# $
+order22 
+:22 
+$num22 
+)33 
+)44 	
+;44	 
+
+if66 
+
+(66 
+MultiTenancyConsts66 
+.66 
+	IsEnabled66 (
+)66( )
+{77 	
+administration88 
+.88 
+SetSubItemOrder88 *
+(88* +%
+TenantManagementMenuNames88+ D
+.88D E
+	GroupName88E N
+,88N O
+$num88P Q
+)88Q R
+;88R S
+}99 	
+else:: 
+{;; 	
+administration<< 
+.<< 
+TryRemoveMenuItem<< ,
+(<<, -%
+TenantManagementMenuNames<<- F
+.<<F G
+	GroupName<<G P
+)<<P Q
+;<<Q R
+}== 	
+administration?? 
+.?? 
+SetSubItemOrder?? &
+(??& '
+IdentityMenuNames??' 8
+.??8 9
+	GroupName??9 B
+,??B C
+$num??D E
+)??E F
+;??F G
+administration@@ 
+.@@ 
+SetSubItemOrder@@ &
+(@@& '&
+SettingManagementMenuNames@@' A
+.@@A B
+	GroupName@@B K
+,@@K L
+$num@@M N
+)@@N O
+;@@O P
+returnBB 
+TaskBB 
+.BB 
+CompletedTaskBB !
+;BB! "
+}CC 
+privateEE 
+TaskEE "
+ConfigureUserMenuAsyncEE '
+(EE' ($
+MenuConfigurationContextEE( @
+contextEEA H
+)EEH I
+{FF 
+varGG 
+lGG 
+=GG 
+contextGG 
+.GG 
+GetLocalizerGG $
+<GG$ %
+SwaggerDemoResourceGG% 8
+>GG8 9
+(GG9 :
+)GG: ;
+;GG; <
+varHH "
+accountStringLocalizerHH "
+=HH# $
+contextHH% ,
+.HH, -
+GetLocalizerHH- 9
+<HH9 :
+AccountResourceHH: I
+>HHI J
+(HHJ K
+)HHK L
+;HHL M
+varII 
+authServerUrlII 
+=II 
+_configurationII *
+[II* +
+$strII+ A
+]IIA B
+??IIC E
+$strIIF H
+;IIH I
+contextKK 
+.KK 
+MenuKK 
+.KK 
+AddItemKK 
+(KK 
+newKK  
+ApplicationMenuItemKK! 4
+(KK4 5
+$strKK5 E
+,KKE F"
+accountStringLocalizerKKG ]
+[KK] ^
+$strKK^ i
+]KKi j
+,KKj k
+$"LL 
+{LL 
+authServerUrlLL 
+.LL 
+EnsureEndsWithLL +
+(LL+ ,
+$charLL, /
+)LL/ 0
+}LL0 1
+$strLL1 J
+{LLJ K
+_configurationLLK Y
+[LLY Z
+$strLLZ g
+]LLg h
+}LLh i
+"LLi j
+,LLj k
+iconLLl p
+:LLp q
+$strLLr }
+,LL} ~
+order	LL Ñ
+:
+LLÑ Ö
+$num
+LLÜ ä
+,
+LLä ã
+null
+LLå ê
+,
+LLê ë
+$str
+LLí ö
+)
+LLö õ
+.
+LLõ ú"
+RequireAuthenticated
+LLú ∞
+(
+LL∞ ±
+)
+LL± ≤
+)
+LL≤ ≥
+;
+LL≥ ¥
+contextMM 
+.MM 
+MenuMM 
+.MM 
+AddItemMM 
+(MM 
+newMM  
+ApplicationMenuItemMM! 4
+(MM4 5
+$strMM5 E
+,MME F
+lMMG H
+[MMH I
+$strMMI Q
+]MMQ R
+,MMR S
+urlMMT W
+:MMW X
+$strMMY k
+,MMk l
+iconMMm q
+:MMq r
+$str	MMs Ñ
+,
+MMÑ Ö
+order
+MMÜ ã
+:
+MMã å
+int
+MMç ê
+.
+MMê ë
+MaxValue
+MMë ô
+-
+MMö õ
+$num
+MMú †
+)
+MM† °
+.
+MM° ¢"
+RequireAuthenticated
+MM¢ ∂
+(
+MM∂ ∑
+)
+MM∑ ∏
+)
+MM∏ π
+;
+MMπ ∫
+returnOO 
+TaskOO 
+.OO 
+CompletedTaskOO !
+;OO! "
+}PP 
+}QQ ƒ
+F/Users/nizar/SwaggerDemo/src/SwaggerDemo.Web/Menus/SwaggerDemoMenus.cs
+	namespace 	
+SwaggerDemo
+ 
+. 
+Web 
+. 
+Menus 
+;  
+public 
+class 
+SwaggerDemoMenus 
+{ 
+private 
+const 
+string 
+Prefix 
+=  !
+$str" /
+;/ 0
+public 
+
+const 
+string 
+Home 
+= 
+Prefix %
++& '
+$str( /
+;/ 0
+}
+
+ ç
+S/Users/nizar/SwaggerDemo/src/SwaggerDemo.Web/Menus/SwaggerDemoToolbarContributor.cs
+	namespace 	
+SwaggerDemo
+ 
+. 
+Web 
+. 
+Menus 
+;  
+public		 
+class		 )
+SwaggerDemoToolbarContributor		 *
+:		+ ,
+IToolbarContributor		- @
+{
+
+ 
+public 
+
+virtual 
+Task !
+ConfigureToolbarAsync -
+(- .(
+IToolbarConfigurationContext. J
+contextK R
+)R S
+{ 
+if 
+
+( 
+context 
+. 
+Toolbar 
+. 
+Name  
+!=! #
+StandardToolbars$ 4
+.4 5
+Main5 9
+)9 :
+{ 	
+return 
+Task 
+. 
+CompletedTask %
+;% &
+} 	
+if 
+
+( 
+! 
+context 
+. 
+ServiceProvider $
+.$ %
+GetRequiredService% 7
+<7 8
+ICurrentUser8 D
+>D E
+(E F
+)F G
+.G H
+IsAuthenticatedH W
+)W X
+{ 	
+context 
+. 
+Toolbar 
+. 
+Items !
+.! "
+Add" %
+(% &
+new& )
+ToolbarItem* 5
+(5 6
+typeof6 <
+(< ="
+LoginLinkViewComponent= S
+)S T
+)T U
+)U V
+;V W
+} 	
+return 
+Task 
+. 
+CompletedTask !
+;! "
+} 
+} È
+B/Users/nizar/SwaggerDemo/src/SwaggerDemo.Web/Pages/Index.cshtml.cs
+	namespace 	
+SwaggerDemo
+ 
+. 
+Web 
+. 
+Pages 
+;  
+public 
+class 
+
+IndexModel 
+:  
+SwaggerDemoPageModel .
+{ 
+public 
+
+void 
+OnGet 
+( 
+) 
+{		 
+} 
+public 
+
+async 
+Task 
+OnPostLoginAsync &
+(& '
+)' (
+{ 
+await 
+HttpContext 
+. 
+ChallengeAsync (
+(( )
+$str) /
+)/ 0
+;0 1
+} 
+} ˜
+J/Users/nizar/SwaggerDemo/src/SwaggerDemo.Web/Pages/SwaggerDemoPageModel.cs
+	namespace 	
+SwaggerDemo
+ 
+. 
+Web 
+. 
+Pages 
+;  
+public 
+abstract 
+class  
+SwaggerDemoPageModel *
+:+ ,
+AbpPageModel- 9
+{ 
+	protected  
+SwaggerDemoPageModel "
+(" #
+)# $
+{		 $
+LocalizationResourceType
+
+  
+=
+
+! "
+typeof
+
+# )
+(
+
+) *
+SwaggerDemoResource
+
+* =
+)
+
+= >
+;
+
+> ?
+} 
+} °
+7/Users/nizar/SwaggerDemo/src/SwaggerDemo.Web/Program.cs
 	namespace		 	
 SwaggerDemo		
  
-;		 
+.		 
+Web		 
+;		 
 public 
 class 
 Program 
@@ -144,9 +759,9 @@ S/Users/nizar/SwaggerDemo/src/SwaggerDemo.HttpApi.Host/Controllers/HomeControlle
 . 
 Information 
 ( 
-$str @
-)@ A
-;A B
+$str 0
+)0 1
+;1 2
 var 
 builder 
 = 
@@ -179,12 +794,12 @@ UseSerilog"" 
 builder## 
 .## 
 AddApplicationAsync## -
-<##- .(
-SwaggerDemoHttpApiHostModule##. J
->##J K
-(##K L
-)##L M
-;##M N
+<##- . 
+SwaggerDemoWebModule##. B
+>##B C
+(##C D
+)##D E
+;##E F
 var$$ 
 app$$ 
 =$$ 
@@ -251,1436 +866,1876 @@ UseSerilog"" 
 ;55  
 }66 	
 }77 
-}88 Ïë
-U/Users/nizar/SwaggerDemo/src/SwaggerDemo.HttpApi.Host/SwaggerDemoHttpApiHostModule.cs
-	namespace   	
-SwaggerDemo  
+}88 „
+G/Users/nizar/SwaggerDemo/src/SwaggerDemo.Web/Properties/AssemblyInfo.cs
+[ 
+assembly 	
+:	 
+'
+InternalsVisibleToAttribute
+ %
+(% &
+$str& =
+)= >
+]> ?⁄
+K/Users/nizar/SwaggerDemo/src/SwaggerDemo.Web/SwaggerDemoBrandingProvider.cs
+	namespace 	
+SwaggerDemo
  
-;   
-["" 
-	DependsOn"" 
-
-(""
- 
-typeof## 
-
-(##
- $
-SwaggerDemoHttpApiModule## #
-)### $
-,##$ %
-typeof$$ 
-
-($$
- 
-AbpAutofacModule$$ 
-)$$ 
-,$$ 
-typeof%% 
-
-(%%
- .
-"AbpCachingStackExchangeRedisModule%% -
-)%%- .
-,%%. /
-typeof&& 
-
-(&&
- '
-AbpDistributedLockingModule&& &
-)&&& '
-,&&' (
-typeof'' 
-
-(''
- 0
-$AbpAspNetCoreMvcUiMultiTenancyModule'' /
-)''/ 0
-,''0 1
-typeof(( 
-
-(((
- (
-SwaggerDemoApplicationModule(( '
-)((' (
-,((( )
-typeof)) 
-
-())
- 0
-$SwaggerDemoEntityFrameworkCoreModule)) /
-)))/ 0
-,))0 1
-typeof** 
-
-(**
- &
-AbpAspNetCoreSerilogModule** %
-)**% &
-,**& '
-typeof++ 
-
-(++
-  
-AbpSwashbuckleModule++ 
-)++  
-),, 
-],, 
-public-- 
-class-- (
-SwaggerDemoHttpApiHostModule-- )
-:--* +
-	AbpModule--, 5
-{.. 
-public// 
+. 
+Web 
+; 
+[ 
+
+Dependency 
+( 
+ReplaceServices 
+= 
+true "
+)" #
+]# $
+public 
+class '
+SwaggerDemoBrandingProvider (
+:) *#
+DefaultBrandingProvider+ B
+{ 
+public		 
 
-override// 
-void// 
-ConfigureServices// *
-(//* +'
-ServiceConfigurationContext//+ F
-context//G N
-)//N O
-{00 
-var11 
-configuration11 
-=11 
-context11 #
-.11# $
-Services11$ ,
-.11, -
-GetConfiguration11- =
-(11= >
-)11> ?
-;11? @
-var22 
-hostingEnvironment22 
-=22  
-context22! (
-.22( )
-Services22) 1
-.221 2!
-GetHostingEnvironment222 G
-(22G H
-)22H I
-;22I J,
- ConfigureConventionalControllers44 (
-(44( )
-)44) *
-;44* +#
-ConfigureAuthentication55 
-(55  
-context55  '
-,55' (
-configuration55) 6
-)556 7
-;557 8
-ConfigureCache66 
-(66 
-configuration66 $
-)66$ %
-;66% &&
-ConfigureVirtualFileSystem77 "
-(77" #
-context77# *
-)77* +
-;77+ ,#
-ConfigureDataProtection88 
-(88  
-context88  '
-,88' (
-configuration88) 6
-,886 7
-hostingEnvironment888 J
-)88J K
-;88K L'
-ConfigureDistributedLocking99 #
-(99# $
-context99$ +
-,99+ ,
-configuration99- :
-)99: ;
-;99; <
-ConfigureCors:: 
-(:: 
-context:: 
-,:: 
-configuration:: ,
-)::, -
-;::- .$
-ConfigureSwaggerServices;;  
-(;;  !
-context;;! (
-,;;( )
-configuration;;* 7
-);;7 8
-;;;8 9
-}<< 
-private>> 
-void>> 
-ConfigureCache>> 
-(>>  
-IConfiguration>>  .
-configuration>>/ <
-)>>< =
-{?? 
-	Configure@@ 
-<@@ &
-AbpDistributedCacheOptions@@ ,
->@@, -
-(@@- .
-options@@. 5
-=>@@6 8
-{@@9 :
-options@@; B
-.@@B C
-	KeyPrefix@@C L
-=@@M N
-$str@@O ]
-;@@] ^
-}@@_ `
-)@@` a
-;@@a b
-}AA 
-privateCC 
-voidCC &
-ConfigureVirtualFileSystemCC +
-(CC+ ,'
-ServiceConfigurationContextCC, G
-contextCCH O
-)CCO P
-{DD 
-varEE 
-hostingEnvironmentEE 
-=EE  
-contextEE! (
-.EE( )
-ServicesEE) 1
-.EE1 2!
-GetHostingEnvironmentEE2 G
-(EEG H
-)EEH I
-;EEI J
-ifGG 
+override		 
+string		 
+AppName		 "
+=>		# %
+$str		& 3
+;		3 4
+}
+
+ ª
+O/Users/nizar/SwaggerDemo/src/SwaggerDemo.Web/SwaggerDemoWebAutoMapperProfile.cs
+	namespace 	
+SwaggerDemo
+ 
+. 
+Web 
+; 
+public 
+class +
+SwaggerDemoWebAutoMapperProfile ,
+:- .
+Profile/ 6
+{ 
+public 
++
+SwaggerDemoWebAutoMapperProfile *
+(* +
+)+ ,
+{ 
+}
+
+ 
+} ∏™
+D/Users/nizar/SwaggerDemo/src/SwaggerDemo.Web/SwaggerDemoWebModule.cs
+	namespace00 	
+SwaggerDemo00
+ 
+.00 
+Web00 
+;00 
+[22 
+	DependsOn22 
 
-(GG 
-hostingEnvironmentGG 
-.GG 
-IsDevelopmentGG ,
-(GG, -
-)GG- .
-)GG. /
-{HH 	
-	ConfigureII 
-<II '
-AbpVirtualFileSystemOptionsII 1
->II1 2
-(II2 3
-optionsII3 :
-=>II; =
-{JJ 
-optionsKK 
-.KK 
-FileSetsKK  
-.KK  !%
-ReplaceEmbeddedByPhysicalKK! :
-<KK: ;)
-SwaggerDemoDomainSharedModuleKK; X
->KKX Y
-(KKY Z
-PathLL 
-.LL 
-CombineLL  
-(LL  !
-hostingEnvironmentLL! 3
-.LL3 4
-ContentRootPathLL4 C
-,LLC D
-$"MM 
-$strMM 
-{MM 
-PathMM !
-.MM! ""
-DirectorySeparatorCharMM" 8
-}MM8 9
-$strMM9 R
-"MMR S
-)MMS T
-)MMT U
-;MMU V
-optionsNN 
-.NN 
-FileSetsNN  
-.NN  !%
-ReplaceEmbeddedByPhysicalNN! :
-<NN: ;#
-SwaggerDemoDomainModuleNN; R
->NNR S
-(NNS T
-PathOO 
-.OO 
-CombineOO  
-(OO  !
-hostingEnvironmentOO! 3
-.OO3 4
-ContentRootPathOO4 C
-,OOC D
-$"PP 
-$strPP 
-{PP 
-PathPP !
-.PP! ""
-DirectorySeparatorCharPP" 8
-}PP8 9
-$strPP9 K
-"PPK L
-)PPL M
-)PPM N
-;PPN O
-optionsQQ 
-.QQ 
-FileSetsQQ  
-.QQ  !%
-ReplaceEmbeddedByPhysicalQQ! :
-<QQ: ;1
-%SwaggerDemoApplicationContractsModuleQQ; `
->QQ` a
-(QQa b
-PathRR 
-.RR 
-CombineRR  
-(RR  !
-hostingEnvironmentRR! 3
-.RR3 4
-ContentRootPathRR4 C
-,RRC D
-$"SS 
-$strSS 
-{SS 
-PathSS !
-.SS! ""
-DirectorySeparatorCharSS" 8
-}SS8 9
-$strSS9 Z
-"SSZ [
-)SS[ \
-)SS\ ]
-;SS] ^
-optionsTT 
-.TT 
-FileSetsTT  
-.TT  !%
-ReplaceEmbeddedByPhysicalTT! :
-<TT: ;(
-SwaggerDemoApplicationModuleTT; W
->TTW X
-(TTX Y
-PathUU 
-.UU 
-CombineUU  
-(UU  !
-hostingEnvironmentUU! 3
-.UU3 4
-ContentRootPathUU4 C
-,UUC D
-$"VV 
-$strVV 
-{VV 
-PathVV !
-.VV! ""
-DirectorySeparatorCharVV" 8
-}VV8 9
-$strVV9 P
-"VVP Q
-)VVQ R
-)VVR S
-;VVS T
-}WW 
-)WW 
-;WW 
-}XX 	
-}YY 
-private[[ 
-void[[ ,
- ConfigureConventionalControllers[[ 1
-([[1 2
-)[[2 3
-{\\ 
-	Configure]] 
-<]] #
-AbpAspNetCoreMvcOptions]] )
->]]) *
-(]]* +
-options]]+ 2
-=>]]3 5
-{^^ 	
-options__ 
-.__ #
-ConventionalControllers__ +
-.__+ ,
-Create__, 2
-(__2 3
-typeof__3 9
-(__9 :(
-SwaggerDemoApplicationModule__: V
-)__V W
-.__W X
-Assembly__X `
-)__` a
-;__a b
-}`` 	
-)``	 
+(22
+ 
+typeof33 
 
-;``
+(33
+ *
+SwaggerDemoHttpApiClientModule33 )
+)33) *
+,33* +
+typeof44 
+
+(44
+ $
+SwaggerDemoHttpApiModule44 #
+)44# $
+,44$ %
+typeof55 
+
+(55
+ :
+.AbpAspNetCoreAuthenticationOpenIdConnectModule55 9
+)559 :
+,55: ;
+typeof66 
+
+(66
+ (
+AbpAspNetCoreMvcClientModule66 '
+)66' (
+,66( )
+typeof77 
+
+(77
+ "
+AbpHttpClientWebModule77 !
+)77! "
+,77" #
+typeof88 
+
+(88
+ 4
+(AbpAspNetCoreMvcUiLeptonXLiteThemeModule88 3
+)883 4
+,884 5
+typeof99 
+
+(99
+ 
+AbpAutofacModule99 
+)99 
+,99 
+typeof:: 
+
+(::
+ .
+"AbpCachingStackExchangeRedisModule:: -
+)::- .
+,::. /
+typeof;; 
+
+(;;
+ '
+AbpDistributedLockingModule;; &
+);;& '
+,;;' (
+typeof<< 
+
+(<<
+ )
+AbpSettingManagementWebModule<< (
+)<<( )
+,<<) *
+typeof== 
+
+(==
+ /
+#AbpHttpClientIdentityModelWebModule== .
+)==. /
+,==/ 0
+typeof>> 
+
+(>>
+  
+AbpIdentityWebModule>> 
+)>>  
+,>>  !
+typeof?? 
+
+(??
+ (
+AbpTenantManagementWebModule?? '
+)??' (
+,??( )
+typeof@@ 
+
+(@@
+ &
+AbpAspNetCoreSerilogModule@@ %
+)@@% &
+,@@& '
+typeofAA 
+
+(AA
+  
+AbpSwashbuckleModuleAA 
+)AA  
+)BB 
+]BB 
+publicCC 
+classCC  
+SwaggerDemoWebModuleCC !
+:CC" #
+	AbpModuleCC$ -
+{DD 
+publicEE 
+
+overrideEE 
+voidEE  
+PreConfigureServicesEE -
+(EE- .'
+ServiceConfigurationContextEE. I
+contextEEJ Q
+)EEQ R
+{FF 
+contextGG 
+.GG 
+ServicesGG 
+.GG 
+PreConfigureGG %
+<GG% &4
+(AbpMvcDataAnnotationsLocalizationOptionsGG& N
+>GGN O
+(GGO P
+optionsGGP W
+=>GGX Z
+{HH 	
+optionsII 
+.II 
+AddAssemblyResourceII '
+(II' (
+typeofJJ 
+(JJ 
+SwaggerDemoResourceJJ *
+)JJ* +
+,JJ+ ,
+typeofKK 
+(KK )
+SwaggerDemoDomainSharedModuleKK 4
+)KK4 5
+.KK5 6
+AssemblyKK6 >
+,KK> ?
+typeofLL 
+(LL 1
+%SwaggerDemoApplicationContractsModuleLL <
+)LL< =
+.LL= >
+AssemblyLL> F
+,LLF G
+typeofMM 
+(MM  
+SwaggerDemoWebModuleMM +
+)MM+ ,
+.MM, -
+AssemblyMM- 5
+)NN 
+;NN 
+}OO 	
+)OO	 
+
+;OO
  
-}aa 
-privatecc 
-voidcc #
-ConfigureAuthenticationcc (
-(cc( )'
-ServiceConfigurationContextcc) D
-contextccE L
-,ccL M
-IConfigurationccN \
-configurationcc] j
-)ccj k
-{dd 
-contextee 
-.ee 
-Servicesee 
-.ee 
-AddAuthenticationee *
-(ee* +
-JwtBearerDefaultsee+ <
-.ee< = 
-AuthenticationSchemeee= Q
-)eeQ R
-.ff 
-AddJwtBearerff 
-(ff 
-optionsff !
-=>ff" $
-{gg 
-optionshh 
-.hh 
-	Authorityhh !
-=hh" #
-configurationhh$ 1
-[hh1 2
-$strhh2 H
-]hhH I
-;hhI J
-optionsii 
-.ii  
-RequireHttpsMetadataii ,
-=ii- .
-Convertii/ 6
-.ii6 7
-	ToBooleanii7 @
-(ii@ A
-configurationiiA N
-[iiN O
-$striiO p
-]iip q
-)iiq r
-;iir s
-optionsjj 
-.jj 
-Audiencejj  
-=jj! "
-$strjj# 0
-;jj0 1
-optionskk 
-.kk 
-MapInboundClaimskk (
-=kk) *
-falsekk+ 0
-;kk0 1
-}ll 
-)ll 
-;ll 
-}mm 
-privateoo 
-staticoo 
-voidoo $
-ConfigureSwaggerServicesoo 0
-(oo0 1'
-ServiceConfigurationContextoo1 L
-contextooM T
-,ooT U
-IConfigurationooV d
-configurationooe r
-)oor s
-{pp 
-context
-ÅÅ 
-.
-ÅÅ 
-Services
-ÅÅ 
-.
-ÅÅ &
-AddAbpSwaggerGenWithOidc
-ÅÅ 1
-(
-ÅÅ1 2
-configuration
-ÇÇ 
-[
-ÇÇ 
-$str
-ÇÇ 0
-]
-ÇÇ0 1
-,
-ÇÇ1 2
-scopes
-ÉÉ 
-:
-ÉÉ 
-new
-ÉÉ 
-[
-ÉÉ 
-]
-ÉÉ 
-{
-ÉÉ 
-$str
-ÉÉ )
-}
-ÉÉ* +
-,
-ÉÉ+ ,
-flows
-ÖÖ 
-:
-ÖÖ 
-new
-ÖÖ 
-[
-ÖÖ 
-]
-ÖÖ 
-{
-ÖÖ !
-AbpSwaggerOidcFlows
-ÖÖ .
-.
-ÖÖ. /
-AuthorizationCode
-ÖÖ/ @
-,
-ÖÖ@ A!
-AbpSwaggerOidcFlows
-ÖÖB U
-.
-ÖÖU V
-Password
-ÖÖV ^
-}
-ÖÖ_ `
-,
-ÖÖ` a
-discoveryEndpoint
-àà 
-:
-àà 
-null
-àà #
-,
-àà# $
-options
-ââ 
-=>
-ââ 
-{
-ää 
-options
-ãã 
-.
-ãã 
-
-SwaggerDoc
-ãã "
-(
-ãã" #
-$str
-ãã# '
-,
-ãã' (
-new
-ãã) ,
-OpenApiInfo
-ãã- 8
-{
-ãã9 :
-Title
-ãã; @
-=
-ããA B
-$str
-ããC T
-,
-ããT U
-Version
-ããV ]
-=
-ãã^ _
-$str
-ãã` d
-}
-ããe f
-)
-ããf g
-;
-ããg h
-options
-åå 
-.
-åå #
-DocInclusionPredicate
-åå -
-(
-åå- .
-(
-åå. /
-docName
-åå/ 6
-,
-åå6 7
-description
-åå8 C
-)
-ååC D
-=>
-ååE G
-true
-ååH L
-)
-ååL M
-;
-ååM N
-options
-çç 
-.
-çç 
-CustomSchemaIds
-çç '
-(
-çç' (
-type
-çç( ,
-=>
-çç- /
-type
-çç0 4
-.
-çç4 5
-FullName
-çç5 =
-)
-çç= >
-;
-çç> ?
-}
-éé 
-)
-éé 
-;
-éé 
-}
-èè 
-private
-ëë 
-void
-ëë %
-ConfigureDataProtection
-ëë (
-(
-ëë( ))
-ServiceConfigurationContext
-íí #
-context
-íí$ +
-,
-íí+ ,
-IConfiguration
-ìì 
-configuration
-ìì $
-,
-ìì$ %!
-IWebHostEnvironment
-îî  
-hostingEnvironment
-îî .
-)
-îî. /
-{
-ïï 
-var
-ññ #
-dataProtectionBuilder
-ññ !
-=
-ññ" #
-context
-ññ$ +
-.
-ññ+ ,
-Services
-ññ, 4
-.
-ññ4 5
-AddDataProtection
-ññ5 F
-(
-ññF G
-)
-ññG H
-.
-ññH I 
-SetApplicationName
-ññI [
-(
-ññ[ \
-$str
-ññ\ i
-)
-ññi j
-;
-ññj k
-if
-óó 
-
-(
-óó 
-!
-óó  
-hostingEnvironment
-óó 
-.
-óó  
-IsDevelopment
-óó  -
-(
-óó- .
-)
-óó. /
-)
-óó/ 0
-{
-òò 	
-var
-ôô 
-redis
-ôô 
-=
-ôô #
-ConnectionMultiplexer
-ôô -
-.
-ôô- .
-Connect
-ôô. 5
-(
-ôô5 6
-configuration
-ôô6 C
-[
-ôôC D
-$str
-ôôD Y
-]
-ôôY Z
-)
-ôôZ [
-;
-ôô[ \#
-dataProtectionBuilder
-öö !
-.
-öö! "-
-PersistKeysToStackExchangeRedis
-öö" A
-(
-ööA B
-redis
-ööB G
-,
-ööG H
-$str
-ööI f
-)
-ööf g
-;
-öög h
-}
-õõ 	
-}
-úú 
-private
-ûû 
-void
-ûû )
-ConfigureDistributedLocking
-ûû ,
-(
-ûû, -)
-ServiceConfigurationContext
-üü #
-context
-üü$ +
-,
-üü+ ,
-IConfiguration
-†† 
-configuration
-†† $
-)
-††$ %
-{
-°° 
-context
-¢¢ 
-.
-¢¢ 
-Services
-¢¢ 
-.
-¢¢ 
-AddSingleton
-¢¢ %
-<
-¢¢% &&
-IDistributedLockProvider
-¢¢& >
->
-¢¢> ?
-(
-¢¢? @
-sp
-¢¢@ B
-=>
-¢¢C E
-{
-££ 	
-var
-§§ 
-
-connection
-§§ 
-=
-§§ #
-ConnectionMultiplexer
-§§ 2
-.
-•• 
-Connect
-•• 
-(
-•• 
-configuration
-•• &
-[
-••& '
-$str
-••' <
-]
-••< =
-)
-••= >
-;
-••> ?
-return
-¶¶ 
-new
-¶¶ 5
-'RedisDistributedSynchronizationProvider
-¶¶ >
-(
-¶¶> ?
-
-connection
-¶¶? I
-.
-¶¶I J
-GetDatabase
-¶¶J U
-(
-¶¶U V
-)
-¶¶V W
-)
-¶¶W X
-;
-¶¶X Y
-}
-ßß 	
-)
-ßß	 
-
-;
-ßß
+}PP 
+publicRR 
+
+overrideRR 
+voidRR 
+ConfigureServicesRR *
+(RR* +'
+ServiceConfigurationContextRR+ F
+contextRRG N
+)RRN O
+{SS 
+varTT 
+hostingEnvironmentTT 
+=TT  
+contextTT! (
+.TT( )
+ServicesTT) 1
+.TT1 2!
+GetHostingEnvironmentTT2 G
+(TTG H
+)TTH I
+;TTI J
+varUU 
+configurationUU 
+=UU 
+contextUU #
+.UU# $
+ServicesUU$ ,
+.UU, -
+GetConfigurationUU- =
+(UU= >
+)UU> ?
+;UU? @
+ConfigureBundlesWW 
+(WW 
+)WW 
+;WW 
+ConfigureCacheXX 
+(XX 
+)XX 
+;XX #
+ConfigureDataProtectionYY 
+(YY  
+contextYY  '
+,YY' (
+configurationYY) 6
+,YY6 7
+hostingEnvironmentYY8 J
+)YYJ K
+;YYK L'
+ConfigureDistributedLockingZZ #
+(ZZ# $
+contextZZ$ +
+,ZZ+ ,
+configurationZZ- :
+)ZZ: ;
+;ZZ; <
+ConfigureUrls[[ 
+([[ 
+configuration[[ #
+)[[# $
+;[[$ %#
+ConfigureAuthentication\\ 
+(\\  
+context\\  '
+,\\' (
+configuration\\) 6
+)\\6 7
+;\\7 8
+ConfigureAutoMapper]] 
+(]] 
+)]] 
+;]] &
+ConfigureVirtualFileSystem^^ "
+(^^" #
+hostingEnvironment^^# 5
+)^^5 6
+;^^6 7'
+ConfigureNavigationServices__ #
+(__# $
+configuration__$ 1
+)__1 2
+;__2 3!
+ConfigureMultiTenancy`` 
+(`` 
+)`` 
+;``  $
+ConfigureSwaggerServicesaa  
+(aa  !
+contextaa! (
+.aa( )
+Servicesaa) 1
+)aa1 2
+;aa2 3
+}bb 
+privatedd 
+voiddd 
+ConfigureBundlesdd !
+(dd! "
+)dd" #
+{ee 
+	Configureff 
+<ff 
+AbpBundlingOptionsff $
+>ff$ %
+(ff% &
+optionsff& -
+=>ff. 0
+{gg 	
+optionshh 
+.hh 
+StyleBundleshh  
+.hh  !
+	Configurehh! *
+(hh* +#
+LeptonXLiteThemeBundlesii '
+.ii' (
+Stylesii( .
+.ii. /
+Globalii/ 5
+,ii5 6
+bundlejj 
+=>jj 
+{kk 
+bundlell 
+.ll 
+AddFilesll #
+(ll# $
+$strll$ 8
+)ll8 9
+;ll9 :
+}mm 
+)nn 
+;nn 
+}oo 	
+)oo	 
+
+;oo
+ 
+}pp 
+privaterr 
+voidrr 
+ConfigureCacherr 
+(rr  
+)rr  !
+{ss 
+	Configurett 
+<tt &
+AbpDistributedCacheOptionstt ,
+>tt, -
+(tt- .
+optionstt. 5
+=>tt6 8
+{uu 	
+optionsvv 
+.vv 
+	KeyPrefixvv 
+=vv 
+$strvv  .
+;vv. /
+}ww 	
+)ww	 
+
+;ww
+ 
+}xx 
+privatezz 
+voidzz 
+ConfigureUrlszz 
+(zz 
+IConfigurationzz -
+configurationzz. ;
+)zz; <
+{{{ 
+	Configure|| 
+<|| 
+AppUrlOptions|| 
+>||  
+(||  !
+options||! (
+=>||) +
+{}} 	
+options~~ 
+.~~ 
+Applications~~  
+[~~  !
+$str~~! &
+]~~& '
+.~~' (
+RootUrl~~( /
+=~~0 1
+configuration~~2 ?
+[~~? @
+$str~~@ M
+]~~M N
+;~~N O
+} 	
+)	 
+
+;
  
+}
+ÄÄ 
+private
+ÇÇ 
+void
+ÇÇ #
+ConfigureMultiTenancy
+ÇÇ &
+(
+ÇÇ& '
+)
+ÇÇ' (
+{
+ÉÉ 
+	Configure
+ÑÑ 
+<
+ÑÑ $
+AbpMultiTenancyOptions
+ÑÑ (
+>
+ÑÑ( )
+(
+ÑÑ) *
+options
+ÑÑ* 1
+=>
+ÑÑ2 4
+{
+ÖÖ 	
+options
+ÜÜ 
+.
+ÜÜ 
+	IsEnabled
+ÜÜ 
+=
+ÜÜ  
+MultiTenancyConsts
+ÜÜ  2
+.
+ÜÜ2 3
+	IsEnabled
+ÜÜ3 <
+;
+ÜÜ< =
+}
+áá 	
+)
+áá	 
+
+;
+áá
+ 
+}
+àà 
+private
+ää 
+void
+ää %
+ConfigureAuthentication
+ää (
+(
+ää( ))
+ServiceConfigurationContext
+ää) D
+context
+ääE L
+,
+ääL M
+IConfiguration
+ääN \
+configuration
+ää] j
+)
+ääj k
+{
+ãã 
+context
+åå 
+.
+åå 
+Services
+åå 
+.
+åå 
+AddAuthentication
+åå *
+(
+åå* +
+options
+åå+ 2
+=>
+åå3 5
+{
+çç 
+options
+éé 
+.
+éé 
+DefaultScheme
+éé %
+=
+éé& '
+$str
+éé( 1
+;
+éé1 2
+options
+èè 
+.
+èè $
+DefaultChallengeScheme
+èè .
+=
+èè/ 0
+$str
+èè1 7
+;
+èè7 8
+}
+êê 
+)
+êê 
+.
+ëë 
+	AddCookie
+ëë 
+(
+ëë 
+$str
+ëë  
+,
+ëë  !
+options
+ëë" )
+=>
+ëë* ,
+{
+íí 
+options
+ìì 
+.
+ìì 
+ExpireTimeSpan
+ìì &
+=
+ìì' (
+TimeSpan
+ìì) 1
+.
+ìì1 2
+FromDays
+ìì2 :
+(
+ìì: ;
+$num
+ìì; >
+)
+ìì> ?
+;
+ìì? @
+options
+îî 
+.
+îî "
+CheckTokenExpiration
+îî ,
+(
+îî, -
+)
+îî- .
+;
+îî. /
+}
+ïï 
+)
+ïï 
+.
+ññ !
+AddAbpOpenIdConnect
+ññ  
+(
+ññ  !
+$str
+ññ! '
+,
+ññ' (
+options
+ññ) 0
+=>
+ññ1 3
+{
+óó 
+options
+òò 
+.
+òò 
+	Authority
+òò !
+=
+òò" #
+configuration
+òò$ 1
+[
+òò1 2
+$str
+òò2 H
+]
+òòH I
+;
+òòI J
+options
+ôô 
+.
+ôô "
+RequireHttpsMetadata
+ôô ,
+=
+ôô- .
+Convert
+ôô/ 6
+.
+ôô6 7
+	ToBoolean
+ôô7 @
+(
+ôô@ A
+configuration
+ôôA N
+[
+ôôN O
+$str
+ôôO p
+]
+ôôp q
+)
+ôôq r
+;
+ôôr s
+options
+öö 
+.
+öö 
+ResponseType
+öö $
+=
+öö% &'
+OpenIdConnectResponseType
+öö' @
+.
+öö@ A
+CodeIdToken
+ööA L
+;
+ööL M
+options
+úú 
+.
+úú 
+ClientId
+úú  
+=
+úú! "
+configuration
+úú# 0
+[
+úú0 1
+$str
+úú1 F
+]
+úúF G
+;
+úúG H
+options
+ùù 
+.
+ùù 
+ClientSecret
+ùù $
+=
+ùù% &
+configuration
+ùù' 4
+[
+ùù4 5
+$str
+ùù5 N
+]
+ùùN O
+;
+ùùO P
+options
+üü 
+.
+üü 
+UsePkce
+üü 
+=
+üü  !
+true
+üü" &
+;
+üü& '
+options
+†† 
+.
+†† 
+
+SaveTokens
+†† "
+=
+††# $
+true
+††% )
+;
+††) *
+options
+°° 
+.
+°° +
+GetClaimsFromUserInfoEndpoint
+°° 5
+=
+°°6 7
+true
+°°8 <
+;
+°°< =
+options
+££ 
+.
+££ 
+Scope
+££ 
+.
+££ 
+Add
+££ !
+(
+££! "
+$str
+££" )
+)
+££) *
+;
+££* +
+options
+§§ 
+.
+§§ 
+Scope
+§§ 
+.
+§§ 
+Add
+§§ !
+(
+§§! "
+$str
+§§" )
+)
+§§) *
+;
+§§* +
+options
+•• 
+.
+•• 
+Scope
+•• 
+.
+•• 
+Add
+•• !
+(
+••! "
+$str
+••" )
+)
+••) *
+;
+••* +
+options
+¶¶ 
+.
+¶¶ 
+Scope
+¶¶ 
+.
+¶¶ 
+Add
+¶¶ !
+(
+¶¶! "
+$str
+¶¶" /
+)
+¶¶/ 0
+;
+¶¶0 1
+}
+ßß 
+)
+ßß 
+;
+ßß 
 }
 ®® 
 private
 ™™ 
 void
-™™ 
-ConfigureCors
-™™ 
+™™ !
+ConfigureAutoMapper
+™™ $
 (
-™™ )
-ServiceConfigurationContext
-™™ :
-context
-™™; B
-,
-™™B C
-IConfiguration
-™™D R
-configuration
-™™S `
+™™$ %
 )
-™™` a
+™™% &
 {
-´´ 
-context
-¨¨ 
-.
-¨¨ 
-Services
-¨¨ 
-.
-¨¨ 
-AddCors
-¨¨  
+´´ 
+	Configure
+¨¨ 
+<
+¨¨ "
+AbpAutoMapperOptions
+¨¨ &
+>
+¨¨& '
 (
-¨¨  !
+¨¨' (
 options
-¨¨! (
+¨¨( /
 =>
-¨¨) +
+¨¨0 2
 {
 ≠≠ 	
 options
 ÆÆ 
 .
-ÆÆ 
-AddDefaultPolicy
-ÆÆ $
-(
-ÆÆ$ %
-builder
-ÆÆ% ,
-=>
-ÆÆ- /
-{
-ØØ 
-builder
-∞∞ 
-.
-±± 
-WithOrigins
-±±  
-(
-±±  !
-configuration
-±±! .
-[
-±±. /
-$str
-±±/ @
-]
-±±@ A
-?
-±±A B
-.
-≤≤ 
-Split
-≤≤ 
-(
-≤≤ 
-$str
-≤≤ "
-,
-≤≤" # 
-StringSplitOptions
-≤≤$ 6
-.
-≤≤6 7 
-RemoveEmptyEntries
-≤≤7 I
-)
-≤≤I J
-.
-≥≥ 
-Select
-≥≥ 
-(
-≥≥  
-o
-≥≥  !
-=>
-≥≥" $
-o
-≥≥% &
-.
-≥≥& '
-RemovePostFix
-≥≥' 4
-(
-≥≥4 5
-$str
-≥≥5 8
-)
-≥≥8 9
-)
-≥≥9 :
-.
-¥¥ 
-ToArray
-¥¥  
-(
-¥¥  !
-)
-¥¥! "
-??
-¥¥# %
-Array
-¥¥& +
-.
-¥¥+ ,
-Empty
-¥¥, 1
+ÆÆ 
+AddMaps
+ÆÆ 
 <
-¥¥1 2
-string
-¥¥2 8
+ÆÆ "
+SwaggerDemoWebModule
+ÆÆ 0
 >
-¥¥8 9
+ÆÆ0 1
 (
-¥¥9 :
+ÆÆ1 2
 )
-¥¥: ;
-)
-¥¥; <
-.
-µµ #
-WithAbpExposedHeaders
-µµ *
-(
-µµ* +
-)
-µµ+ ,
-.
-∂∂ 9
-+SetIsOriginAllowedToAllowWildcardSubdomains
-∂∂ @
-(
-∂∂@ A
-)
-∂∂A B
-.
-∑∑ 
-AllowAnyHeader
-∑∑ #
-(
-∑∑# $
-)
-∑∑$ %
-.
-∏∏ 
-AllowAnyMethod
-∏∏ #
-(
-∏∏# $
-)
-∏∏$ %
-.
-ππ 
-AllowCredentials
-ππ %
-(
-ππ% &
-)
-ππ& '
+ÆÆ2 3
 ;
-ππ' (
+ÆÆ3 4
 }
-∫∫ 
+ØØ 	
 )
-∫∫ 
-;
-∫∫ 
-}
-ªª 	
-)
-ªª	 
+ØØ	 
 
 ;
-ªª
+ØØ
  
 }
-ºº 
+∞∞ 
+private
+≤≤ 
+void
+≤≤ (
+ConfigureVirtualFileSystem
+≤≤ +
+(
+≤≤+ ,!
+IWebHostEnvironment
+≤≤, ? 
+hostingEnvironment
+≤≤@ R
+)
+≤≤R S
+{
+≥≥ 
+if
+¥¥ 
+
+(
+¥¥  
+hostingEnvironment
+¥¥ 
+.
+¥¥ 
+IsDevelopment
+¥¥ ,
+(
+¥¥, -
+)
+¥¥- .
+)
+¥¥. /
+{
+µµ 	
+	Configure
+∂∂ 
+<
+∂∂ )
+AbpVirtualFileSystemOptions
+∂∂ 1
+>
+∂∂1 2
+(
+∂∂2 3
+options
+∂∂3 :
+=>
+∂∂; =
+{
+∑∑ 
+options
+∏∏ 
+.
+∏∏ 
+FileSets
+∏∏  
+.
+∏∏  !'
+ReplaceEmbeddedByPhysical
+∏∏! :
+<
+∏∏: ;+
+SwaggerDemoDomainSharedModule
+∏∏; X
+>
+∏∏X Y
+(
+∏∏Y Z
+Path
+∏∏Z ^
+.
+∏∏^ _
+Combine
+∏∏_ f
+(
+∏∏f g 
+hostingEnvironment
+∏∏g y
+.
+∏∏y z
+ContentRootPath∏∏z â
+,∏∏â ä
+$"∏∏ã ç
+$str∏∏ç è
+{∏∏è ê
+Path∏∏ê î
+.∏∏î ï&
+DirectorySeparatorChar∏∏ï ´
+}∏∏´ ¨
+$str∏∏¨ ≈
+"∏∏≈ ∆
+)∏∏∆ «
+)∏∏« »
+;∏∏» …
+options
+ππ 
+.
+ππ 
+FileSets
+ππ  
+.
+ππ  !'
+ReplaceEmbeddedByPhysical
+ππ! :
+<
+ππ: ;3
+%SwaggerDemoApplicationContractsModule
+ππ; `
+>
+ππ` a
+(
+ππa b
+Path
+ππb f
+.
+ππf g
+Combine
+ππg n
+(
+ππn o!
+hostingEnvironmentππo Å
+.ππÅ Ç
+ContentRootPathππÇ ë
+,ππë í
+$"ππì ï
+$strππï ó
+{ππó ò
+Pathππò ú
+.ππú ù&
+DirectorySeparatorCharππù ≥
+}ππ≥ ¥
+$strππ¥ ’
+"ππ’ ÷
+)ππ÷ ◊
+)ππ◊ ÿ
+;ππÿ Ÿ
+options
+∫∫ 
+.
+∫∫ 
+FileSets
+∫∫  
+.
+∫∫  !'
+ReplaceEmbeddedByPhysical
+∫∫! :
+<
+∫∫: ;"
+SwaggerDemoWebModule
+∫∫; O
+>
+∫∫O P
+(
+∫∫P Q 
+hostingEnvironment
+∫∫Q c
+.
+∫∫c d
+ContentRootPath
+∫∫d s
+)
+∫∫s t
+;
+∫∫t u
+}
+ªª 
+)
+ªª 
+;
+ªª 
+}
+ºº 	
+}
+ΩΩ 
+private
+øø 
+void
+øø )
+ConfigureNavigationServices
+øø ,
+(
+øø, -
+IConfiguration
+øø- ;
+configuration
+øø< I
+)
+øøI J
+{
+¿¿ 
+	Configure
+¡¡ 
+<
+¡¡ "
+AbpNavigationOptions
+¡¡ &
+>
+¡¡& '
+(
+¡¡' (
+options
+¡¡( /
+=>
+¡¡0 2
+{
+¬¬ 	
+options
+√√ 
+.
+√√ 
+MenuContributors
+√√ $
+.
+√√$ %
+Add
+√√% (
+(
+√√( )
+new
+√√) ,(
+SwaggerDemoMenuContributor
+√√- G
+(
+√√G H
+configuration
+√√H U
+)
+√√U V
+)
+√√V W
+;
+√√W X
+}
+ƒƒ 	
+)
+ƒƒ	 
+
+;
+ƒƒ
+ 
+	Configure
+∆∆ 
+<
+∆∆ 
+AbpToolbarOptions
+∆∆ #
+>
+∆∆# $
+(
+∆∆$ %
+options
+∆∆% ,
+=>
+∆∆- /
+{
+«« 	
+options
+»» 
+.
+»» 
+Contributors
+»»  
+.
+»»  !
+Add
+»»! $
+(
+»»$ %
+new
+»»% (+
+SwaggerDemoToolbarContributor
+»») F
+(
+»»F G
+)
+»»G H
+)
+»»H I
+;
+»»I J
+}
+…… 	
+)
+……	 
+
+;
+……
+ 
+}
+   
+private
+ÃÃ 
+void
+ÃÃ &
+ConfigureSwaggerServices
+ÃÃ )
+(
+ÃÃ) * 
+IServiceCollection
+ÃÃ* <
+services
+ÃÃ= E
+)
+ÃÃE F
+{
+ÕÕ 
+services
+ŒŒ 
+.
+ŒŒ 
+AddAbpSwaggerGen
+ŒŒ !
+(
+ŒŒ! "
+options
+œœ 
+=>
+œœ 
+{
+–– 
+options
+—— 
+.
+—— 
+
+SwaggerDoc
+—— "
+(
+——" #
+$str
+——# '
+,
+——' (
+new
+——) ,
+OpenApiInfo
+——- 8
+{
+——9 :
+Title
+——; @
+=
+——A B
+$str
+——C T
+,
+——T U
+Version
+——V ]
+=
+——^ _
+$str
+——` d
+}
+——e f
+)
+——f g
+;
+——g h
+options
+““ 
+.
+““ #
+DocInclusionPredicate
+““ -
+(
+““- .
+(
+““. /
+docName
+““/ 6
+,
+““6 7
+description
+““8 C
+)
+““C D
+=>
+““E G
+true
+““H L
+)
+““L M
+;
+““M N
+options
+”” 
+.
+”” 
+CustomSchemaIds
+”” '
+(
+””' (
+type
+””( ,
+=>
+””- /
+type
+””0 4
+.
+””4 5
+FullName
+””5 =
+)
+””= >
+;
+””> ?
+}
+‘‘ 
+)
+’’ 	
+;
+’’	 
+
+}
+÷÷ 
+private
+ÿÿ 
+void
+ÿÿ %
+ConfigureDataProtection
+ÿÿ (
+(
+ÿÿ( ))
+ServiceConfigurationContext
+ŸŸ #
+context
+ŸŸ$ +
+,
+ŸŸ+ ,
+IConfiguration
+⁄⁄ 
+configuration
+⁄⁄ $
+,
+⁄⁄$ %!
+IWebHostEnvironment
+€€  
+hostingEnvironment
+€€ .
+)
+€€. /
+{
+‹‹ 
+var
+›› #
+dataProtectionBuilder
+›› !
+=
+››" #
+context
+››$ +
+.
+››+ ,
+Services
+››, 4
+.
+››4 5
+AddDataProtection
+››5 F
+(
+››F G
+)
+››G H
+.
+››H I 
+SetApplicationName
+››I [
+(
+››[ \
+$str
+››\ i
+)
+››i j
+;
+››j k
+if
+ﬁﬁ 
+
+(
+ﬁﬁ 
+!
+ﬁﬁ  
+hostingEnvironment
+ﬁﬁ 
+.
+ﬁﬁ  
+IsDevelopment
+ﬁﬁ  -
+(
+ﬁﬁ- .
+)
+ﬁﬁ. /
+)
+ﬁﬁ/ 0
+{
+ﬂﬂ 	
+var
+‡‡ 
+redis
+‡‡ 
+=
+‡‡ #
+ConnectionMultiplexer
+‡‡ -
+.
+‡‡- .
+Connect
+‡‡. 5
+(
+‡‡5 6
+configuration
+‡‡6 C
+[
+‡‡C D
+$str
+‡‡D Y
+]
+‡‡Y Z
+)
+‡‡Z [
+;
+‡‡[ \#
+dataProtectionBuilder
+·· !
+.
+··! "-
+PersistKeysToStackExchangeRedis
+··" A
+(
+··A B
+redis
+··B G
+,
+··G H
+$str
+··I f
+)
+··f g
+;
+··g h
+}
+‚‚ 	
+}
+„„ 
+private
+ÂÂ 
+void
+ÂÂ )
+ConfigureDistributedLocking
+ÂÂ ,
+(
+ÂÂ, -)
+ServiceConfigurationContext
+ÊÊ #
+context
+ÊÊ$ +
+,
+ÊÊ+ ,
+IConfiguration
+ÁÁ 
+configuration
+ÁÁ $
+)
+ÁÁ$ %
+{
+ËË 
+context
+ÈÈ 
+.
+ÈÈ 
+Services
+ÈÈ 
+.
+ÈÈ 
+AddSingleton
+ÈÈ %
+<
+ÈÈ% &&
+IDistributedLockProvider
+ÈÈ& >
+>
+ÈÈ> ?
+(
+ÈÈ? @
+sp
+ÈÈ@ B
+=>
+ÈÈC E
+{
+ÍÍ 	
+var
+ÎÎ 
+
+connection
+ÎÎ 
+=
+ÎÎ #
+ConnectionMultiplexer
+ÎÎ 2
+.
+ÏÏ 
+Connect
+ÏÏ 
+(
+ÏÏ 
+configuration
+ÏÏ &
+[
+ÏÏ& '
+$str
+ÏÏ' <
+]
+ÏÏ< =
+)
+ÏÏ= >
+;
+ÏÏ> ?
+return
+ÌÌ 
+new
+ÌÌ 5
+'RedisDistributedSynchronizationProvider
+ÌÌ >
+(
+ÌÌ> ?
+
+connection
+ÌÌ? I
+.
+ÌÌI J
+GetDatabase
+ÌÌJ U
+(
+ÌÌU V
+)
+ÌÌV W
+)
+ÌÌW X
+;
+ÌÌX Y
+}
+ÓÓ 	
+)
+ÓÓ	 
+
+;
+ÓÓ
+ 
+}
+ÔÔ 
 public
-ææ 
+ÒÒ 
 
 override
-ææ 
+ÒÒ 
 void
-ææ )
+ÒÒ )
 OnApplicationInitialization
-ææ 4
+ÒÒ 4
 (
-ææ4 5.
+ÒÒ4 5.
  ApplicationInitializationContext
-ææ5 U
+ÒÒ5 U
 context
-ææV ]
+ÒÒV ]
 )
-ææ] ^
+ÒÒ] ^
 {
-øø 
+ÚÚ 
 var
-¿¿ 
+ÛÛ 
 app
-¿¿ 
+ÛÛ 
 =
-¿¿ 
+ÛÛ 
 context
-¿¿ 
+ÛÛ 
 .
-¿¿ #
+ÛÛ #
 GetApplicationBuilder
-¿¿ /
+ÛÛ /
 (
-¿¿/ 0
+ÛÛ/ 0
 )
-¿¿0 1
+ÛÛ0 1
 ;
-¿¿1 2
+ÛÛ1 2
 var
-¡¡ 
+ÙÙ 
 env
-¡¡ 
+ÙÙ 
 =
-¡¡ 
+ÙÙ 
 context
-¡¡ 
+ÙÙ 
 .
-¡¡ 
+ÙÙ 
 GetEnvironment
-¡¡ (
+ÙÙ (
 (
-¡¡( )
+ÙÙ( )
 )
-¡¡) *
+ÙÙ) *
 ;
-¡¡* +
+ÙÙ* +
 if
-√√ 
+ˆˆ 
 
 (
-√√ 
+ˆˆ 
 env
-√√ 
+ˆˆ 
 .
-√√ 
+ˆˆ 
 IsDevelopment
-√√ 
+ˆˆ 
 (
-√√ 
+ˆˆ 
 )
-√√ 
+ˆˆ 
 )
-√√  
+ˆˆ  
 {
-ƒƒ 	
+˜˜ 	
 app
-≈≈ 
+¯¯ 
 .
-≈≈ '
+¯¯ '
 UseDeveloperExceptionPage
-≈≈ )
+¯¯ )
 (
-≈≈) *
+¯¯) *
 )
-≈≈* +
+¯¯* +
 ;
-≈≈+ ,
+¯¯+ ,
 }
-∆∆ 	
+˘˘ 	
 app
-»» 
+˚˚ 
 .
-»» '
+˚˚ '
 UseAbpRequestLocalization
-»» %
+˚˚ %
 (
-»»% &
+˚˚% &
 )
-»»& '
+˚˚& '
 ;
-»»' (
-app
-…… 
+˚˚' (
+if
+˝˝ 
+
+(
+˝˝ 
+!
+˝˝ 
+env
+˝˝ 
 .
-…… 
+˝˝ 
+IsDevelopment
+˝˝ 
+(
+˝˝ 
+)
+˝˝  
+)
+˝˝  !
+{
+˛˛ 	
+app
+ˇˇ 
+.
+ˇˇ 
+UseErrorPage
+ˇˇ 
+(
+ˇˇ 
+)
+ˇˇ 
+;
+ˇˇ 
+}
+ÄÄ 	
+app
+ÇÇ 
+.
+ÇÇ 
 UseCorrelationId
-…… 
+ÇÇ 
 (
-…… 
+ÇÇ 
 )
-…… 
+ÇÇ 
 ;
-…… 
+ÇÇ 
 app
-   
+ÉÉ 
 .
-   
+ÉÉ 
 UseStaticFiles
-   
+ÉÉ 
 (
-   
+ÉÉ 
 )
-   
+ÉÉ 
 ;
-   
+ÉÉ 
 app
-ÀÀ 
+ÑÑ 
 .
-ÀÀ 
+ÑÑ 
 
 UseRouting
-ÀÀ 
+ÑÑ 
 (
-ÀÀ 
+ÑÑ 
 )
-ÀÀ 
+ÑÑ 
 ;
-ÀÀ 
+ÑÑ 
 app
-ÃÃ 
+ÖÖ 
 .
-ÃÃ 
-UseCors
-ÃÃ 
-(
-ÃÃ 
-)
-ÃÃ 
-;
-ÃÃ 
-app
-ÕÕ 
-.
-ÕÕ 
+ÖÖ 
 UseAuthentication
-ÕÕ 
+ÖÖ 
 (
-ÕÕ 
+ÖÖ 
 )
-ÕÕ 
+ÖÖ 
 ;
-ÕÕ  
+ÖÖ  
 if
-œœ 
+áá 
 
 (
-œœ  
+áá  
 MultiTenancyConsts
-œœ 
+áá 
 .
-œœ 
+áá 
 	IsEnabled
-œœ (
+áá (
 )
-œœ( )
+áá( )
 {
-–– 	
+àà 	
 app
-—— 
+ââ 
 .
-—— 
+ââ 
 UseMultiTenancy
-—— 
+ââ 
 (
-——  
+ââ  
 )
-——  !
+ââ  !
 ;
-——! "
+ââ! "
 }
-““ 	
+ää 	
 app
-‘‘ 
+åå 
 .
-‘‘ 
+åå 
 UseAuthorization
-‘‘ 
+åå 
 (
-‘‘ 
+åå 
 )
-‘‘ 
+åå 
 ;
-‘‘ 
+åå 
 app
-÷÷ 
+çç 
 .
-÷÷ 
+çç 
 
 UseSwagger
-÷÷ 
+çç 
 (
-÷÷ 
+çç 
 )
-÷÷ 
+çç 
 ;
-÷÷ 
+çç 
 app
-◊◊ 
+éé 
 .
-◊◊ 
+éé 
 UseAbpSwaggerUI
-◊◊ 
+éé 
 (
-◊◊ 
+éé 
 options
-◊◊ #
+éé #
 =>
-◊◊$ &
+éé$ &
 {
-ÿÿ 	
+èè 	
 options
-ŸŸ 
+êê 
 .
-ŸŸ 
+êê 
 SwaggerEndpoint
-ŸŸ #
+êê #
 (
-ŸŸ# $
+êê# $
 $str
-ŸŸ$ >
+êê$ >
 ,
-ŸŸ> ?
+êê> ?
 $str
-ŸŸ@ Q
+êê@ Q
 )
-ŸŸQ R
+êêQ R
 ;
-ŸŸR S
-var
-€€ 
-configuration
-€€ 
-=
-€€ 
-context
-€€  '
-.
-€€' (
-GetConfiguration
-€€( 8
-(
-€€8 9
-)
-€€9 :
-;
-€€: ;
-options
-‹‹ 
-.
-‹‹ 
-OAuthClientId
-‹‹ !
-(
-‹‹! "
-configuration
-‹‹" /
-[
-‹‹/ 0
-$str
-‹‹0 L
-]
-‹‹L M
-)
-‹‹M N
-;
-‹‹N O
-options
-›› 
-.
-›› 
-OAuthScopes
-›› 
-(
-››  
-$str
-››  -
-)
-››- .
-;
-››. /
+êêR S
 }
-ﬁﬁ 	
+ëë 	
 )
-ﬁﬁ	 
+ëë	 
 
 ;
-ﬁﬁ
+ëë
  
 app
-‡‡ 
+íí 
 .
-‡‡ 
-UseAuditing
-‡‡ 
-(
-‡‡ 
-)
-‡‡ 
-;
-‡‡ 
-app
-·· 
-.
-·· $
+íí $
 UseAbpSerilogEnrichers
-·· "
+íí "
 (
-··" #
+íí" #
 )
-··# $
+íí# $
 ;
-··$ %
+íí$ %
 app
-‚‚ 
+ìì 
 .
-‚‚ 
-UseUnitOfWork
-‚‚ 
-(
-‚‚ 
-)
-‚‚ 
-;
-‚‚ 
-app
-„„ 
-.
-„„ $
+ìì $
 UseConfiguredEndpoints
-„„ "
+ìì "
 (
-„„" #
+ìì" #
 )
-„„# $
+ìì# $
 ;
-„„$ %
+ìì$ %
 }
-‰‰ 
-}ÂÂ 
+îî 
+}ïï 

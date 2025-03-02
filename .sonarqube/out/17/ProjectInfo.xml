@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ProjectInfo xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://www.sonarsource.com/msbuild/integration/2015/1">
-  <ProjectName>SwaggerDemo.EntityFrameworkCore.Tests</ProjectName>
+  <ProjectName>SwaggerDemo.AuthServer</ProjectName>
   <ProjectLanguage>C#</ProjectLanguage>
-  <ProjectType>Test</ProjectType>
-  <ProjectGuid>1fe30eb9-74a9-47f5-a9f6-7b1fab672d81</ProjectGuid>
-  <FullPath>/Users/nizar/SwaggerDemo/test/SwaggerDemo.EntityFrameworkCore.Tests/SwaggerDemo.EntityFrameworkCore.Tests.csproj</FullPath>
+  <ProjectType>Product</ProjectType>
+  <ProjectGuid>073c361e-b8f4-49f5-93cc-72a3ff49c026</ProjectGuid>
+  <FullPath>/Users/nizar/SwaggerDemo/src/SwaggerDemo.AuthServer/SwaggerDemo.AuthServer.csproj</FullPath>
   <IsExcluded>false</IsExcluded>
   <AnalysisResults>
     <AnalysisResult Id="FilesToAnalyze" Location="/Users/nizar/SwaggerDemo/.sonarqube/conf/17/FilesToAnalyze.txt" />

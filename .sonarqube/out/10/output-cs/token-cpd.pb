@@ -1,128 +1,194 @@
-æ
-Y/Users/nizar/SwaggerDemo/src/SwaggerDemo.HttpApi.Client/SwaggerDemoHttpApiClientModule.cs
-	namespace 	
-SwaggerDemo
+ë
+U/Users/nizar/SwaggerDemo/src/SwaggerDemo.HttpApi/Controllers/SwaggerDemoController.cs
+	namespace 	
+SwaggerDemo
  
-; 
-[ 
-	DependsOn 
-
-(
- 
-typeof 
+. 
+Controllers !
+;! "
+public 
+abstract 
+class !
+SwaggerDemoController +
+:, -
+AbpControllerBase. ?
+{		 
+	protected
+
+ !
+SwaggerDemoController
+
+ #
+(
+
+# $
+)
+
+$ %
+{  
+LocalizationResource 
+= 
+typeof %
+(% &
+SwaggerDemoResource& 9
+)9 :
+;: ;
+} 
+} Ù
+I/Users/nizar/SwaggerDemo/src/SwaggerDemo.HttpApi/Models/Test/TestModel.cs
+	namespace 	
+SwaggerDemo
+ 
+. 
+Models 
+. 
+Test !
+;! "
+public 
+class 
+	TestModel 
+{ 
+public 
+
+string 
+Name 
+{ 
+get 
+; 
+set !
+;! "
+}# $
+public		 
+
+DateTime		 
+	BirthDate		 
+{		 
+get		  #
+;		# $
+set		% (
+;		( )
+}		* +
+}
+
+ ª
+L/Users/nizar/SwaggerDemo/src/SwaggerDemo.HttpApi/SwaggerDemoHttpApiModule.cs
+	namespace 	
+SwaggerDemo
+ 
+; 
+[ 
+	DependsOn 
 
 (
- 1
-%SwaggerDemoApplicationContractsModule 0
-)0 1
-,1 2
+ 
 typeof 
 
 (
- )
-AbpAccountHttpApiClientModule (
-)( )
-,) *
+ 1
+%SwaggerDemoApplicationContractsModule 0
+)0 1
+,1 2
 typeof 
 
 (
- *
-AbpIdentityHttpApiClientModule )
-)) *
-,* +
+ #
+AbpAccountHttpApiModule "
+)" #
+,# $
 typeof 
 
 (
- 6
-*AbpPermissionManagementHttpApiClientModule 5
-)5 6
-,6 7
+ $
+AbpIdentityHttpApiModule #
+)# $
+,$ %
 typeof 
 
 (
- 2
-&AbpTenantManagementHttpApiClientModule 1
-)1 2
-,2 3
+ 0
+$AbpPermissionManagementHttpApiModule /
+)/ 0
+,0 1
 typeof 
 
 (
- 3
-'AbpFeatureManagementHttpApiClientModule 2
-)2 3
-,3 4
+ ,
+ AbpTenantManagementHttpApiModule +
+)+ ,
+,, -
 typeof 
 
 (
- 3
-'AbpSettingManagementHttpApiClientModule 2
-)2 3
-) 
-] 
-public 
-class *
-SwaggerDemoHttpApiClientModule +
-:, -
-	AbpModule. 7
-{ 
-public 
-
-const 
-string 
-RemoteServiceName )
-=* +
-$str, 5
-;5 6
-public 
-
-override 
-void 
-ConfigureServices *
-(* +'
-ServiceConfigurationContext+ F
-contextG N
-)N O
-{ 
-context 
-. 
-Services 
-.  
-AddHttpClientProxies -
-(- .
-typeof 
-( 1
-%SwaggerDemoApplicationContractsModule 8
-)8 9
-.9 :
-Assembly: B
-,B C
-RemoteServiceName 
-) 	
-;	 
-
-	Configure!! 
-<!! '
-AbpVirtualFileSystemOptions!! -
->!!- .
-(!!. /
-options!!/ 6
-=>!!7 9
-{"" 	
-options## 
-.## 
-FileSets## 
-.## 
-AddEmbedded## (
-<##( )*
-SwaggerDemoHttpApiClientModule##) G
->##G H
-(##H I
-)##I J
-;##J K
-}$$ 	
-)$$	 
+ -
+!AbpFeatureManagementHttpApiModule ,
+), -
+,- .
+typeof 
 
-;$$
+(
+ -
+!AbpSettingManagementHttpApiModule ,
+), -
+) 
+] 
+public 
+class $
+SwaggerDemoHttpApiModule %
+:& '
+	AbpModule( 1
+{ 
+public 
+
+override 
+void 
+ConfigureServices *
+(* +'
+ServiceConfigurationContext+ F
+contextG N
+)N O
+{ !
+ConfigureLocalization 
+( 
+) 
+;  
+} 
+private 
+void !
+ConfigureLocalization &
+(& '
+)' (
+{ 
+	Configure   
+<   "
+AbpLocalizationOptions   (
+>  ( )
+(  ) *
+options  * 1
+=>  2 4
+{!! 	
+options"" 
+."" 
+	Resources"" 
+.## 
+Get## 
+<## 
+SwaggerDemoResource## (
+>##( )
+(##) *
+)##* +
+.$$ 
+AddBaseTypes$$ 
+($$ 
+typeof%% 
+(%% 
+AbpUiResource%% (
+)%%( )
+)&& 
+;&& 
+}'' 	
+)''	 
+
+;''
  
-}%% 
-}&& 
+}(( 
+})) 

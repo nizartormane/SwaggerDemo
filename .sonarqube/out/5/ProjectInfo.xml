@@ -15,5 +15,5 @@
   </AnalysisSettings>
   <Configuration>Debug</Configuration>
   <Platform>AnyCPU</Platform>
-  <TargetFramework>netstandard2.0</TargetFramework>
+  <TargetFramework>netstandard2.1</TargetFramework>
 </ProjectInfo>

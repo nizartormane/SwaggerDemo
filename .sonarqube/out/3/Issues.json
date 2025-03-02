@@ -8,9 +8,51 @@
         "version": "4.12.0.0",
         "fileVersion": "4.12.0-3.24574.8 (dfa7fc6b)",
         "semanticVersion": "4.12.0",
-        "language": "en-TN"
+        "language": "en-US"
       },
       "results": [
+        {
+          "ruleId": "S1144",
+          "level": "warning",
+          "message": "Remove the unused private method 'L'.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///Users/nizar/SwaggerDemo/src/SwaggerDemo.Application.Contracts/Permissions/SwaggerDemoPermissionDefinitionProvider.cs",
+                "region": {
+                  "startLine": 16,
+                  "startColumn": 5,
+                  "endLine": 19,
+                  "endColumn": 6
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "S1481",
+          "level": "warning",
+          "message": "Remove the unused local variable 'myGroup'.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///Users/nizar/SwaggerDemo/src/SwaggerDemo.Application.Contracts/Permissions/SwaggerDemoPermissionDefinitionProvider.cs",
+                "region": {
+                  "startLine": 11,
+                  "startColumn": 13,
+                  "endLine": 11,
+                  "endColumn": 20
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
         {
           "ruleId": "S125",
           "level": "warning",
@@ -66,48 +108,6 @@
                   "startColumn": 1,
                   "endLine": 21,
                   "endColumn": 77
-                }
-              }
-            }
-          ],
-          "properties": {
-            "warningLevel": 1
-          }
-        },
-        {
-          "ruleId": "S1144",
-          "level": "warning",
-          "message": "Remove the unused private method 'L'.",
-          "locations": [
-            {
-              "resultFile": {
-                "uri": "file:///Users/nizar/SwaggerDemo/src/SwaggerDemo.Application.Contracts/Permissions/SwaggerDemoPermissionDefinitionProvider.cs",
-                "region": {
-                  "startLine": 16,
-                  "startColumn": 5,
-                  "endLine": 19,
-                  "endColumn": 6
-                }
-              }
-            }
-          ],
-          "properties": {
-            "warningLevel": 1
-          }
-        },
-        {
-          "ruleId": "S1481",
-          "level": "warning",
-          "message": "Remove the unused local variable 'myGroup'.",
-          "locations": [
-            {
-              "resultFile": {
-                "uri": "file:///Users/nizar/SwaggerDemo/src/SwaggerDemo.Application.Contracts/Permissions/SwaggerDemoPermissionDefinitionProvider.cs",
-                "region": {
-                  "startLine": 11,
-                  "startColumn": 13,
-                  "endLine": 11,
-                  "endColumn": 20
                 }
               }
             }

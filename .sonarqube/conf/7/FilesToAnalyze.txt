@@ -1,9 +1,1 @@
-﻿/Users/nizar/SwaggerDemo/src/SwaggerDemo.EntityFrameworkCore/EntityFrameworkCore/EntityFrameworkCoreSwaggerDemoDbSchemaMigrator.cs
-/Users/nizar/SwaggerDemo/src/SwaggerDemo.EntityFrameworkCore/EntityFrameworkCore/SwaggerDemoDbContext.cs
-/Users/nizar/SwaggerDemo/src/SwaggerDemo.EntityFrameworkCore/EntityFrameworkCore/SwaggerDemoDbContextFactory.cs
-/Users/nizar/SwaggerDemo/src/SwaggerDemo.EntityFrameworkCore/EntityFrameworkCore/SwaggerDemoEfCoreEntityExtensionMappings.cs
-/Users/nizar/SwaggerDemo/src/SwaggerDemo.EntityFrameworkCore/EntityFrameworkCore/SwaggerDemoEntityFrameworkCoreModule.cs
-/Users/nizar/SwaggerDemo/src/SwaggerDemo.EntityFrameworkCore/Migrations/20240912065503_Initial.cs
-/Users/nizar/SwaggerDemo/src/SwaggerDemo.EntityFrameworkCore/Migrations/20240912065503_Initial.Designer.cs
-/Users/nizar/SwaggerDemo/src/SwaggerDemo.EntityFrameworkCore/Migrations/SwaggerDemoDbContextModelSnapshot.cs
-/Users/nizar/SwaggerDemo/src/SwaggerDemo.EntityFrameworkCore/Properties/AssemblyInfo.cs
+﻿/Users/nizar/SwaggerDemo/src/SwaggerDemo.HttpApi.Client/SwaggerDemoHttpApiClientModule.cs
