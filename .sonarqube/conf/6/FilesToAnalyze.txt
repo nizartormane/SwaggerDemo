@@ -1,4 +1,9 @@
-﻿/Users/nizar/SwaggerDemo/src/SwaggerDemo.Application.Contracts/Permissions/SwaggerDemoPermissionDefinitionProvider.cs
-/Users/nizar/SwaggerDemo/src/SwaggerDemo.Application.Contracts/Permissions/SwaggerDemoPermissions.cs
-/Users/nizar/SwaggerDemo/src/SwaggerDemo.Application.Contracts/SwaggerDemoApplicationContractsModule.cs
-/Users/nizar/SwaggerDemo/src/SwaggerDemo.Application.Contracts/SwaggerDemoDtoExtensions.cs
+﻿/Users/nizar/SwaggerDemo/src/SwaggerDemo.Domain/Data/ISwaggerDemoDbSchemaMigrator.cs
+/Users/nizar/SwaggerDemo/src/SwaggerDemo.Domain/Data/NullSwaggerDemoDbSchemaMigrator.cs
+/Users/nizar/SwaggerDemo/src/SwaggerDemo.Domain/Data/SwaggerDemoDbMigrationService.cs
+/Users/nizar/SwaggerDemo/src/SwaggerDemo.Domain/OpenIddict/OpenIddictDataSeedContributor.cs
+/Users/nizar/SwaggerDemo/src/SwaggerDemo.Domain/Properties/AssemblyInfo.cs
+/Users/nizar/SwaggerDemo/src/SwaggerDemo.Domain/Settings/SwaggerDemoSettingDefinitionProvider.cs
+/Users/nizar/SwaggerDemo/src/SwaggerDemo.Domain/Settings/SwaggerDemoSettings.cs
+/Users/nizar/SwaggerDemo/src/SwaggerDemo.Domain/SwaggerDemoConsts.cs
+/Users/nizar/SwaggerDemo/src/SwaggerDemo.Domain/SwaggerDemoDomainModule.cs

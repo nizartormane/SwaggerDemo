@@ -1,4 +1,9 @@
-﻿/Users/nizar/SwaggerDemo/src/SwaggerDemo.HttpApi/Controllers/SwaggerDemoController.cs
-/Users/nizar/SwaggerDemo/src/SwaggerDemo.HttpApi/Models/Test/TestModel.cs
-/Users/nizar/SwaggerDemo/src/SwaggerDemo.HttpApi/SwaggerDemoHttpApiModule.cs
-/Users/nizar/.nuget/packages/volo.abp.identity.httpapi/8.3.0/contentFiles/any/net8.0/Volo.Abp.Identity.HttpApi.abppkg.analyze.json
+﻿/Users/nizar/SwaggerDemo/test/SwaggerDemo.TestBase/Security/FakeCurrentPrincipalAccessor.cs
+/Users/nizar/SwaggerDemo/test/SwaggerDemo.TestBase/SwaggerDemoTestBase.cs
+/Users/nizar/SwaggerDemo/test/SwaggerDemo.TestBase/SwaggerDemoTestBaseModule.cs
+/Users/nizar/SwaggerDemo/test/SwaggerDemo.TestBase/SwaggerDemoTestDataSeedContributor.cs
+/Users/nizar/.nuget/packages/microsoft.net.test.sdk/17.2.0/build/netcoreapp2.1/Microsoft.NET.Test.Sdk.Program.cs
+/Users/nizar/.nuget/packages/microsoft.testplatform.testhost/17.2.0/build/netcoreapp2.1/Microsoft.TestPlatform.PlatformAbstractions.dll
+/Users/nizar/.nuget/packages/xunit.runner.visualstudio/2.4.5/build/netcoreapp3.1/xunit.runner.visualstudio.dotnetcore.testadapter.dll
+/Users/nizar/.nuget/packages/xunit.runner.visualstudio/2.4.5/build/netcoreapp3.1/xunit.runner.reporters.netcoreapp10.dll
+/Users/nizar/.nuget/packages/xunit.runner.visualstudio/2.4.5/build/netcoreapp3.1/xunit.runner.utility.netcoreapp10.dll

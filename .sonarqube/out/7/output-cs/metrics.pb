@@ -1,14 +1,2 @@
-²
-‚/Users/nizar/SwaggerDemo/src/SwaggerDemo.EntityFrameworkCore/EntityFrameworkCore/EntityFrameworkCoreSwaggerDemoDbSchemaMigrator.cs 8jr
- !"‚Ä
-h/Users/nizar/SwaggerDemo/src/SwaggerDemo.EntityFrameworkCore/EntityFrameworkCore/SwaggerDemoDbContext.cs	 8j !"#%&)2BMOQRr2	
-*+,-./013489:<>?@DEFGHIJKUV‚	@DEFGHIJK¢
-o/Users/nizar/SwaggerDemo/src/SwaggerDemo.EntityFrameworkCore/EntityFrameworkCore/SwaggerDemoDbContextFactory.cs 8j	
-r !‚¯
-|/Users/nizar/SwaggerDemo/src/SwaggerDemo.EntityFrameworkCore/EntityFrameworkCore/SwaggerDemoEfCoreEntityExtensionMappings.cs 8j !#'(r	
-*+,‚¿
-x/Users/nizar/SwaggerDemo/src/SwaggerDemo.EntityFrameworkCore/EntityFrameworkCore/SwaggerDemoEntityFrameworkCoreModule.cs 8j)*01r-	
- !"#%&'(+,./2356‚"'+.2Å
-a/Users/nizar/SwaggerDemo/src/SwaggerDemo.EntityFrameworkCore/Migrations/20240912065503_Initial.cs§ 8jžr«	
- !"#$%&'()*+,-.0123456789:;<=>?@ABCEFGHIJKLMNOPQRSTUVWYZ[\]^_`abcdeghijklmnopqrstuvwxyz{}~€‚ƒ„…†‡ˆ‰ŠŒŽ‘’“”•–—˜™›œžŸ ¡¢£¤¥¦§¨©ª«¬­®¯°±²³´µ¶·¹º»¼½¾¿ÀÁÂÃÄÅÆÈÉÊËÌÍÎÏÐÑÒÓÔÖ×ØÙÚÛÜÝÞßàáâãäåæçèêëìíîïðñòóôõö÷øùúûüþÿ€‚ƒ„…†‡ˆ‰Š‹ŒŽ‘’“”•—˜™š›œžŸ ¡¢£¤¥¦§¨©«¬­®¯°±²³´µ¶·¸¹º»¼½¿ÀÁÂÃÄÅÆÇÈÉÊËÌÎÏÐÑÒÓÔÕÖ×ØÙÚÛÜÝÞßàáâãåæçèéêëìíîïðñòóõö÷øùúûüýþÿ€‚ƒ„…†‡ˆ‰Š‹ŒŽ‘’“”•–—˜™š›œžŸ ¡¢£¤¥¦§¨©ª«¬­®¯°±²³´µ¶·¸¹º»¼½¾¿ÀÂÃÄÅÆÇÈÉÊËÌÍÎÏÐÑÒÓÔÕÖ×ØÙÚÛÝÞßàáâãäåæçèéêëìíîïðñòóôö÷øùúûüýþÿ€‚ƒ„…†‡ˆ‰Š‹Œ‘’“”•–—˜™š›œžŸ ¡¢£¤¥¦§¨ª«¬­®¯°±²³´µ¶·¸¹º»¼½¿ÀÁÂÃÄÅÆÇÈÉÊËÌÍÎÏÐÒÓÔÕÖ×ØÙÚÛÜÝÞßàáâãäåçèéêëìíîïðñòóôõö÷øùúüýþÿ€‚ƒ„…†‡ˆ‰Š‹ŒŽ‘’“”•—˜™š›œžŸ ¡¢£¤¥¦§¨©ª«¬­®°±²³´µ¶·¸¹º»¼½¾¿ÀÁÂÃÅÆÇÈÉÊËÌÍÎÏÐÑÒÓÔÕÖ×ØÙÚÛÜÝÞßàáâãåæçèéêëìíîïðñòóôõö÷øùúüýþÿ€‚ƒ„…†‡ˆ‰Š‹ŒŽ‘’“”•–—˜™š›œžŸ ¡¢£¥¦§¨ª«¬­¯°±²´µ¶·¹º»¼¾¿ÀÁÃÄÅÆÈÉÊËÍÎÏÐÑÓÔÕÖØÙÚÛÜÞßàáâãåæçèéêìíîïñòóôö÷øùûüýþÿ€‚ƒ„…†ˆ‰Š‹Ž‘“”•–˜™š›žŸ ¢£¤¥§¨©ª¬­®¯±²³´¶·¸¹»¼½¾ÀÁÂÃÄÆÇÈÉÊËÍÎÏÐÒÓÔÕ×ØÙÚÜÝÞßáâãäæçèéëìíîðñòóõö÷øúûüýÿ€‚„…†‡‰Š‹ŒŽ‘“”•–˜™š›œŸ ¡¢¤¥§¨ª«­®°±³´¶·¹º¼½¿ÀÂÃÅÆÈÉËÌÎÏÑÒÔÕ×ØÚÛÝÞàáãäæçéêìíïðòóõöøùûüþÿ	‚	„	…	†	‡	ˆ	‚¡	 !"#$%&'()+-02456789:;<=>@BEGIJKLMNOPQRTVY[]^_`bdgiklmnopqrstuvxz}‚ƒ„…‡‰ŒŽ‘’“”–˜›Ÿ ¡¢£¤¥¦§¨©ª«¬­¯±²´¹»½¾¿ÀÁÃÅÈÊÌÍÎÏÑÓÖØÚÛÜÝÞßàáâãåçêìîïðñòóôõö÷ùûþ€‚ƒ„…†‡ˆ‰Š‹ŒŽ’”—™›œžŸ ¡¢£¤¦¨«­¯°±²³´µ¶·¸º¼¿ÁÃÄÅÆÇÉËÎÐÒÓÔÕÖ×ØÙÚÛÜÝÞàâåçéêëìíîðòõ÷ùúûüýþÿ€‚ƒ„…†‡ˆ‰Š‹ŒŽ‘’“”•–—™›ž ¢£¤¥¦§¨©ª«¬­®¯°±²³´µ¶·¸¹º»½¿ÂÄÆÇÈÉÊËÌÍÎÏÐÑÒÓÔÕÖØÚÝßáâãäåæçèéëíîðóöøúûüýþÿ€‚„†‡‰Œ‘“”•–—™›œž¡¢¤§ª¬®¯°±²´¶·¹¼¿ÁÃÄÅÇÉÊÌÏÒÔÖ×ØÙÚÜÞßáäçéëìíîïñóôöùüþ€‚ƒ„†ˆ‰‹Ž‘”—™›œŸ¡¢¤§¨ª­°²´µ¶·¸º¼½¿ÂÅÇÉÊËÌÍÎÏÐÑÒÓÔÕÖ×ØÙÛÝÞàåçéêëìíîïñóôöùüþ€‚ƒ„…†‡ˆ‰Š‹ŒŽ‘’“”–˜™›ž ¥ª­¯²´·¹¼¾ÃÆÈÍÓØÞáåèìïñöûþ‚ˆ“˜ ¢¥§ª¬¯±¶»¾ÀÆÉÍÒ×Üßáäæéëðõúÿ„‡‰Ž‘“˜¡¤§ª­°³¶¹¼¿ÂÅÈËÎÑÔ×ÚÝàãæéìïòõøûþ	„	]
-W/Users/nizar/SwaggerDemo/src/SwaggerDemo.EntityFrameworkCore/Properties/AssemblyInfo.csr
+Ž
+Y/Users/nizar/SwaggerDemo/src/SwaggerDemo.HttpApi.Client/SwaggerDemoHttpApiClientModule.cs 8r"	!"#$%&‚!#

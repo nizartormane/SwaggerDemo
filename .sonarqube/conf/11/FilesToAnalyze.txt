@@ -1,1 +1,4 @@
-﻿/Users/nizar/SwaggerDemo/src/SwaggerDemo.HttpApi.Client/SwaggerDemoHttpApiClientModule.cs
+﻿/Users/nizar/SwaggerDemo/src/SwaggerDemo.Application/Properties/AssemblyInfo.cs
+/Users/nizar/SwaggerDemo/src/SwaggerDemo.Application/SwaggerDemoApplicationAutoMapperProfile.cs
+/Users/nizar/SwaggerDemo/src/SwaggerDemo.Application/SwaggerDemoApplicationModule.cs
+/Users/nizar/SwaggerDemo/src/SwaggerDemo.Application/SwaggerDemoAppService.cs

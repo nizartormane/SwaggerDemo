@@ -1,170 +1,128 @@
-ë
-O/Users/nizar/SwaggerDemo/src/SwaggerDemo.Application/Properties/AssemblyInfo.cs
-[ 
-assembly 	
-:	 
-'
-InternalsVisibleToAttribute
- %
-(% &
-$str& E
-)E F
-]F G»
-_/Users/nizar/SwaggerDemo/src/SwaggerDemo.Application/SwaggerDemoApplicationAutoMapperProfile.cs
-	namespace 	
-SwaggerDemo
+æ
+Y/Users/nizar/SwaggerDemo/src/SwaggerDemo.HttpApi.Client/SwaggerDemoHttpApiClientModule.cs
+	namespace 	
+SwaggerDemo
  
-; 
-public 
-class 3
-'SwaggerDemoApplicationAutoMapperProfile 4
-:5 6
-Profile7 >
-{ 
-public 
-3
-'SwaggerDemoApplicationAutoMapperProfile 2
-(2 3
-)3 4
-{ 
-} 
-} ¯
-T/Users/nizar/SwaggerDemo/src/SwaggerDemo.Application/SwaggerDemoApplicationModule.cs
-	namespace
-
- 	
-SwaggerDemo
-
-
- 
-;
-
- 
-[ 
-	DependsOn 
-
-(
- 
-typeof 
+; 
+[ 
+	DependsOn 
 
 (
- #
-SwaggerDemoDomainModule "
-)" #
-,# $
+ 
 typeof 
 
 (
- '
-AbpAccountApplicationModule &
-)& '
-,' (
+ 1
+%SwaggerDemoApplicationContractsModule 0
+)0 1
+,1 2
 typeof 
 
 (
- 1
-%SwaggerDemoApplicationContractsModule 0
-)0 1
-,1 2
+ )
+AbpAccountHttpApiClientModule (
+)( )
+,) *
 typeof 
 
 (
- (
-AbpIdentityApplicationModule '
-)' (
-,( )
+ *
+AbpIdentityHttpApiClientModule )
+)) *
+,* +
 typeof 
 
 (
- 4
-(AbpPermissionManagementApplicationModule 3
-)3 4
-,4 5
+ 6
+*AbpPermissionManagementHttpApiClientModule 5
+)5 6
+,6 7
 typeof 
 
 (
- 0
-$AbpTenantManagementApplicationModule /
-)/ 0
-,0 1
+ 2
+&AbpTenantManagementHttpApiClientModule 1
+)1 2
+,2 3
 typeof 
 
 (
- 1
-%AbpFeatureManagementApplicationModule 0
-)0 1
-,1 2
+ 3
+'AbpFeatureManagementHttpApiClientModule 2
+)2 3
+,3 4
 typeof 
 
 (
- 1
-%AbpSettingManagementApplicationModule 0
-)0 1
-) 
-] 
+ 3
+'AbpSettingManagementHttpApiClientModule 2
+)2 3
+) 
+] 
 public 
-class (
-SwaggerDemoApplicationModule )
-:* +
-	AbpModule, 5
+class *
+SwaggerDemoHttpApiClientModule +
+:, -
+	AbpModule. 7
 { 
 public 
+
+const 
+string 
+RemoteServiceName )
+=* +
+$str, 5
+;5 6
+public 
 
-override 
-void 
-ConfigureServices *
-(* +'
-ServiceConfigurationContext+ F
-contextG N
-)N O
-{ 
-	Configure 
-<  
-AbpAutoMapperOptions &
->& '
-(' (
-options( /
-=>0 2
-{ 	
-options 
-. 
-AddMaps 
-< (
-SwaggerDemoApplicationModule 8
->8 9
-(9 :
-): ;
-;; <
-} 	
-)	 
+override 
+void 
+ConfigureServices *
+(* +'
+ServiceConfigurationContext+ F
+contextG N
+)N O
+{ 
+context 
+. 
+Services 
+.  
+AddHttpClientProxies -
+(- .
+typeof 
+( 1
+%SwaggerDemoApplicationContractsModule 8
+)8 9
+.9 :
+Assembly: B
+,B C
+RemoteServiceName 
+) 	
+;	 
+
+	Configure!! 
+<!! '
+AbpVirtualFileSystemOptions!! -
+>!!- .
+(!!. /
+options!!/ 6
+=>!!7 9
+{"" 	
+options## 
+.## 
+FileSets## 
+.## 
+AddEmbedded## (
+<##( )*
+SwaggerDemoHttpApiClientModule##) G
+>##G H
+(##H I
+)##I J
+;##J K
+}$$ 	
+)$$	 
 
-;
+;$$
  
-} 
-} ¼
-M/Users/nizar/SwaggerDemo/src/SwaggerDemo.Application/SwaggerDemoAppService.cs
-	namespace 	
-SwaggerDemo
- 
-; 
-public 
-abstract 
-class !
-SwaggerDemoAppService +
-:, -
-ApplicationService. @
-{ 
-	protected !
-SwaggerDemoAppService #
-(# $
-)$ %
-{  
-LocalizationResource 
-= 
-typeof %
-(% &
-SwaggerDemoResource& 9
-)9 :
-;: ;
-} 
-} 
+}%% 
+}&& 

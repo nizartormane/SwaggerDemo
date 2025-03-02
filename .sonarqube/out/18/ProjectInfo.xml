@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ProjectInfo xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://www.sonarsource.com/msbuild/integration/2015/1">
-  <ProjectName>SwaggerDemo.Web</ProjectName>
+  <ProjectName>SwaggerDemo.HttpApi.Client.ConsoleTestApp</ProjectName>
   <ProjectLanguage>C#</ProjectLanguage>
   <ProjectType>Product</ProjectType>
-  <ProjectGuid>6fe54035-9c11-4702-a5e2-d16f23101468</ProjectGuid>
-  <FullPath>/Users/nizar/SwaggerDemo/src/SwaggerDemo.Web/SwaggerDemo.Web.csproj</FullPath>
+  <ProjectGuid>ef480016-9127-4916-8735-d2466bdbc582</ProjectGuid>
+  <FullPath>/Users/nizar/SwaggerDemo/test/SwaggerDemo.HttpApi.Client.ConsoleTestApp/SwaggerDemo.HttpApi.Client.ConsoleTestApp.csproj</FullPath>
   <IsExcluded>false</IsExcluded>
   <AnalysisResults>
     <AnalysisResult Id="FilesToAnalyze" Location="/Users/nizar/SwaggerDemo/.sonarqube/conf/18/FilesToAnalyze.txt" />

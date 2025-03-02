@@ -1,7 +1,7 @@
-e
-\/Users/nizar/SwaggerDemo/test/SwaggerDemo.HttpApi.Client.ConsoleTestApp/ClientDemoService.csutf-8o
-f/Users/nizar/SwaggerDemo/test/SwaggerDemo.HttpApi.Client.ConsoleTestApp/ConsoleTestAppHostedService.csutf-8[
-R/Users/nizar/SwaggerDemo/test/SwaggerDemo.HttpApi.Client.ConsoleTestApp/Program.csutf-8u
-l/Users/nizar/SwaggerDemo/test/SwaggerDemo.HttpApi.Client.ConsoleTestApp/SwaggerDemoConsoleApiClientModule.csutf-8“
-‡/Users/nizar/SwaggerDemo/test/SwaggerDemo.HttpApi.Client.ConsoleTestApp/obj/Debug/net8.0/.NETCoreApp,Version=v8.0.AssemblyAttributes.csutf-8ž
-’/Users/nizar/SwaggerDemo/test/SwaggerDemo.HttpApi.Client.ConsoleTestApp/obj/Debug/net8.0/SwaggerDemo.HttpApi.Client.ConsoleTestApp.AssemblyInfo.csutf-8
+\
+S/Users/nizar/SwaggerDemo/src/SwaggerDemo.HttpApi.Host/Controllers/HomeController.csutf-8I
+@/Users/nizar/SwaggerDemo/src/SwaggerDemo.HttpApi.Host/Program.csutf-8^
+U/Users/nizar/SwaggerDemo/src/SwaggerDemo.HttpApi.Host/SwaggerDemoHttpApiHostModule.csutf-8€
+u/Users/nizar/SwaggerDemo/src/SwaggerDemo.HttpApi.Host/obj/Debug/net8.0/.NETCoreApp,Version=v8.0.AssemblyAttributes.csutf-8z
+o/Users/nizar/SwaggerDemo/src/SwaggerDemo.HttpApi.Host/obj/Debug/net8.0/SwaggerDemo.HttpApi.Host.AssemblyInfo.csutf-8Ž
+‚/Users/nizar/SwaggerDemo/src/SwaggerDemo.HttpApi.Host/obj/Debug/net8.0/SwaggerDemo.HttpApi.Host.MvcApplicationPartsAssemblyInfo.csutf-8
