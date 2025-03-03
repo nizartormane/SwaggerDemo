@@ -1,29 +1,72 @@
-name: Deploy ABP .NET App
+name: Deploy to AWS ECR
 
 on:
   push:
     tags:
-      - 'v*' 
+      - 'v*'  # Déclenchement uniquement si un tag (ex: v1.0.0) est créé
+
+permissions:
+  id-token: write
+  contents: read
+
 jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v2
+
+    - name: Setup .NET 8.0
+      uses: actions/setup-dotnet@v1
+      with:
+        dotnet-version: '8.0'
+
+    - name: Install SonarScanner for .NET
+      run: dotnet tool install --global dotnet-sonarscanner
+
+    - name: Start SonarQube Analysis
+      run: |
+        dotnet sonarscanner begin /k:"my-new-project-key" /d:sonar.host.url="https://74d3-41-225-94-245.ngrok-free.app" /d:sonar.login="${{ secrets.SONAR_TOKEN }}" /d:sonar.scanner.scanAll=false
+        dotnet build
+
+    - name: End SonarQube Analysis
+      run: dotnet sonarscanner end /d:sonar.login="${{ secrets.SONAR_TOKEN }}"
+
   deploy:
+    needs: build  # Le déploiement ne démarre que si le build a réussi
+    if: startsWith(github.ref, 'refs/tags/deploy')  # Déploiement uniquement si un tag 'deploy' est ajouté
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout Repository
-        uses: actions/checkout@v4
+    - name: Checkout repository
+      uses: actions/checkout@v2
 
-      - name: Log in to Docker Hub
-        uses: docker/login-action@v3
-        with:
-          username: ${{ secrets.DOCKER_USERNAME }}
-          password: ${{ secrets.DOCKER_PASSWORD }}
+    - name: Configure AWS credentials
+      uses: aws-actions/configure-aws-credentials@v2
+      with:
+        aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+        aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+        aws-region: ${{ secrets.AWS_REGION }}
 
-      - name: Build Docker Image
-        run: |  
-          docker build -t mon-image -f src/SwaggerDemo.HttpApi.Host/Dockerfile .
+    - name: Login to Amazon ECR
+      run: |
+        aws ecr get-login-password --region ${{ secrets.AWS_REGION }} | docker login --username AWS --password-stdin ${{ secrets.AWS_ACCOUNT_ID }}.dkr.ecr.${{ secrets.AWS_REGION }}.amazonaws.com
 
-         
+    - name: Build and push Docker images
+      run: |
+        ECR_REPO="${{ secrets.AWS_ACCOUNT_ID }}.dkr.ecr.${{ secrets.AWS_REGION }}.amazonaws.com/swaggerdemo123"
+        
+        docker build -t v-auth -f src/SwaggerDemo.AuthServer/Dockerfile .
+        docker build -t v-dbmigrator -f src/SwaggerDemo.DbMigrator/Dockerfile .
+        docker build -t v-http -f src/SwaggerDemo.HttpApi.Host/Dockerfile .
 
-      - name: Push Docker Image 
-        run: |
-          docker push ${{ secrets.DOCKER_USERNAME }}/swaggerdemo:${{ github.ref_name }}
+        docker tag v-auth $ECR_REPO:v-auth
+        docker tag v-dbmigrator $ECR_REPO:v-dbmigrator
+        docker tag v-http $ECR_REPO:v-http
+
+        docker push $ECR_REPO:v-auth
+        docker push $ECR_REPO:v-dbmigrator
+        docker push $ECR_REPO:v-http
+
+    - name: Logout from Amazon ECR
+      run: docker logout ${{ secrets.AWS_ACCOUNT_ID }}.dkr.ecr.${{ secrets.AWS_REGION }}.amazonaws.com
