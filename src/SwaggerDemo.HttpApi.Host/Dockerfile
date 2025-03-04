@@ -33,7 +33,7 @@ RUN dotnet tool install --global dotnet-ef
 # Ensure the tool is in the PATH
 ENV PATH="$PATH:/root/.dotnet/tools"
 # Run migrations
-RUN dotnet ef database update --project /src/src/SwaggerDemo.EntityFrameworkCore
+# RUN dotnet ef database update --project /src/src/SwaggerDemo.EntityFrameworkCore
 
 FROM base AS final
 WORKDIR /app
