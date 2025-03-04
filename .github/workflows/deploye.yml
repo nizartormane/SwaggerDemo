@@ -22,7 +22,7 @@ jobs:
         dotnet-version: '8.0'
 
     - name: Install SonarScanner for .NET
-      run: dotnet tool install --global dotnet-sonarscanner
+      run: dotnet tool install --global dotnet-sonarscanner  
 
     - name: Start SonarQube Analysis
       run: |
