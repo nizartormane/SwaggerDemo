@@ -1,35 +1,35 @@
-# name: Build and SonarQube Analysis
+name: Build and SonarQube Analysis
 
-# on:
-#   push:
-#     branches:
-#       - main
+on:
+  push:
+    branches:
+      - main
 
-# jobs:
-#   sonar-analysis:
-#     runs-on: ubuntu-latest
+jobs:
+  sonar-analysis:
+    runs-on: ubuntu-latest
 
-#     steps:
-#     - name: Check out repository
-#       uses: actions/checkout@v2
+    steps:
+    - name: Check out repository
+      uses: actions/checkout@v2
 
-#     - name: Setup .NET 8.0
-#       uses: actions/setup-dotnet@v1
-#       with:
-#         dotnet-version: '8.0'
+    - name: Setup .NET 8.0
+      uses: actions/setup-dotnet@v1
+      with:
+        dotnet-version: '8.0'
 
-#     - name: Install SonarScanner for .NET
-#       run: |
-#         dotnet tool install --global dotnet-sonarscanner
+    - name: Install SonarScanner for .NET
+      run: |
+        dotnet tool install --global dotnet-sonarscanner
 
-#     - name: Start SonarQube Analysis
-#       run: |
-#         dotnet sonarscanner begin /k:"my-new-project-key" /d:sonar.host.url="https://986a-41-225-208-132.ngrok-free.app" /d:sonar.login="sqa_a37e9475471d9823285321e694382d135850ba21" /d:sonar.scanner.scanAll=false
-#         dotnet build
+    - name: Start SonarQube Analysis
+      run: |
+        dotnet sonarscanner begin /k:"my-new-project-key" /d:sonar.host.url="https://9m64vdmh-9000.uks1.devtunnels.ms/" /d:sonar.login="sqa_a37e9475471d9823285321e694382d135850ba21" /d:sonar.scanner.scanAll=false
+        dotnet build
 
-#     - name: End SonarQube Analysis  
-#       run: |
-#         dotnet sonarscanner end /d:sonar.login="sqa_a37e9475471d9823285321e694382d135850ba21"
+    - name: End SonarQube Analysis  
+      run: |
+        dotnet sonarscanner end /d:sonar.login="sqa_a37e9475471d9823285321e694382d135850ba21"
 
 
 
