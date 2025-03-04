@@ -5,9 +5,7 @@ on:
     tags:
       - 'v*'  # Déclenchement uniquement si un tag (ex: v1.0.0) est créé
 
-permissions:
-  id-token: write
-  contents: read
+
 
 jobs:
   build:
