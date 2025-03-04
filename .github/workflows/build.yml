@@ -24,10 +24,10 @@ jobs:
 
     - name: Start SonarQube Analysis
       run: |
-        dotnet sonarscanner begin /k:"my-new-project-key" /d:sonar.host.url="https://2cb0-41-225-208-132.ngrok-free.app" /d:sonar.login="sqa_a37e9475471d9823285321e694382d135850ba21" /d:sonar.scanner.scanAll=false
+        dotnet sonarscanner begin /k:"my-new-project-key" /d:sonar.host.url="https://c240-41-225-208-132.ngrok-free.app" /d:sonar.login="sqa_a37e9475471d9823285321e694382d135850ba21" /d:sonar.scanner.scanAll=false
         dotnet build
 
-    - name: End SonarQube Analysis
+    - name: End SonarQube Analysis  
       run: |
         dotnet sonarscanner end /d:sonar.login="sqa_a37e9475471d9823285321e694382d135850ba21"
 
