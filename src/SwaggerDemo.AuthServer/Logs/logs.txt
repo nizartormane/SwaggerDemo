@@ -8547,3 +8547,8 @@ HelpLink.LinkId = 20476
 2025-03-04 11:45:02.560 +01:00 [INF] Start cleanup tokens.
 2025-03-04 11:45:03.497 +01:00 [INF] Start cleanup authorizations.
 2025-03-04 11:45:03.641 +01:00 [INF] Lock is released for TokenCleanupBackgroundWorker
+2025-03-04 12:45:03.712 +01:00 [INF] Lock is acquired for TokenCleanupBackgroundWorker
+2025-03-04 12:45:03.793 +01:00 [INF] Start cleanup.
+2025-03-04 12:45:03.793 +01:00 [INF] Start cleanup tokens.
+2025-03-04 12:45:04.458 +01:00 [INF] Start cleanup authorizations.
+2025-03-04 12:45:04.568 +01:00 [INF] Lock is released for TokenCleanupBackgroundWorker
