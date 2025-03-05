@@ -9,31 +9,8 @@ on:
 
 
 jobs:
-  build:
-    runs-on: ubuntu-latest
-    steps:
-    - name: Checkout repository
-      uses: actions/checkout@v2
-
-    - name: Setup .NET 8.0
-      uses: actions/setup-dotnet@v1
-      with:
-        dotnet-version: '8.0'
-
-    - name: Install SonarScanner for .NET
-      run: dotnet tool install --global dotnet-sonarscanner  
-
-    - name: Start SonarQube Analysis
-      run: |
-        dotnet sonarscanner begin /k:"my-new-project-key" /d:sonar.host.url="https://ded4-41-225-208-132.ngrok-free.app" /d:sonar.login="${{ secrets.SONAR_TOKEN }}" /d:sonar.scanner.scanAll=false
-        dotnet build
-
-    - name: End SonarQube Analysis
-      run: dotnet sonarscanner end /d:sonar.login="${{ secrets.SONAR_TOKEN }}"
-
   deploy:
-    needs: build  # Le déploiement ne démarre que si le build a réussi
-    if: startsWith(github.ref, 'refs/tags/deploy')  # Déploiement uniquement si un tag 'deploy' est ajouté    
+     
     runs-on: ubuntu-latest
 
     steps:
