@@ -12,7 +12,7 @@ EXPOSE 8081
 FROM mcr.microsoft.com/dotnet/sdk:8.0 AS build
 ARG BUILD_CONFIGURATION=Release
 WORKDIR ./src
-COPY ["NuGet.Config", "."]
+COPY ["NuGet.Config", "."]  
 COPY ["src/SwaggerDemo.AuthServer/SwaggerDemo.AuthServer.csproj", "src/SwaggerDemo.AuthServer/"]
 COPY ["src/SwaggerDemo.EntityFrameworkCore/SwaggerDemo.EntityFrameworkCore.csproj", "src/SwaggerDemo.EntityFrameworkCore/"]
 COPY ["src/SwaggerDemo.Domain/SwaggerDemo.Domain.csproj", "src/SwaggerDemo.Domain/"]
