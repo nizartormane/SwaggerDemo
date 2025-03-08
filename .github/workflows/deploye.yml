@@ -16,6 +16,14 @@ jobs:
     steps:
     - name: Checkout repository   
       uses: actions/checkout@v2
+
+    - name: Get Git Tag
+      id: git-tag
+      run: |
+        TAG_NAME="${GITHUB_REF#refs/tags/}"  # Extrait le tag directement de GITHUB_REF
+        echo "Tag: $TAG_NAME"
+        echo "TAG_NAME=$TAG_NAME" >> $GITHUB_ENV
+
     - name: Get modified services
       id: changed-files
       run: |
@@ -40,9 +48,6 @@ jobs:
         echo "MODIFIED_SERVICES=$MODIFIED_SERVICES" >> $GITHUB_ENV
         echo "Modified services: $MODIFIED_SERVICES"
 
-
-
-
     - name: Configure AWS credentials
       uses: aws-actions/configure-aws-credentials@v2
       with:
@@ -57,29 +62,37 @@ jobs:
     - name: Build and push modified Docker images
       run: |
         ECR_REPO="${{ secrets.AWS_ACCOUNT_ID }}.dkr.ecr.${{ secrets.AWS_REGION }}.amazonaws.com/swaggerdemo123"
-        
+        TAG_NAME=${{ env.TAG_NAME }}  # Récupère le tag Git
+
         for SERVICE in $MODIFIED_SERVICES; do
           case $SERVICE in
             v-auth)
               docker build -t v-auth -f src/SwaggerDemo.AuthServer/Dockerfile .
-              docker tag v-auth $ECR_REPO:v-auth
-              docker push $ECR_REPO:v-auth
+              docker tag v-auth $ECR_REPO:v-auth-$TAG_NAME
+              docker tag v-auth $ECR_REPO:v-auth-latest  # Tag "latest" pour la dernière version
+              docker push $ECR_REPO:v-auth-$TAG_NAME
+              docker push $ECR_REPO:v-auth-latest
               ;;
             v-dbmigrator)
               docker build -t v-dbmigrator -f src/SwaggerDemo.DbMigrator/Dockerfile .
-              docker tag v-dbmigrator $ECR_REPO:v-dbmigrator
-              docker push $ECR_REPO:v-dbmigrator
+              docker tag v-dbmigrator $ECR_REPO:v-dbmigrator-$TAG_NAME
+              docker tag v-dbmigrator $ECR_REPO:v-dbmigrator-latest  # Tag "latest"
+              docker push $ECR_REPO:v-dbmigrator-$TAG_NAME
+              docker push $ECR_REPO:v-dbmigrator-latest
               ;;
             v-http)
               docker build -t v-http -f src/SwaggerDemo.HttpApi.Host/Dockerfile .
-              docker tag v-http $ECR_REPO:v-http
-              docker push $ECR_REPO:v-http
+              docker tag v-http $ECR_REPO:v-http-$TAG_NAME
+              docker tag v-http $ECR_REPO:v-http-latest  # Tag "latest"
+              docker push $ECR_REPO:v-http-$TAG_NAME
+              docker push $ECR_REPO:v-http-latest
               ;;
           esac
         done
 
     - name: Logout from Amazon ECR
       run: docker logout ${{ secrets.AWS_ACCOUNT_ID }}.dkr.ecr.${{ secrets.AWS_REGION }}.amazonaws.com
+
 
 
 
