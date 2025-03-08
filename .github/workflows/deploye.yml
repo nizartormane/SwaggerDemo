@@ -1,9 +1,10 @@
 name: Deploy to AWS ECR
 
 on:
-  push:
-    branches:
-      - main       
+  workflow_run:
+    workflows: ["Build"]
+    types:
+      - completed    
  
 jobs:
   deploy:
