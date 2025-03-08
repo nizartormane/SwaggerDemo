@@ -62,23 +62,23 @@ jobs:
         for SERVICE in $MODIFIED_SERVICES; do
           case $SERVICE in
             v-auth)
-              docker build -t AuthSeurver -f src/SwaggerDemo.AuthServer/Dockerfile .
-              docker tag AuthSeurver $ECR_REPO:$TAG_NAME
-              docker tag AuthSeurver $ECR_REPO:latest
+              docker build -t authseurver -f src/SwaggerDemo.AuthServer/Dockerfile .
+              docker tag authseurver $ECR_REPO:$TAG_NAME
+              docker tag authseurver $ECR_REPO:latest
               docker push $ECR_REPO:$TAG_NAME
               docker push $ECR_REPO:latest
               ;;
             v-dbmigrator)
-              docker build -t DbMigrator -f src/SwaggerDemo.DbMigrator/Dockerfile .
-              docker tag DbMigrator $ECR_REPO:$TAG_NAME
-              docker tag DbMigrator $ECR_REPO:latest
+              docker build -t dbmigrator -f src/SwaggerDemo.DbMigrator/Dockerfile .
+              docker tag dbmigrator $ECR_REPO:$TAG_NAME
+              docker tag dbmigrator $ECR_REPO:latest
               docker push $ECR_REPO:$TAG_NAME
               docker push $ECR_REPO:latest
               ;;
             v-http)
-              docker build -t HttpApi -f src/SwaggerDemo.HttpApi.Host/Dockerfile .
-              docker tag HttpApi $ECR_REPO:$TAG_NAME
-              docker tag HttpApi $ECR_REPO:latest
+              docker build -t httpapi -f src/SwaggerDemo.HttpApi.Host/Dockerfile .
+              docker tag httpapi $ECR_REPO:$TAG_NAME
+              docker tag httpapi $ECR_REPO:latest
               docker push $ECR_REPO:$TAG_NAME
               docker push $ECR_REPO:latest
               ;;
