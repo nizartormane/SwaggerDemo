@@ -16,21 +16,27 @@ jobs:
       id: changed-files
       run: |
         echo "Fetching modified services..."
-        git fetch --depth=2
+        git fetch --prune --unshallow
         MODIFIED_SERVICES=""
 
-        if git diff --name-only HEAD^ HEAD | grep -q "src/SwaggerDemo.AuthServer/"; then
+        CHANGED_FILES=$(git diff --name-only HEAD^ HEAD)
+
+        echo "Changed files: $CHANGED_FILES"
+
+        if echo "$CHANGED_FILES" | grep -q "src/SwaggerDemo.AuthServer/"; then
           MODIFIED_SERVICES="$MODIFIED_SERVICES v-auth"
         fi
-        if git diff --name-only HEAD^ HEAD | grep -q "src/SwaggerDemo.DbMigrator/"; then
+        if echo "$CHANGED_FILES" | grep -q "src/SwaggerDemo.DbMigrator/"; then
           MODIFIED_SERVICES="$MODIFIED_SERVICES v-dbmigrator"
         fi
-        if git diff --name-only HEAD^ HEAD | grep -q "src/SwaggerDemo.HttpApi.Host/"; then
+        if echo "$CHANGED_FILES" | grep -q "src/SwaggerDemo.HttpApi.Host/"; then
           MODIFIED_SERVICES="$MODIFIED_SERVICES v-http"
         fi
         
         echo "MODIFIED_SERVICES=$MODIFIED_SERVICES" >> $GITHUB_ENV
         echo "Modified services: $MODIFIED_SERVICES"
+
+
 
 
     - name: Configure AWS credentials
