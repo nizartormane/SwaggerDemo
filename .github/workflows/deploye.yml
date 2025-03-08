@@ -1,12 +1,13 @@
 name: Deploy to AWS ECR
 
 on:
-  workflow_run:
-    workflows: ["Build Pipeline"]
-    types:
-      - completed
-    branches:
-      - main 
+  push:
+    tags:
+      - 'v*'  # Déclenchement uniquement si un tag (ex: v1.0.0) est créé
+
+permissions:
+  id-token: write
+  contents: read
  
 jobs:
   deploy:
