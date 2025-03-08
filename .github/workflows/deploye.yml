@@ -2,9 +2,11 @@ name: Deploy to AWS ECR
 
 on:
   workflow_run:
-    workflows: ["build"]
+    workflows: ["Build Pipeline"]
     types:
-      - completed    
+      - completed
+    branches:
+      - main 
  
 jobs:
   deploy:
