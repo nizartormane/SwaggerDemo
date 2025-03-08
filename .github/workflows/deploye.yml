@@ -12,13 +12,13 @@ jobs:
     steps:
     - name: Checkout repository   
       uses: actions/checkout@v2
-
     - name: Get modified services
       id: changed-files
       run: |
-        echo "Checking for modified services..."
+        echo "Fetching modified services..."
+        git fetch --depth=2
         MODIFIED_SERVICES=""
-        
+
         if git diff --name-only HEAD^ HEAD | grep -q "src/SwaggerDemo.AuthServer/"; then
           MODIFIED_SERVICES="$MODIFIED_SERVICES v-auth"
         fi
@@ -28,7 +28,10 @@ jobs:
         if git diff --name-only HEAD^ HEAD | grep -q "src/SwaggerDemo.HttpApi.Host/"; then
           MODIFIED_SERVICES="$MODIFIED_SERVICES v-http"
         fi
+        
         echo "MODIFIED_SERVICES=$MODIFIED_SERVICES" >> $GITHUB_ENV
+        echo "Modified services: $MODIFIED_SERVICES"
+
 
     - name: Configure AWS credentials
       uses: aws-actions/configure-aws-credentials@v2
