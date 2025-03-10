@@ -8,14 +8,15 @@ on:
 permissions:
   id-token: write
   contents: read
- 
+
 jobs:
   deploy:
     runs-on: ubuntu-latest
 
     steps:
-    - name: Checkout repository   
+    - name: Checkout repository
       uses: actions/checkout@v2
+
     - name: Get modified services
       id: changed-files
       run: |
@@ -40,9 +41,6 @@ jobs:
         echo "MODIFIED_SERVICES=$MODIFIED_SERVICES" >> $GITHUB_ENV
         echo "Modified services: $MODIFIED_SERVICES"
 
-
-
-
     - name: Configure AWS credentials
       uses: aws-actions/configure-aws-credentials@v2
       with:
@@ -62,17 +60,17 @@ jobs:
         for SERVICE in $MODIFIED_SERVICES; do
           case $SERVICE in
             v-auth)
-              docker build -t authseurver -f src/SwaggerDemo.AuthServer/Dockerfile .
-              docker tag authseurver $ECR_REPO:$TAG_NAME
-              docker tag authseurver $ECR_REPO:latest
-              docker push $ECR_REPO:$TAG_NAME
+              docker build -t authserver -f src/SwaggerDemo.AuthServer/Dockerfile .
+              docker tag authserver $ECR_REPO:$TAG_NAME
+              docker tag authserver $ECR_REPO:latest
+              docker push $ECR_REPO:authserver-$TAG_NAME
               docker push $ECR_REPO:latest
               ;;
             v-dbmigrator)
               docker build -t dbmigrator -f src/SwaggerDemo.DbMigrator/Dockerfile .
               docker tag dbmigrator $ECR_REPO:$TAG_NAME
               docker tag dbmigrator $ECR_REPO:latest
-              docker push $ECR_REPO:$TAG_NAME
+              docker push $ECR_REPO:dbmigrator-$TAG_NAME
               docker push $ECR_REPO:latest
               ;;
             v-http)
@@ -87,6 +85,7 @@ jobs:
 
     - name: Logout from Amazon ECR
       run: docker logout ${{ secrets.AWS_ACCOUNT_ID }}.dkr.ecr.${{ secrets.AWS_REGION }}.amazonaws.com
+
 
 
 
