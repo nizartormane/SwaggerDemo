@@ -54,38 +54,37 @@ jobs:
       run: |
         aws ecr get-login-password --region ${{ secrets.AWS_REGION }} | docker login --username AWS --password-stdin ${{ secrets.AWS_ACCOUNT_ID }}.dkr.ecr.${{ secrets.AWS_REGION }}.amazonaws.com
 
-        - name: Build and push modified Docker images
-        run: |
-          ECR_REPO="${{ secrets.AWS_ACCOUNT_ID }}.dkr.ecr.${{ secrets.AWS_REGION }}.amazonaws.com/swaggerdemo123"
-          TAG_NAME="${GITHUB_REF#refs/tags/}" # Extraire le tag (ex: v1.0.0)
-          TAG_NAME=$(echo $TAG_NAME | tr '[:upper:]' '[:lower:]')  # Convertir en minuscule
-  
-          for SERVICE in $MODIFIED_SERVICES; do
-            case $SERVICE in
-              v-auth)
-                docker build -t authserver -f src/SwaggerDemo.AuthServer/Dockerfile .
-                docker tag authserver $ECR_REPO:authserver-$TAG_NAME
-                docker tag authserver $ECR_REPO:latest
-                docker push $ECR_REPO:authserver-$TAG_NAME
-                docker push $ECR_REPO:latest
-                ;;
-              v-dbmigrator)
-                docker build -t dbmigrator -f src/SwaggerDemo.DbMigrator/Dockerfile .
-                docker tag dbmigrator $ECR_REPO:dbmigrator-$TAG_NAME
-                docker tag dbmigrator $ECR_REPO:latest
-                docker push $ECR_REPO:dbmigrator-$TAG_NAME
-                docker push $ECR_REPO:latest
-                ;;
-              v-http)
-                docker build -t httpapi -f src/SwaggerDemo.HttpApi.Host/Dockerfile .
-                docker tag httpapi $ECR_REPO:httpapi-$TAG_NAME
-                docker tag httpapi $ECR_REPO:latest
-                docker push $ECR_REPO:httpapi-$TAG_NAME
-                docker push $ECR_REPO:latest
-                ;;
-            esac
-          done
-  
+    - name: Build and push modified Docker images
+      run: |
+        ECR_REPO="${{ secrets.AWS_ACCOUNT_ID }}.dkr.ecr.${{ secrets.AWS_REGION }}.amazonaws.com/swaggerdemo123"
+        TAG_NAME="${GITHUB_REF#refs/tags/}" # Get the tag name
+
+        for SERVICE in $MODIFIED_SERVICES; do
+          case $SERVICE in
+            v-auth)
+              docker build -t authseurver -f src/SwaggerDemo.AuthServer/Dockerfile .
+              docker tag authseurver $ECR_REPO:$TAG_NAME
+              docker tag authseurver $ECR_REPO:latest
+              docker push $ECR_REPO:$TAG_NAME
+              docker push $ECR_REPO:latest
+              ;;
+            v-dbmigrator)
+              docker build -t dbmigrator -f src/SwaggerDemo.DbMigrator/Dockerfile .
+              docker tag dbmigrator $ECR_REPO:$TAG_NAME
+              docker tag dbmigrator $ECR_REPO:latest
+              docker push $ECR_REPO:$TAG_NAME
+              docker push $ECR_REPO:latest
+              ;;
+            v-http)
+              docker build -t httpapi -f src/SwaggerDemo.HttpApi.Host/Dockerfile .
+              docker tag httpapi $ECR_REPO:$TAG_NAME
+              docker tag httpapi $ECR_REPO:latest
+              docker push $ECR_REPO:httpapi-$TAG_NAME
+              docker push $ECR_REPO:latest
+              ;;
+          esac
+        done
+
     - name: Logout from Amazon ECR
       run: docker logout ${{ secrets.AWS_ACCOUNT_ID }}.dkr.ecr.${{ secrets.AWS_REGION }}.amazonaws.com
 
