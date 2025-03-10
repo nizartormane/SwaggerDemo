@@ -77,7 +77,8 @@ jobs:
               docker build -t httpapi -f src/SwaggerDemo.HttpApi.Host/Dockerfile .
               docker tag httpapi $ECR_REPO:$TAG_NAME
               docker tag httpapi $ECR_REPO:latest
-              docker push $ECR_REPO:httpapi-$TAG_NAME
+              docker push $ECR_REPO:$TAG_NAME
+              
               docker push $ECR_REPO:latest
               ;;
           esac
