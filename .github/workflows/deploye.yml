@@ -83,7 +83,7 @@ jobs:
           esac
         done
 
-    - name: Logout from Amazon ECR
+    - name: Logout from Amazon ECR  
       run: docker logout ${{ secrets.AWS_ACCOUNT_ID }}.dkr.ecr.${{ secrets.AWS_REGION }}.amazonaws.com
 
 
