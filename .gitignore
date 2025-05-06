@@ -4,4 +4,4 @@ obj/
 .git/
 node_modules/
 *.log
-*.txt
+Logs
