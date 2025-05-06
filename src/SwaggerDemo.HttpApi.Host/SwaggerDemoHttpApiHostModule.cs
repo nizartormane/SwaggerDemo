@@ -28,6 +28,7 @@ using Volo.Abp.Localization;
 using Volo.Abp.Modularity;
 using Volo.Abp.Swashbuckle;
 using Volo.Abp.VirtualFileSystem;
+using Prometheus;
 
 namespace SwaggerDemo;
 
@@ -201,6 +202,12 @@ public class SwaggerDemoHttpApiHostModule : AbpModule
         app.UseCorrelationId();
         app.UseStaticFiles();
         app.UseRouting();
+
+
+        app.UseHttpMetrics();  // Capture les métriques HTTP pour Prometheus
+
+
+
         app.UseCors();
         app.UseAuthentication();
 
@@ -210,6 +217,9 @@ public class SwaggerDemoHttpApiHostModule : AbpModule
         }
 
         app.UseAuthorization();
+
+
+        app.UseEndpoints(endpoints => { endpoints.MapMetrics(); });
 
         app.UseSwagger();
         app.UseAbpSwaggerUI(options =>

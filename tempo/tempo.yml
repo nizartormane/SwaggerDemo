@@ -1,0 +1,12 @@
+receivers:
+  zipkin:
+    endpoint: 0.0.0.0:9412
+
+storage:
+  trace:
+    backend: local
+    local:
+      path: /tmp/tempo
+
+server:
+  http_listen_port: 3200
