@@ -5,7 +5,7 @@ module.exports = {
     clean: [
 
     ],
-    mappings: {
+    mappings: {     
 
     }
-};   //////
+};   /////////
