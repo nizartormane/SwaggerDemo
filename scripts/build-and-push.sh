@@ -5,6 +5,9 @@ set -e
 ECR_REPO="${AWS_ACCOUNT_ID}.dkr.ecr.${AWS_REGION}.amazonaws.com/swaggerdemo123"
 TAG_NAME="${GITHUB_REF#refs/tags/}"
 
+# Affiche les services modifiés
+echo "Modified services: $MODIFIED_SERVICES"
+
 for SERVICE in $MODIFIED_SERVICES; do
   case $SERVICE in
     v-auth)
