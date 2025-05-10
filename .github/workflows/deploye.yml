@@ -1,18 +1,14 @@
 name: Deploy to AWS ECR
-
 on:
   push:
     tags:
       - 'v*'  # Déclenchement uniquement si un tag (ex: v1.0.0) est créé
-
 permissions:
   id-token: write
   contents: read
-
 jobs:
   deploy:
     runs-on: ubuntu-latest
-
     steps:
     - name: Checkout repository
       uses: actions/checkout@v2
@@ -23,7 +19,6 @@ jobs:
         echo "Fetching modified services..."
         git fetch --prune --unshallow
         MODIFIED_SERVICES=""
-
         CHANGED_FILES=$(git diff --name-only HEAD^ HEAD)
 
         echo "Changed files: $CHANGED_FILES"
@@ -37,21 +32,17 @@ jobs:
         if echo "$CHANGED_FILES" | grep -q "src/SwaggerDemo.HttpApi.Host/"; then
           MODIFIED_SERVICES="$MODIFIED_SERVICES v-http"
         fi
-        
         echo "MODIFIED_SERVICES=$MODIFIED_SERVICES" >> $GITHUB_ENV
         echo "Modified services: $MODIFIED_SERVICES"
-
     - name: Configure AWS credentials
       uses: aws-actions/configure-aws-credentials@v2
       with:
         aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
         aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
         aws-region: ${{ secrets.AWS_REGION }}
-
     - name: Login to Amazon ECR
       run: |
         aws ecr get-login-password --region ${{ secrets.AWS_REGION }} | docker login --username AWS --password-stdin ${{ secrets.AWS_ACCOUNT_ID }}.dkr.ecr.${{ secrets.AWS_REGION }}.amazonaws.com
-
     - name: Build and push modified Docker images
       run: |
         ECR_REPO="${{ secrets.AWS_ACCOUNT_ID }}.dkr.ecr.${{ secrets.AWS_REGION }}.amazonaws.com/swaggerdemo123"
