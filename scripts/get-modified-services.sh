@@ -1,5 +1,4 @@
 #!/bin/bash
-
 set -e
 
 echo "Fetching modified services..."
@@ -21,4 +20,5 @@ if echo "$CHANGED_FILES" | grep -q "src/SwaggerDemo.HttpApi.Host/"; then
 fi
 
 echo "MODIFIED_SERVICES=$MODIFIED_SERVICES" >> "$GITHUB_ENV"
-echo "Modified services: $MODIFIED_SERVICES"
+echo "$MODIFIED_SERVICES"  # <--- C’est ça qu'on capture dans le YAML
+
