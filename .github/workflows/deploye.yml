@@ -49,15 +49,15 @@ jobs:
 
     - name: Logout from Amazon ECR  
       run: docker logout ${{ secrets.AWS_ACCOUNT_ID }}.dkr.ecr.${{ secrets.AWS_REGION }}.amazonaws.com
-
-    # - name: Notify Slack
-    #   if: always()
-    #   uses: rtCamp/action-slack-notify@v2
-    #   env:
-    #     SLACK_WEBHOOK: ${{ secrets.SLACK_WEBHOOK_URL }}
-    #     SLACK_MESSAGE: |
-    #       ${{ job.status == 'success' && '✅ Build passed' || '❌ Build failed' }} on branch ${{ github.ref_name }} by ${{ github.actor }}
-    #     SLACK_COLOR: ${{ job.status == 'success' && 'good' || 'danger' }}
+      
+    - name: Notify Slack
+      if: always()
+      uses: rtCamp/action-slack-notify@v2
+      env:
+        SLACK_WEBHOOK: ${{ secrets.SLACK_WEBHOOK_URL }}
+        SLACK_MESSAGE: |
+          ${{ job.status == 'success' && '✅ Build passed' || '❌ Build failed' }} on branch ${{ github.ref_name }} by ${{ github.actor }}
+        SLACK_COLOR: ${{ job.status == 'success' && 'good' || 'danger' }}
 
 
 
