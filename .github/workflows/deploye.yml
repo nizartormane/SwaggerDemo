@@ -21,8 +21,8 @@ jobs:
       id: detect
       run: |
         chmod +x ./scripts/get-modified-services.sh
-        MODIFIED_SERVICES=$(./scripts/get-modified-services.sh)
-        echo "modified_services=$MODIFIED_SERVICES" >> $GITHUB_OUTPUT
+        ./scripts/get-modified-services.sh >> $GITHUB_OUTPUT
+    
 
     - name: Configure AWS credentials
       uses: aws-actions/configure-aws-credentials@v2
