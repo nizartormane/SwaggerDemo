@@ -3,7 +3,7 @@ name: Deploy to AWS ECR
 on:
   push:
     tags:
-      - 'v*'  # Déclenchement uniquement si un tag (ex: v1.0.0) est créé
+      - 'v*'  # Déclenchement uniquement si un tag est créé (ex: v1.0.0)
 
 permissions:
   id-token: write
@@ -17,29 +17,12 @@ jobs:
     - name: Checkout repository
       uses: actions/checkout@v2
 
-    - name: Get modified services
-      id: changed-files
+    - name: Detect modified services
+      id: detect
       run: |
-        echo "Fetching modified services..."
-        git fetch --prune --unshallow
-        MODIFIED_SERVICES=""
-
-        CHANGED_FILES=$(git diff --name-only HEAD^ HEAD)
-
-        echo "Changed files: $CHANGED_FILES"
-
-        if echo "$CHANGED_FILES" | grep -q "src/SwaggerDemo.AuthServer/"; then
-          MODIFIED_SERVICES="$MODIFIED_SERVICES v-auth"
-        fi
-        if echo "$CHANGED_FILES" | grep -q "src/SwaggerDemo.DbMigrator/"; then
-          MODIFIED_SERVICES="$MODIFIED_SERVICES v-dbmigrator"
-        fi
-        if echo "$CHANGED_FILES" | grep -q "src/SwaggerDemo.HttpApi.Host/"; then
-          MODIFIED_SERVICES="$MODIFIED_SERVICES v-http"
-        fi
-        
-        echo "MODIFIED_SERVICES=$MODIFIED_SERVICES" >> $GITHUB_ENV
-        echo "Modified services: $MODIFIED_SERVICES"
+        chmod +x ./scripts/get-modified-services.sh
+        ./scripts/get-modified-services.sh >> $GITHUB_OUTPUT
+    
 
     - name: Configure AWS credentials
       uses: aws-actions/configure-aws-credentials@v2
@@ -50,42 +33,40 @@ jobs:
 
     - name: Login to Amazon ECR
       run: |
-        aws ecr get-login-password --region ${{ secrets.AWS_REGION }} | docker login --username AWS --password-stdin ${{ secrets.AWS_ACCOUNT_ID }}.dkr.ecr.${{ secrets.AWS_REGION }}.amazonaws.com
+        aws ecr get-login-password --region ${{ secrets.AWS_REGION }} \
+          | docker login --username AWS --password-stdin \
+            ${{ secrets.AWS_ACCOUNT_ID }}.dkr.ecr.${{ secrets.AWS_REGION }}.amazonaws.com
 
     - name: Build and push modified Docker images
+      env:
+        AWS_ACCOUNT_ID: ${{ secrets.AWS_ACCOUNT_ID }}
+        AWS_REGION: ${{ secrets.AWS_REGION }}
+        GITHUB_REF: ${{ github.ref }}
+        MODIFIED_SERVICES: ${{ steps.detect.outputs.modified_services }}
       run: |
-        ECR_REPO="${{ secrets.AWS_ACCOUNT_ID }}.dkr.ecr.${{ secrets.AWS_REGION }}.amazonaws.com/swaggerdemo123"
-        TAG_NAME="${GITHUB_REF#refs/tags/}" # Get the tag name
-
-        for SERVICE in $MODIFIED_SERVICES; do
-          case $SERVICE in
-            v-auth)
-              docker build -t authserver -f src/SwaggerDemo.AuthServer/Dockerfile .
-              docker tag authserver $ECR_REPO:$TAG_NAME
-              docker tag authserver $ECR_REPO:latest
-              docker push $ECR_REPO:authserver-$TAG_NAME
-              docker push $ECR_REPO:authserver-latest
-              ;;
-            v-dbmigrator)
-              docker build -t dbmigrator -f src/SwaggerDemo.DbMigrator/Dockerfile .
-              docker tag dbmigrator $ECR_REPO:$TAG_NAME
-              docker tag dbmigrator $ECR_REPO:latest
-              docker push $ECR_REPO:dbmigrator-$TAG_NAME
-              docker push $ECR_REPO:dbmigrator-latest
-              ;;
-            v-http)
-              docker build -t httpapi -f src/SwaggerDemo.HttpApi.Host/Dockerfile .
-              docker tag httpapi $ECR_REPO:httpapi-$TAG_NAME
-              docker tag httpapi $ECR_REPO:httpapi-latest
-              docker push $ECR_REPO:httpapi-$TAG_NAME
-              docker push $ECR_REPO:httpapi-latest
-
-              ;;
-          esac
-        done
+        chmod +x ./scripts/build-and-push.sh
+        ./scripts/build-and-push.sh
 
     - name: Logout from Amazon ECR  
       run: docker logout ${{ secrets.AWS_ACCOUNT_ID }}.dkr.ecr.${{ secrets.AWS_REGION }}.amazonaws.com
+      
+    - name: Notify Slack
+      if: always()
+      uses: rtCamp/action-slack-notify@v2
+      env:
+        SLACK_WEBHOOK: ${{ secrets.SLACK_WEBHOOK_URL }}
+        SLACK_MESSAGE: |
+          ${{ job.status == 'success' && '✅ Build passed' || '❌ Build failed' }} on branch ${{ github.ref_name }} by ${{ github.actor }}
+        SLACK_COLOR: ${{ job.status == 'success' && 'good' || 'danger' }}
+
+
+
+
+
+
+
+
+
 
 
 
@@ -93,47 +74,87 @@ jobs:
 
 
 # name: Deploy to AWS ECR
-
 # on:
 #   push:
-#     branches:
-#       - main       
- 
+#     tags:
+#       - 'v*'  # Déclenchement uniquement si un tag (ex: v1.0.0) est créé
+# permissions:
+#   id-token: write
+#   contents: read
 # jobs:
 #   deploy:
-     
 #     runs-on: ubuntu-latest
-
 #     steps:
 #     - name: Checkout repository
 #       uses: actions/checkout@v2
 
+#     - name: Get modified services
+#       id: changed-files
+#       run: |
+#         echo "Fetching modified services..."
+#         git fetch --prune --unshallow
+#         MODIFIED_SERVICES=""
+#         CHANGED_FILES=$(git diff --name-only HEAD^ HEAD)
+
+#         echo "Changed files: $CHANGED_FILES"
+
+#         if echo "$CHANGED_FILES" | grep -q "src/SwaggerDemo.AuthServer/"; then
+#           MODIFIED_SERVICES="$MODIFIED_SERVICES v-auth"
+#         fi
+#         if echo "$CHANGED_FILES" | grep -q "src/SwaggerDemo.DbMigrator/"; then
+#           MODIFIED_SERVICES="$MODIFIED_SERVICES v-dbmigrator"
+#         fi
+#         if echo "$CHANGED_FILES" | grep -q "src/SwaggerDemo.HttpApi.Host/"; then
+#           MODIFIED_SERVICES="$MODIFIED_SERVICES v-http"
+#         fi
+#         echo "MODIFIED_SERVICES=$MODIFIED_SERVICES" >> $GITHUB_ENV
+#         echo "Modified services: $MODIFIED_SERVICES"
 #     - name: Configure AWS credentials
 #       uses: aws-actions/configure-aws-credentials@v2
 #       with:
 #         aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
 #         aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
 #         aws-region: ${{ secrets.AWS_REGION }}
-
 #     - name: Login to Amazon ECR
 #       run: |
 #         aws ecr get-login-password --region ${{ secrets.AWS_REGION }} | docker login --username AWS --password-stdin ${{ secrets.AWS_ACCOUNT_ID }}.dkr.ecr.${{ secrets.AWS_REGION }}.amazonaws.com
-
-#     - name: Build and push Docker images
+#     - name: Build and push modified Docker images
 #       run: |
 #         ECR_REPO="${{ secrets.AWS_ACCOUNT_ID }}.dkr.ecr.${{ secrets.AWS_REGION }}.amazonaws.com/swaggerdemo123"
-        
-#         docker build -t v-auth -f src/SwaggerDemo.AuthServer/Dockerfile .
-#         docker build -t v-dbmigrator -f src/SwaggerDemo.DbMigrator/Dockerfile .
-#         docker build -t v-http -f src/SwaggerDemo.HttpApi.Host/Dockerfile .
+#         TAG_NAME="${GITHUB_REF#refs/tags/}" # Get the tag name
 
-#         docker tag v-auth $ECR_REPO:v-auth
-#         docker tag v-dbmigrator $ECR_REPO:v-dbmigrator
-#         docker tag v-http $ECR_REPO:v-http
+#         for SERVICE in $MODIFIED_SERVICES; do
+#           case $SERVICE in
+#             v-auth)
+#               docker build -t authserver -f src/SwaggerDemo.AuthServer/Dockerfile .
+#               docker tag authserver $ECR_REPO:$TAG_NAME
+#               docker tag authserver $ECR_REPO:latest
+#               docker push $ECR_REPO:authserver-$TAG_NAME
+#               docker push $ECR_REPO:authserver-latest
+#               ;;
+#             v-dbmigrator)
+#               docker build -t dbmigrator -f src/SwaggerDemo.DbMigrator/Dockerfile .
+#               docker tag dbmigrator $ECR_REPO:$TAG_NAME
+#               docker tag dbmigrator $ECR_REPO:latest
+#               docker push $ECR_REPO:dbmigrator-$TAG_NAME
+#               docker push $ECR_REPO:dbmigrator-latest
+#               ;;
+#             v-http)
+#               docker build -t httpapi -f src/SwaggerDemo.HttpApi.Host/Dockerfile .
+#               docker tag httpapi $ECR_REPO:httpapi-$TAG_NAME
+#               docker tag httpapi $ECR_REPO:httpapi-latest
+#               docker push $ECR_REPO:httpapi-$TAG_NAME
+#               docker push $ECR_REPO:httpapi-latest
 
-#         docker push $ECR_REPO:v-auth
-#         docker push $ECR_REPO:v-dbmigrator
-#         docker push $ECR_REPO:v-http        
+#               ;;
+#           esac
+#         done
 
-#     - name: Logout from Amazon ECR
+#     - name: Logout from Amazon ECR  
 #       run: docker logout ${{ secrets.AWS_ACCOUNT_ID }}.dkr.ecr.${{ secrets.AWS_REGION }}.amazonaws.com
+
+
+
+
+
+
