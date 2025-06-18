@@ -28,7 +28,7 @@ jobs:
 
     - name: Start SonarQube Analysis
       run: |
-        dotnet sonarscanner begin /k:"${{ env.SONAR_PROJECT_KEY }}" \   
+        dotnet sonarscanner begin /k:"${{ env.SONAR_PROJECT_KEY }}" \
           /d:sonar.host.url=${{ secrets.SONAR_HOST_URL }} \
           /d:sonar.login=${{ secrets.SONAR_TOKEN }} \
           /d:sonar.scanner.scanAll=false
