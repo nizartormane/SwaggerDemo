@@ -7,7 +7,7 @@ on:
 
 env:
   DOTNET_VERSION: '8.0'
-  # BUILD_CONFIGURATION: 'Release'
+  BUILD_CONFIGURATION: 'Release'
   SONAR_PROJECT_KEY: 'my-new-project-key'
 
 jobs:
@@ -30,7 +30,7 @@ jobs:
       run: |
         dotnet sonarscanner begin /k:"${{ env.SONAR_PROJECT_KEY }}" \
           /d:sonar.host.url=${{ secrets.SONAR_HOST_URL }} \
-          /d:sonar.login=${{ secrets.SONAR_TOKEN }} \   
+          /d:sonar.login=${{ secrets.SONAR_TOKEN }} \
           /d:sonar.scanner.scanAll=false
 
     - name: Build project
@@ -38,6 +38,49 @@ jobs:
 
     - name: End SonarQube Analysis
       run: dotnet sonarscanner end /d:sonar.login=${{ secrets.SONAR_TOKEN }}
+
+
+
+# name: Build and SonarQube Analysis
+
+# on:
+#   push:
+#     branches:
+#       - main
+
+# env:
+#   DOTNET_VERSION: '8.0'
+#   BUILD_CONFIGURATION: 'Release'
+#   SONAR_PROJECT_KEY: 'my-new-project-key'
+
+# jobs:
+#   sonar-analysis:
+#     runs-on: ubuntu-latest
+
+#     steps:
+#     - name: Check out repository
+#       uses: actions/checkout@v2
+
+#     - name: Setup .NET ${{ env.DOTNET_VERSION }}
+#       uses: actions/setup-dotnet@v1
+#       with:
+#         dotnet-version: ${{ env.DOTNET_VERSION }}
+
+#     - name: Install SonarScanner for .NET
+#       run: dotnet tool install --global dotnet-sonarscanner
+
+#     - name: Start SonarQube Analysis
+#       run: |
+#         dotnet sonarscanner begin /k:"${{ env.SONAR_PROJECT_KEY }}"\
+#           /d:sonar.host.url=${{ secrets.SONAR_HOST_URL }}\
+#           /d:sonar.login=${{ secrets.SONAR_TOKEN }}\   
+#           /d:sonar.scanner.scanAll=false
+
+#     - name: Build project
+#       run: dotnet build --configuration ${{ env.BUILD_CONFIGURATION }}
+
+#     - name: End SonarQube Analysis
+#       run: dotnet sonarscanner end /d:sonar.login=${{ secrets.SONAR_TOKEN }} //////
 
     # - name: Run tests
     #   run: dotnet test --configuration ${{ env.BUILD_CONFIGURATION }}
