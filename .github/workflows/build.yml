@@ -47,7 +47,7 @@ jobs:
 #   push:
 #     branches:
 #       - main
-#
+
 # env:
 #   DOTNET_VERSION: '8.0'
 #   BUILD_CONFIGURATION: 'Release'
