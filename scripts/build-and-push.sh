@@ -11,7 +11,8 @@ echo "Modified services: $MODIFIED_SERVICES"
 for SERVICE in $MODIFIED_SERVICES; do
   case $SERVICE in
     v-auth)
-      docker build -t authserver -f ./src/SwaggerDemo.AuthServer/Dockerfile .
+      docker build -t authserver 
+      -f ./src/SwaggerDemo.AuthServer/Dockerfile .
       docker tag authserver $ECR_REPO:authserver-$TAG_NAME
       docker tag authserver $ECR_REPO:authserver-latest
       docker push $ECR_REPO:authserver-$TAG_NAME
