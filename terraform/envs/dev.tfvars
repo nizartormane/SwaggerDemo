@@ -1,0 +1,6 @@
+aws_region        = "eu-west-1"
+vpc_cidr          = "10.1.0.0/16"
+public_subnet_cidr = "10.1.1.0/24"
+instance_type     = "t2.micro"
+ami_id            = "ami-09079da11cd2861fa"
+#terraform apply -var-file="dev.tfvars"
