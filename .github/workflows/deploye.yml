@@ -58,7 +58,7 @@ jobs:
         SLACK_MESSAGE: |
           ${{ job.status == 'success' && '✅ Build passed' || '❌ Build failed' }} on branch ${{ github.ref_name }} by ${{ github.actor }}
         SLACK_COLOR: ${{ job.status == 'success' && 'good' || 'danger' }}
-//
+
 
 
 
