@@ -1,4 +1,4 @@
-#!/bin/bash
+# #!/bin/bash
 
 set -e
 
@@ -11,8 +11,7 @@ echo "Modified services: $MODIFIED_SERVICES"
 for SERVICE in $MODIFIED_SERVICES; do
   case $SERVICE in
     v-auth)
-      docker build -t authserver 
-      -f ./src/SwaggerDemo.AuthServer/Dockerfile .
+      docker build -t authserver -f ./src/SwaggerDemo.AuthServer/Dockerfile .
       docker tag authserver $ECR_REPO:authserver-$TAG_NAME
       docker tag authserver $ECR_REPO:authserver-latest
       docker push $ECR_REPO:authserver-$TAG_NAME
@@ -28,9 +27,4 @@ for SERVICE in $MODIFIED_SERVICES; do
     v-http)
       docker build -t httpapi -f ./src/SwaggerDemo.HttpApi.Host/Dockerfile .
       docker tag httpapi $ECR_REPO:httpapi-$TAG_NAME
-      docker tag httpapi $ECR_REPO:httpapi-latest
-      docker push $ECR_REPO:httpapi-$TAG_NAME
-      docker push $ECR_REPO:httpapi-latest
-      ;;
-  esac
-done
+      docker tag httpapi $ECR_REPO:httpap_
