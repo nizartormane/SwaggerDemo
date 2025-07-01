@@ -25,6 +25,9 @@ jobs:
 
     - name: Install SonarScanner for .NET
       run: dotnet tool install --global dotnet-sonarscanner
+    - name: Clear SonarQube Scanner cache
+      run: rm -rf ~/.sonar/cache
+
 
     - name: Start SonarQube Analysis
       run: |
